@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import  style from '../../styles/main.css';
 import logo from '../../assets/img/logo/logo.png';
 
 const Header: React.FC = () => {
     return (
         <>
       {/* Header Section Start */}
-      <header id="headerSection">
+      <header className="headerSection">
         <div className="container-fluid">
           <div className="row">
             {/* top Header */}
@@ -14,7 +13,7 @@ const Header: React.FC = () => {
               <div className="container">
                 <div className="row">
                   <div className="navTop">
-                    <ul>
+                    <ul className='flex gap-4'>
                       <li className="dropdown">
                         <a
                           className="dropdown-toggle"
@@ -149,7 +148,6 @@ const Header: React.FC = () => {
                   <div className="middleHeader___Left">
                     <div className="headerbrand">
                       <a href="index.html">
-                        {" "}
                         <img
                           src={logo.src}
                           width="90px"
@@ -265,7 +263,7 @@ const Header: React.FC = () => {
                     <nav className="navbar navbar-expand-lg">
                       <div className="container-fluid p-0">
                         <div
-                          className="collapse navbar-collapse justify-content-end"
+                          className="navbar-collapse justify-content-end"
                           id="navbarNavDropdown"
                         >
                           <ul className="navbar-nav">
