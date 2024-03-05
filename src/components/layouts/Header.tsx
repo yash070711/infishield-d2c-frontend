@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import  style from '../../styles/main.css';
-import logo from '../../assets/img/logo/logo.png';
+import logo from '../../assets/images/InfinityLogo.png';
 
 const Header: React.FC = () => {
     return (
@@ -148,15 +147,14 @@ const Header: React.FC = () => {
                 <div className="middleHeader">
                   <div className="middleHeader___Left">
                     <div className="headerbrand">
-                      <a href="index.html">
-                        {" "}
+               
                         <img
                           src={logo.src}
                           width="90px"
                           height="98.6px"
                           alt="infyShield Logo"
                         />
-                      </a>
+                  
                     </div>
                   </div>
                   <div className="middleHeader___Right navbar navbar-expand-lg">
@@ -270,13 +268,13 @@ const Header: React.FC = () => {
                         >
                           <ul className="navbar-nav">
                             <li className="nav-item">
-                              <Link
+                              <a
                                 className="nav-link active"
                                 aria-current="page"
                                 href="index.html"
                               >
                                 Home
-                              </Link>
+                              </a>
                             </li>
                             <li className="nav-item dropdown w-lg-auto">
                               <a
