@@ -1,0 +1,30 @@
+<svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_349_8)">
+<circle cx="34" cy="30" r="30" fill="url(#paint0_linear_349_8)" shape-rendering="crispEdges"/>
+</g>
+<g clip-path="url(#clip0_349_8)">
+<path d="M19.5 46H33.5C33.776 46 34 45.776 34 45.5C34 45.224 33.776 45 33.5 45H19.5C19.224 45 19 44.776 19 44.5V15.5C19 15.224 19.224 15 19.5 15H40.5C40.776 15 41 15.224 41 15.5V20.5C41 20.776 41.224 21 41.5 21C41.776 21 42 20.776 42 20.5V15.5C42 14.673 41.327 14 40.5 14H19.5C18.673 14 18 14.673 18 15.5V44.5C18 45.327 18.673 46 19.5 46Z" fill="#8B4492"/>
+<path d="M36 24.5V44.5C36 45.327 36.673 46 37.5 46H48.5C49.327 46 50 45.327 50 44.5V24.5C50 23.673 49.327 23 48.5 23H37.5C36.673 23 36 23.673 36 24.5ZM49 24.5V44.5C49 44.776 48.776 45 48.5 45H37.5C37.224 45 37 44.776 37 44.5V24.5C37 24.224 37.224 24 37.5 24H48.5C48.776 24 49 24.224 49 24.5Z" fill="#3B89C4"/>
+<path d="M30 43C30.5523 43 31 42.5523 31 42C31 41.4477 30.5523 41 30 41C29.4477 41 29 41.4477 29 42C29 42.5523 29.4477 43 30 43Z" fill="#828282"/>
+<path d="M43 43C43.5523 43 44 42.5523 44 42C44 41.4477 43.5523 41 43 41C42.4477 41 42 41.4477 42 42C42 42.5523 42.4477 43 43 43Z" fill="#828282"/>
+</g>
+<defs>
+<filter id="filter0_d_349_8" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_349_8"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_349_8" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_349_8" x1="34" y1="1.38462" x2="34" y2="64.7885" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E9F5FF"/>
+<stop offset="1" stop-color="#DCF0FF" stop-opacity="0.03"/>
+</linearGradient>
+<clipPath id="clip0_349_8">
+<rect width="32" height="32" fill="white" transform="translate(18 14)"/>
+</clipPath>
+</defs>
+</svg>
