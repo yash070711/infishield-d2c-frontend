@@ -1,3 +1,4 @@
+import { CustomerProvider } from "@/context/customerContext";
 import { APP_INFO } from "@/environments";
 import "@/styles/globals.css";
 import "@/styles/Header.scss";
@@ -9,9 +10,11 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<Head>
 				<title>{APP_INFO.TITLE}</title>
-        <meta name="description" content={APP_INFO.DESCRIPTION} />
+				<meta name="description" content={APP_INFO.DESCRIPTION} />
 			</Head>
-			<Component {...pageProps} />
+			<CustomerProvider>
+				<Component {...pageProps} />
+			</CustomerProvider>
 		</>
 	);
 }
