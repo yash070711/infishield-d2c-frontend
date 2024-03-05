@@ -4,7 +4,7 @@ export const env = {
 };
 
 export const APP_INFO = {
-	TITLE: "Inifinty Customer",
+	TITLE: "Inifinity Customer",
 	DESCRIPTION: "Inifinty | Customer | App",
 };
 
