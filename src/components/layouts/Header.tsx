@@ -1,5 +1,3 @@
-import  style from '../../styles/main.css'
-
 const Header: React.FC = () => {
     return (
         <>
