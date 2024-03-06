@@ -67,7 +67,7 @@ export default function LoginPage() {
 											Login as InfyShield{" "}
 											<a href="#" className="paraLink">
 												{" "}
-												Partner's
+											
 											</a>{" "}
 										</p>
 									</div>

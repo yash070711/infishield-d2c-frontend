@@ -1,0 +1,19 @@
+#partnerSection {
+    padding: 5pc 0;
+  }
+  #partnerSection .partnerContent {
+    padding-top: 6pc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #partnerSection .partnerContent .pc_cards {
+    margin: 1pc 1pc;
+    flex: 0 0 22.532%;
+    display: flex;
+    justify-content: center;
+  }
+  #partnerSection .partnerContent .pc_cards img {
+    width: 249px;
+    height: auto;
+  }

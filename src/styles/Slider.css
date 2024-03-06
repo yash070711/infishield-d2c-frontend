@@ -1,0 +1,1497 @@
+#heroSection {
+    background: linear-gradient(180deg, #E9F5FF 2.31%, rgba(220, 240, 255, 0.03) 107.98%);
+    position: relative;
+    padding-bottom: 269px;
+  }
+  #heroSection .heroSection___slider {
+    position: relative;
+    padding: 0 0 24px;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-button-next, #heroSection .heroSection___slider .swiper .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #004985;
+    background-color: rgba(217, 217, 217, 0);
+    border-radius: 50%;
+    display: none;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-button-next:after, #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+    font-weight: 900;
+    font-size: 24px;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-horizontal > .swiper-pagination-bullets, #heroSection .heroSection___slider .swiper .swiper-pagination-bullets.swiper-pagination-horizontal, #heroSection .heroSection___slider .swiper .swiper-pagination-custom, #heroSection .heroSection___slider .swiper .swiper-pagination-fraction {
+    bottom: 89px;
+    top: auto;
+    left: 0;
+    width: 100%;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: #156197;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+    padding: 0;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+    flex: 0 0 85%;
+    margin-bottom: 16px;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+    width: 100%;
+    color: #6c757d;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0;
+    position: relative;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2::before {
+    content: "";
+    /* background-image: url("../../assets/img/heroheadingIcon.png"); */
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+    width: 100%;
+    color: #212121;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.3;
+    margin: 0;
+    width: 90%;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 span {
+    color: rgb(3, 75, 143);
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content .drafRed {
+    color: #a30e11;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000;
+    line-height: 1.5;
+    margin: 0;
+    text-align: start;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 8px 32px;
+    border-radius: 50px;
+    color: #fff;
+    background: #004985;
+    box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.25);
+    transition: all 0.3s ease 0s;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right {
+    display: flex;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure {
+    padding: 0;
+    margin: 0;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+    width: 100vw;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+    border-radius: 0px 0px 34px 34px;
+  }
+  #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+    border-radius: 0px 0px 34px 34px;
+    width: 100%;
+    height: auto;
+  }
+  #heroSection .heroSection___gridTriCard {
+    position: absolute;
+    max-width: 1240px;
+    margin-block: -100px;
+    inset: auto 17%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    grid-template-rows: 1fr;
+    grid-column-gap: 48px;
+    grid-row-gap: 0px;
+    justify-items: center;
+  }
+  #heroSection .heroSection___gridTriCard .triCard:nth-child(1) {
+    grid-area: 1/1/2/2;
+    width: 100%;
+  }
+  #heroSection .heroSection___gridTriCard .triCard:nth-child(2) {
+    grid-area: 1/2/2/3;
+    width: 100%;
+  }
+  #heroSection .heroSection___gridTriCard .triCard:nth-child(3) {
+    grid-area: 1/3/2/4;
+    width: 100%;
+  }
+  #heroSection .heroSection___gridTriCard .triCard {
+    background: #ffffff;
+    padding: 15px 15px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2509803922);
+  }
+  #heroSection .heroSection___gridTriCard .triCard___Title {
+    margin-bottom: 12px;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___Title h1 {
+    color: #004985;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+    content: "";
+    background: #004985;
+    display: block;
+    width: 20%;
+    height: 2px;
+    position: relative;
+    top: 2px;
+    border-radius: 24px;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 12px;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(1) {
+    grid-area: 1/1/2/2;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(2) {
+    grid-area: 1/2/2/3;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(3) {
+    grid-area: 1/3/2/4;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(4) {
+    grid-area: 2/1/3/2;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(5) {
+    grid-area: 2/2/3/3;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(6) {
+    grid-area: 2/3/3/4;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #353535;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+    margin-bottom: 5px;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+    width: 64px;
+    height: auto;
+    display: block;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: rgba(61, 61, 61, 0.8);
+    margin-bottom: 16px;
+    width: 80%;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+    width: 100%;
+    background: #004985;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1.3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+    content: "";
+    background-image: url("../assets/img/callNow.png");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 36px;
+  }
+  #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 8px 32px;
+    border-radius: 50px;
+    color: #fff;
+    background: #004985;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.168627451);
+  }
+  #heroSection .heroSection___gridTriCard .fullCollength {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 0fr;
+  }
+
+
+  /* benifit section */
+  #benefitSection .benefitHeroSection {
+    display: flex;
+    flex: 0 0 93.33%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 54px;
+    padding: 40px 0px 40px 60px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, rgba(86, 212, 255, 0.76) 0%, #004985 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  }
+  #benefitSection .benefitHeroSection .lightTitle {
+    flex: 0 1 18%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  #benefitSection .benefitHeroSection .lightTitle h2 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffffff;
+  }
+  #benefitSection .benefitHeroSection .lightTitle h2::after {
+    content: "";
+    background: #fff;
+    width: 130px;
+    height: 3px;
+  }
+  #benefitSection .benefitHeroSection .lightTitle p {
+    color: #ffffff;
+    font-size: 15px;
+    text-align: start;
+    margin: 0;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box {
+    position: relative;
+    flex: 0 1 85%;
+    display: flex;
+    justify-content: end;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard {
+    position: relative;
+    flex: 0 0 27.33%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard___media {
+    margin-bottom: 10px;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard___media img {
+    width: 62px;
+    height: auto;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard___body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard___body h3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard___body h3::after {
+    content: "";
+    background: #ffffff;
+    width: 48px;
+    height: 3px;
+    border-radius: 30px;
+    margin: 8px auto;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .fancyCard___body p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 60px;
+    margin: 0;
+  }
+  #benefitSection .benefitHeroSection .fancyCard___box .darkbg-shield {
+    background-color: #000000;
+    background-image: url("../assets/img/shieldlight.svg");
+    background-size: 216%;
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    opacity: 0.98;
+    margin-top: -90px;
+    margin-bottom: -90px;
+    margin-block: -90px;
+    align-content: center;
+    border-radius: 20px;
+    box-shadow: -9px -8px 10px 0px rgba(0, 0, 0, 0.12);
+    transition: all 5ms ease;
+  }
+  #benefitSection .fancyIcon___box {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 90px;
+    grid-row-gap: 40px;
+    justify-items: stretch;
+    margin-top: 16px;
+  }
+  #benefitSection .fancyIcon___box .fancyIcon___Card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #benefitSection .fancyIcon___box .fancyIcon___Card .media {
+    margin: 0;
+    margin-right: 10px;
+  }
+  #benefitSection .fancyIcon___box .fancyIcon___Card .media img {
+    width: 62px;
+    height: auto;
+  }
+  #benefitSection .fancyIcon___box .fancyIcon___Card .title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #212121;
+    text-align: start;
+    width: 50%;
+  }
+
+
+/* reponsive css*/
+/* 
+    320px — 480px: Mobile devices
+*/
+@media (min-width: 320px) and (max-width: 375px) {
+    #heroSection {
+      padding-bottom: 40px;
+    }
+    #heroSection .heroSection___slider {
+      padding: 0 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-pagination {
+      display: none;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next, #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      width: 20px;
+      height: 20px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next:after, #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+      font-weight: 900;
+      font-size: 16px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left {
+      width: auto;
+      padding-left: 24px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      font-weight: 400;
+      font-size: 10px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      font-size: 16px;
+      line-height: 1.3;
+      margin: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 9px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-size: 10px;
+      font-weight: 400;
+      padding: 4px 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: 100vw;
+      height: 151px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      grid-template-rows: minmax(auto, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 10px;
+      position: relative;
+      inset: auto;
+      margin-block: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(1) {
+      grid-area: 1/1/1/1;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(2) {
+      grid-area: 1/2/1/2;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0 6px 6px 0;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(3) {
+      grid-area: 2/1/2/3;
+      width: 100%;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
+    }
+    #heroSection .heroSection___gridTriCard .triCard {
+      border-radius: 6px;
+      padding: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 0;
+      margin-left: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1 {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      height: 1px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      grid-column-gap: 10px;
+      grid-row-gap: 5px;
+      padding: 10px 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(1) {
+      grid-area: 1/1/2/2;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(2) {
+      grid-area: 1/2/2/3;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(3) {
+      grid-area: 1/3/2/4;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(4) {
+      grid-area: 2/1/3/2;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(5) {
+      grid-area: 2/2/3/3;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(6) {
+      grid-area: 2/3/3/4;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards {
+      font-size: 8px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 32px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard {
+      padding: 0 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      font-size: 14px;
+      font-weight: 400;
+      width: 90%;
+      margin: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      font-size: 20px;
+      margin: 0 0 5px 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+      height: 32px;
+      width: 32px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
+      padding: 4px 12px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+  @media (min-width: 376px) and (max-width: 480px) {
+    #heroSection {
+      padding-bottom: 40px;
+    }
+    #heroSection .heroSection___slider {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-pagination {
+      display: none;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      width: 20px;
+      height: 20px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next:after,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+      font-weight: 900;
+      font-size: 16px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left {
+      padding-left: 32px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 1.3;
+      margin: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      font-size: 16px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 span {
+      color: rgb(3, 75, 143);
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 8px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-size: 8px;
+      padding: 4px 12px;
+      color: #fff;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: 100vw;
+      height: 151px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      grid-template-rows: minmax(100px, auto);
+      grid-column-gap: 0;
+      grid-row-gap: 10px;
+      position: relative;
+      inset: auto;
+      margin-block: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(1) {
+      grid-area: 1/1/1/1;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 2px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(2) {
+      grid-area: 1/2/1/2;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0 6px 6px 0;
+      border-bottom: 2px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(3) {
+      grid-area: 2/1/2/3;
+      width: auto;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
+    }
+    #heroSection .heroSection___gridTriCard .triCard {
+      border-radius: 6px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 12px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1 {
+      font-size: 12px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      height: 1px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      grid-column-gap: 5px;
+      grid-row-gap: 0;
+      padding: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(1) {
+      grid-area: 1/1/2/2;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(2) {
+      grid-area: 1/2/2/3;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(3) {
+      grid-area: 1/3/2/4;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(4) {
+      grid-area: 2/1/3/2;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(5) {
+      grid-area: 2/2/3/3;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards:nth-child(6) {
+      grid-area: 2/3/3/4;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards {
+      font-size: 9px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 40px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      font-size: 16px;
+      width: 85%;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      font-size: 24px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+      height: 32px;
+      width: 32px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
+      padding: 8px 24px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+/* 
+    481px — 768px: iPads, Tablets
+*/
+@media (min-width: 481px) and (max-width: 768px) {
+    #heroSection {
+      padding-bottom: 20px;
+    }
+    #heroSection .heroSection___slider {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      width: 20px;
+      height: 20px;
+      display: flex;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next:after,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+      font-weight: 900;
+      font-size: 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-horizontal > .swiper-pagination-bullets,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-custom,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-fraction {
+      bottom: 0;
+      top: auto;
+      left: 0;
+      width: 100%;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left {
+      width: auto;
+      padding-left: 32px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 8px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      font-size: 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      font-size: 24px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 span {
+      color: rgb(3, 75, 143);
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 10px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-size: 10px;
+      font-weight: 400;
+      padding: 4px 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: 100vw;
+      height: 199.9px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      grid-template-rows: minmax(auto, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 10px;
+      width: auto;
+      position: relative;
+      inset: auto;
+      margin-block: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(1) {
+      grid-area: 1/1/1/1;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(2) {
+      grid-area: 1/2/1/2;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0 6px 6px 0;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(3) {
+      grid-area: 2/1/2/3;
+      width: 100%;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
+    }
+    #heroSection .heroSection___gridTriCard .triCard {
+      background: #fff;
+      padding: 15px 15px;
+      border-radius: 6px;
+      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 12px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1 {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      width: 70px;
+      height: 1px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      grid-column-gap: 10px;
+      grid-row-gap: 5px;
+      padding: 10px 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 40px;
+      height: auto;
+      display: block;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      flex: 0 0 100%;
+      order: 1;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.6;
+      color: rgba(61, 61, 61, 0.8);
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      flex: 0 0 70%;
+      order: 2;
+      width: 100%;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+      content: "";
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      height: 36px;
+      width: 36px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+      flex: 0 0 25%;
+      order: 3;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 400;
+      padding: 8px 13px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+/* 
+    769px — 1024px: Small screens, laptops
+*/
+@media (min-width: 769px) and (max-width: 960px) {
+    #heroSection {
+      padding-bottom: 0;
+    }
+    #heroSection .heroSection___slider {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      width: 20px;
+      height: 20px;
+      display: flex;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next:after,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+      font-weight: 900;
+      font-size: 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-horizontal > .swiper-pagination-bullets,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-custom,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-fraction {
+      bottom: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left {
+      width: auto;
+      padding-left: 32px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 8px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      font-size: 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      font-size: 28px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 span {
+      color: rgb(3, 75, 143);
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 10px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-size: 10px;
+      font-weight: 400;
+      padding: 4px 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: 100vw;
+      height: 259.9px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      grid-template-columns: repeat(3, minmax(0, 3fr)); /* Changed 'auto' to '0' */
+      grid-template-rows: minmax(auto, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 10px;
+      width: 98.99%; /* Adjusted width */
+      position: relative;
+      inset: auto;
+      margin-block: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(1) {
+      grid-area: 1/1/1/1;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(2) {
+      grid-area: 1/2/1/2;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0 0 0 0;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(3) {
+      grid-area: 1/3/1/3;
+      width: 100%;
+      margin-left: 0;
+      padding: 10px;
+      border-radius: 0 6px 6px 0;
+      box-shadow: none;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1 {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      width: 70px;
+      height: 1px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      grid-column-gap: 10px;
+      grid-row-gap: 5px;
+      padding: 10px 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 40px;
+      height: auto;
+      display: block;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      flex: 0 0 100%;
+      order: 1;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.6;
+      color: rgba(61, 61, 61, 0.8);
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      flex: 0 0 100%;
+      order: 2;
+      width: 100%;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+      content: "";
+     
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      height: 36px;
+      width: 36px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+      flex: 0 0 40%;
+      order: 3;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.5;
+      font-weight: 400;
+      padding: 8px 13px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+  @media (min-width: 961px) and (max-width: 1024px) {
+    #heroSection {
+      padding-bottom: 0;
+    }
+    #heroSection .heroSection___slider {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      display: none;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next:after,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+      font-weight: 900;
+      font-size: 12px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-horizontal > .swiper-pagination-bullets,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-custom,
+    #heroSection .heroSection___slider .swiper .swiper-pagination-fraction {
+      bottom: 0;
+      top: auto;
+      left: 0;
+      width: 100%;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+      padding: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left {
+      width: auto;
+      padding-left: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 8px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      font-size: 28px;
+      line-height: 1.2;
+      width: 65%;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 span {
+      color: rgb(3, 75, 143);
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 16px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: auto;
+      height: auto;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure .fullWidth {
+      width: 100vw;
+      height: auto;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure .halfWidth {
+      width: auto;
+      height: 298px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      grid-template-columns: repeat(3, minmax(auto, 3fr));
+      grid-template-rows: minmax(auto, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 10px;
+      width: 98.99%;
+      position: relative;
+      inset: auto;
+      margin-block: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(1) {
+      grid-area: 1/1/1/1;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(2) {
+      grid-area: 1/2/1/2;
+      width: 100%;
+      box-shadow: none;
+      border-radius: 0 0 0 0;
+      border-right: 1px solid #bee0ff;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard:nth-child(3) {
+      grid-area: 1/3/1/3;
+      width: 100%;
+      margin-left: 0;
+      padding: 10px;
+      border-radius: 0 6px 6px 0;
+      box-shadow: none;
+      border-bottom: 1px solid #bee0ff;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1 {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      width: 70px;
+      height: 1px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      display: grid;
+      grid-column-gap: 10px;
+      grid-row-gap: 5px;
+      padding: 10px 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 40px;
+      height: auto;
+      display: block;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      flex: 0 0 100%;
+      order: 1;
+      font-size: 16px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      flex: 0 0 100%;
+      order: 2;
+      font-weight: 700;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+      flex: 0 0 40%;
+      order: 3;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 14px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+/* 
+    1025px — 1200px: Desktops, large screens
+*/
+@media (min-width: 1025px) and (max-width: 1200px) {
+    #heroSection {
+      padding-bottom: 120px;
+    }
+    #heroSection .heroSection___slider {
+      padding: 0 0 40px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      display: none;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next:after,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev:after {
+      font-weight: 900;
+      font-size: 24px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+      padding: 0 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 8px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      width: 100%;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.3;
+      margin: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      width: 90%;
+      font-size: 36px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-size: 14px;
+      font-weight: 400;
+      padding: 8px 24px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: auto;
+      height: auto;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure .fullWidth {
+      width: 100vw;
+      height: auto;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure .halfWidth {
+      width: auto;
+      height: 298px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      inset: auto 5%;
+      grid-template-columns: repeat(3, minmax(33%, 1fr));
+      grid-column-gap: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      height: 1px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      padding: 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 40px;
+      height: auto;
+      display: block;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      font-weight: 700;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+      height: 36px;
+      width: 36px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+/* 
+    1201px and more —  Extra large screens, TV
+*/
+@media (min-width: 1201px) and (max-width: 1440px) {
+    #heroSection {
+      background: linear-gradient(180deg, #E9F5FF 2.31%, rgba(220, 240, 255, 0.03) 107.98%);
+      position: relative;
+      padding-bottom: 170px;
+    }
+    #heroSection .heroSection___slider {
+      position: relative;
+      padding: 0 0 40px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-button-next,
+    #heroSection .heroSection___slider .swiper .swiper-button-prev {
+      display: none;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox {
+      padding: 0 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content {
+      flex: 0 0 100%;
+      margin-bottom: 8px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h2 {
+      width: 100%;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.3;
+      margin: 0;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content h1 {
+      width: 70%;
+      font-size: 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_content p {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_left .hero_slidbox_left_action .heroActionBtn {
+      font-weight: 600;
+      padding: 8px 24px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure img {
+      width: auto;
+      height: auto;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure .fullWidth {
+      width: 100vw;
+      height: auto;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .hero_sliedbox .hero_slidbox_right figure .halfWidth {
+      width: auto;
+      height: 298px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox {
+      border-radius: 0px 0px 34px 34px;
+    }
+    #heroSection .heroSection___slider .swiper .swiper-wrapper .swiper-slide .heroImgSlidebox img {
+      border-radius: 0px 0px 34px 34px;
+      width: 100%;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard {
+      max-width: 1020px;
+      inset: auto 5%;
+      grid-template-columns: repeat(3, minmax(33%, 1fr));
+      grid-column-gap: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title {
+      margin-bottom: 12px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___Title h1::after {
+      height: 2px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body {
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      padding: 5px 0;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media {
+      margin-bottom: 5px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .infoCards .media img {
+      width: 40px;
+      height: auto;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2 {
+      font-weight: 700;
+      font-size: 28px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
+      height: 36px;
+      width: 36px;
+    }
+    #heroSection .heroSection___gridTriCard .triCard___body .callCard .callNowbtn {
+      font-size: 12px;
+      padding: 10px 32px;
+    }
+    #heroSection .heroSection___gridTriCard .fullCollength {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 0fr;
+    }
+  }
+  
+/*  
+    1201px and more —  Extra large screens, TV
+*/

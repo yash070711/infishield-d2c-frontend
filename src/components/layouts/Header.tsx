@@ -147,7 +147,7 @@ const Header: React.FC = () => {
                 <div className="middleHeader">
                   <div className="middleHeader___Left">
                     <div className="headerbrand">
-                      <a href="index.html">
+              
                         <img
                           src={logo.src}
                           width="90px"

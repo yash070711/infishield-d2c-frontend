@@ -1,0 +1,166 @@
+#planSection {
+    padding: 45px 0;
+    background: linear-gradient(180deg, rgba(220, 240, 255, 0.03) 0%, rgba(233, 245, 255, 0.75635) 99.99%, rgba(233, 245, 255, 0.76) 100%);
+  }
+  #planSection .swiper .swiper-button-next, #planSection .swiper .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #004985;
+    background-color: rgb(217, 217, 217);
+    border-radius: 50%;
+    display: none;
+  }
+  #planSection .swiper .swiper-button-next:after, #planSection .swiper .swiper-button-prev:after {
+    font-weight: 900;
+    font-size: 24px;
+  }
+  #planSection .swiper-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  #planSection .swiper-slide {
+    width: 420px;
+  }
+  #planSection .planFlexBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #planSection .planFlexBox .planCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 83%;
+    padding: 32px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1607843137);
+  }
+  #planSection .planFlexBox .planCard .light_brd {
+    border: 1px solid rgba(124, 124, 124, 0.1019607843);
+  }
+  #planSection .planFlexBox .planCard.popPlan {
+    background: #004985;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    margin-block: -20px;
+  }
+  #planSection .planFlexBox .planCard.popPlan:has(.head) h3, #planSection .planFlexBox .planCard.popPlan:has(.body) p {
+    color: #fff;
+  }
+  #planSection .planFlexBox .planCard.popPlan:has(.head) h3::after {
+    background: #fff;
+  }
+  #planSection .planFlexBox .planCard .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #planSection .planFlexBox .planCard .head .media img {
+    width: 72px;
+    height: auto;
+  }
+  #planSection .planFlexBox .planCard .head h3 {
+    color: #004985;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    text-align: center;
+    margin: 12px auto;
+  }
+  #planSection .planFlexBox .planCard .head h3::after {
+    content: "";
+    background: #004985;
+    width: 80px;
+    height: 3px;
+    border-radius: 20px;
+    margin-top: 9px;
+  }
+  #planSection .planFlexBox .planCard .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0px;
+  }
+  #planSection .planFlexBox .planCard .body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #planSection .planFlexBox .planCard .body ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+  }
+  #planSection .planFlexBox .planCard .body ul li p {
+    color: #004985;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+    margin-left: 8px;
+    width: 80%;
+  }
+  #planSection .planFlexBox .planCard .body ul li.tick::before {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg5IiBoZWlnaHQ9IjE4NCIgdmlld0JveD0iMCAwIDE4OSAxODQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9Ijk0IiBjeT0iOTIiIHI9Ijg2IiBmaWxsPSIjMEM1Nzk1Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQ0Ljk4NSA1NS41MzM3QzE0OC44OTIgNTkuMDg0IDE0OS4xMDUgNjUuMDQ1NCAxNDUuNDU3IDY4Ljg0OTFMODkuMDA3OSAxMjcuNzNDODcuMjE3IDEyOS41OTggODQuNzI1MiAxMzAuNjc3IDgyLjEwMDMgMTMwLjcyMkM3OS40NzcgMTMwLjc2NiA3Ni45NDY1IDEyOS43NyA3NS4wOTE1IDEyNy45NjRMNDIuODM0NCA5Ni41NjA3QzM5LjA1NTIgOTIuODgxNyAzOS4wNTUyIDg2LjkxNjIgNDIuODM0NCA4My4yMzcyQzQ2LjYxMzQgNzkuNTU4MSA1Mi43NDA1IDc5LjU1ODEgNTYuNTE5NiA4My4yMzcyTDgxLjY5NDMgMTA3Ljc0NUwxMzEuMzA4IDU1Ljk5M0MxMzQuOTU2IDUyLjE4OTEgMTQxLjA3OCA1MS45ODM2IDE0NC45ODUgNTUuNTMzN1oiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  #planSection .planFlexBox .planCard .body ul li.tickDark::before {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg5IiBoZWlnaHQ9IjE4NCIgdmlld0JveD0iMCAwIDE4OSAxODQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9Ijk0IiBjeT0iOTIiIHI9Ijg2IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE0NC45ODUgNTUuNTMzN0MxNDguODkyIDU5LjA4NCAxNDkuMTA1IDY1LjA0NTQgMTQ1LjQ1NyA2OC44NDkxTDg5LjAwOCAxMjcuNzNDODcuMjE3IDEyOS41OTggODQuNzI1MiAxMzAuNjc3IDgyLjEwMDMgMTMwLjcyMkM3OS40NzcxIDEzMC43NjYgNzYuOTQ2NSAxMjkuNzcgNzUuMDkxNSAxMjcuOTY0TDQyLjgzNDQgOTYuNTYwN0MzOS4wNTUyIDkyLjg4MTcgMzkuMDU1MiA4Ni45MTYyIDQyLjgzNDQgODMuMjM3MkM0Ni42MTM0IDc5LjU1ODEgNTIuNzQwNSA3OS41NTgxIDU2LjUxOTcgODMuMjM3Mkw4MS42OTQzIDEwNy43NDVMMTMxLjMwOCA1NS45OTNDMTM0Ljk1NiA1Mi4xODkxIDE0MS4wNzggNTEuOTgzNiAxNDQuOTg1IDU1LjUzMzdaIiBmaWxsPSIjMEM1Nzk1Ii8+Cjwvc3ZnPgo=");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  #planSection .planFlexBox .planCard .body ul li.cross::before {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTg5IiBoZWlnaHQ9IjE4NCIgdmlld0JveD0iMCAwIDE4OSAxODQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iOTQiIGN5PSI5MiIgcj0iODYiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNNjEuMzM0IDQwLjgzNXMtMTIuMTItNi4zOC0xOC40OTkgMGMtNi4zOCA2LjM4IDAgMTguNDk5IDAgMTguNDk5bDkuNDQ2IDkuNDQ2IDIzLjM1MyAyMy43NDYtMjMuMzUzIDIzLjM1Mi05LjQ0NiA5LjA1MnMtNi4zOCAxMS41OTggMCAxNy45NzZjNi4zOCA2LjM3OSAxOC40OTkuOTE2IDE4LjQ5OS45MTZsOS40NDUtOS40NDYgMjMuNzQ2LTIzLjc0NiAyMy4zNTMgMjMuNzQ2IDkuMDUyIDkuNDQ2czExLjU5NyA1LjQ2MyAxNy45NzYtLjkxNmM2LjM3OS02LjM3OC45MTYtMTcuOTc2LjkxNi0xNy45NzZsLTkuNDQ2LTkuMDUyLTIzLjc0Ni0yMy4zNTIgMjMuNzQ2LTIzLjc0NiA5LjQ0Ni05LjQ0NnM1LjQ2NC0xMi4xMi0uOTE2LTE3LjU4M2MtNi4zNzktNS40NjItMTcuOTc2LS45MTYtMTcuOTc2LS45MTZsLTkuMDUyIDkuNDQ2LTIzLjM1MyAyMy4zNTNMNzAuNzggNTAuMjh6IiBmaWxsPSIjRkY2QzZDIi8+PC9zdmc+");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  #planSection .planFlexBox .planCard .body .btn___Lightbtn {
+    border-radius: 30px;
+    background-color: #fff;
+    color: #004985;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 8px 32px;
+    margin-top: 24px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2509803922);
+    transition: all 1.8s cubic-bezier(0.84, 0.21, 0.13, 0.73);
+  }
+  #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+    border-radius: 30px;
+    background-color: #004985;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 8px 32px;
+    margin-top: 24px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2509803922);
+    transition: all 1.8s cubic-bezier(0.84, 0.21, 0.13, 0.73);
+  }
