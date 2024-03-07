@@ -43,7 +43,7 @@ function Slider() {
         el: '.swiper-pagination',
       },
       autoplay: {
-        delay: 3000,
+        delay: 2000, // Set delay to 2 seconds
       },
     });
 
@@ -80,7 +80,7 @@ function Slider() {
                                   <p>Want To Protect Your Device From Accidents?</p>
                                 </div>
                                 <div className="hero_slidbox_left_action">
-                                  <a href="dvicePlans.html" className="heroActionBtn">
+                                  <a href="#" className="heroActionBtn">
                                     Get Now
                                   </a>
                                 </div>

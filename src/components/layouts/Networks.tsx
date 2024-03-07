@@ -8,7 +8,6 @@ import Man from '../../assets/img/man.png'
 import React, { useEffect } from 'react';
 import Swiper from 'swiper';
 
-
 const reviews = [
     {
       profileImage: girl.src,
@@ -65,7 +64,6 @@ function Networks() {
         });
       }, []);
   return (
-<>
 <>
   {/* Network Section start */}
   <section id="networkSection">
@@ -255,8 +253,6 @@ function Networks() {
         </div>
       </div>
     </section>
-</>
-
 </>
   )
 }
