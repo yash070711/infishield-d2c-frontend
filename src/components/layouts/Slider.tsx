@@ -28,6 +28,7 @@ import accidental from '../../assets/img/benefit/png/accidentalDamageOritection.
 import allpartlabour from '../../assets/img/benefit/png/allPartsLabour.png'
 import allbrands from '../../assets/img/benefit/png/allBrands.png'
 import helpdesk from '../../assets/img/benefit/png/helpdeskSupport.png'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 function Slider() {
 
@@ -35,6 +36,8 @@ function Slider() {
     const swiper = new Swiper('.myheroSwiper', {
       direction: 'horizontal',
       loop: true,
+      spaceBetween: 30,
+      speed: 1000,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -43,9 +46,12 @@ function Slider() {
         el: '.swiper-pagination',
       },
       autoplay: {
-        delay: 2000, // Set delay to 2 seconds
+        delay: 3000, // Set delay to 3 seconds
       },
+      modules:[Autoplay, Pagination, Navigation]
     });
+
+    console.log(swiper, 'swiper')
 
     // Clean up on unmount
     return () => swiper.destroy();

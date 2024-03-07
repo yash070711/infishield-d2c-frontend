@@ -8,7 +8,7 @@ import React from 'react'
 function Home() {
   return (
     <div>
-         <Slider/>
+        <Slider/>
         <Plans/>
         <Networks/>
         <InfyAbout/>

@@ -1,7 +1,7 @@
 #aboutSection {
     position: relative;
     display: flex;
-    padding-top: 4pc;
+    padding-top: 100px;
   }
   #aboutSection::after {
     content: "";

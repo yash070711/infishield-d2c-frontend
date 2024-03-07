@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import logo from '../../assets/img/logo/logo.png';
+import { APP_ROUTES } from '@/pages/routes';
 
 const Header: React.FC = () => {
     return (
@@ -206,7 +207,7 @@ const Header: React.FC = () => {
                               <div className="col-12">
                                 <a
                                   className="dropdown-item"
-                                  href="customerLogin.html"
+                                  href={APP_ROUTES.login}
                                 >
                                   Sign In/Sign Up
                                 </a>

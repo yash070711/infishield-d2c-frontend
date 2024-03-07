@@ -268,6 +268,10 @@
 
 
   /* benifit section */
+  #benefitSection {
+    padding-top: 60px;
+  }
+
   #benefitSection .benefitHeroSection {
     display: flex;
     flex: 0 0 93.33%;
@@ -283,7 +287,7 @@
   #benefitSection .benefitHeroSection .lightTitle {
     flex: 0 1 18%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   #benefitSection .benefitHeroSection .lightTitle h2 {
@@ -308,7 +312,7 @@
     position: relative;
     flex: 0 1 85%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   #benefitSection .benefitHeroSection .fancyCard___box .fancyCard {
     position: relative;
