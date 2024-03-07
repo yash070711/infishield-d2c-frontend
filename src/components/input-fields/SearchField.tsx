@@ -8,15 +8,15 @@ const SearchInputField: React.FC<SearchInputProps> = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState<string>('');
 
     useEffect(() => {
-    const debounceTimeout = setTimeout(() => {
-        onSearch(searchTerm);
-    }, 500); // Adjust the debounce timeout as needed
+        const debounceTimeout = setTimeout(() => {
+            onSearch(searchTerm);
+        }, 500); // Adjust the debounce timeout as needed
 
-    return () => clearTimeout(debounceTimeout);
+        return () => clearTimeout(debounceTimeout);
     }, [searchTerm, onSearch]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+        setSearchTerm(e.target.value);
     };
 
     return (

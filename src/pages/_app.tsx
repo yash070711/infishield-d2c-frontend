@@ -13,12 +13,14 @@ import favicon from '@/assets/images/InfinityLogo.png'
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 export default function App({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 		require("bootstrap/dist/js/bootstrap.bundle.min.js");
-	  }, []);	
+	}, []);	
 
 	return (
 		<>
@@ -28,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<link rel="shortcut icon" href={favicon.src} />
 			</Head>
 			<CustomerProvider>
+				<ToastContainer />
 				<Component {...pageProps} />
 			</CustomerProvider>
 		</>

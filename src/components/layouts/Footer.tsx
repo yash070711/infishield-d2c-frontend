@@ -11,7 +11,36 @@ import mailicon from '../../assets/img/footer/mail-iconFt.svg'
 import infinityAssuranceFt from '../../assets/img/footer/infinityAssuranceFt.png'
 import footerpayment from '../../assets/img/footer/footer-payment.png'
 import sslft from '../../assets/img/footer/sslFt.png'
+import notify from '@/helpers/notify';
+import { subscribeNewsletter } from '@/services/global_services';
+
+import { useState } from 'react';
+import { validateEmail } from '@/helpers/uitility';
+
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubscription = async() => {
+    let isEmailValid = validateEmail(email);
+    if (isEmailValid) {
+      try {
+				const response = await subscribeNewsletter(email);
+				if (response && response.isSuccess && response.statusCode === 200) {
+					notify.success('Subscribed successfully!');
+				}
+			} catch (error) {
+				console.error(error);
+				notify.error('Error subscribing to newsletter. Please try again.');
+			}
+    } else {
+      notify.error('Please provide a valid email.');
+    }
+  }
+
 	return (
 		<>
 	<>
@@ -32,13 +61,15 @@ const Footer: React.FC = () => {
           <div className="newsInputs">
             <div className="input-group">
               <input
-                type="text"
+                type="email"
                 className="form-control"
                 placeholder="Enter your email here...."
                 aria-label="Enter your email here...."
                 aria-describedby="button-addon2"
+                value={email}
+                onChange={handleChange}
               />
-              <button className="btn btnSubs" type="button" id="button-addon2">
+              <button className="btn btnSubs" type="button" id="button-addon2" onClick={handleSubscription}>
                 Subscribe Now
               </button>
             </div>
