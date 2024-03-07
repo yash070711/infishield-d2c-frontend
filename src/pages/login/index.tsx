@@ -32,7 +32,6 @@ const LoginPage: React.FC = () => {
 			} catch (error) {
 				console.error(error);
 				notify.error('Error submitting form. Please try again.');
-				setShowOtpField(true)
 			}
 		}
 	}
