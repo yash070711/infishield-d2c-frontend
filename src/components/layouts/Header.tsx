@@ -2,11 +2,25 @@ import Link from 'next/link';
 import logo from '../../assets/img/logo/logo.png';
 import { APP_ROUTES } from '@/pages/routes';
 import SearchInputField from '../input-fields/SearchField';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 
 const Header: React.FC = () => {
+    const [query, setQuery] = useState('');
+    const router = useRouter()
+
     const onSearch = (query: string) => {
       console.log(query, 'query')
+      setQuery(query);
     }
+
+    const handleSearch = (e: any) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (query.length > 0)
+        router.push('/categories?q='+query)
+    }
+
     return (
         <>
       {/* Header Section Start */}
@@ -164,7 +178,7 @@ const Header: React.FC = () => {
                   </div>
                   <div className="middleHeader___Right navbar navbar-expand-lg">
                     <div className="headerForm">
-                      <form action="dvicePlans.html">
+                      <form onSubmit={handleSearch}>
                         <SearchInputField onSearch={onSearch} />
                       </form>
                     </div>

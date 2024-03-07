@@ -20,7 +20,7 @@ const SearchInputField: React.FC<SearchInputProps> = ({ onSearch }) => {
     };
 
     return (
-        <div className="input-group">
+    <div className="input-group">
         <input
             type="text"
             placeholder="Search..."
