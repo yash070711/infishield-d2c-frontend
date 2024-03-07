@@ -4,8 +4,8 @@ export const env = {
 };
 
 export const APP_INFO = {
-	TITLE: "InfyShield Customer",
-	DESCRIPTION: "InfyShield | Customer | App",
+	TITLE: "Buy InfyShield",
+	DESCRIPTION: "InfyShield | Buy | App",
 };
 
 export const SOCIAL_URL = {
