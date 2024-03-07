@@ -148,14 +148,14 @@ const Header: React.FC = () => {
                 <div className="middleHeader">
                   <div className="middleHeader___Left">
                     <div className="headerbrand">
-              
-                        <img
+                      <a href={'/'}>
+                      <img
                           src={logo.src}
                           width="90px"
                           height="98.6px"
                           alt="infyShield Logo"
                         />
-                  
+                      </a>
                     </div>
                   </div>
                   <div className="middleHeader___Right navbar navbar-expand-lg">
@@ -236,7 +236,7 @@ const Header: React.FC = () => {
                           </div>
                         </li>
                         <li>
-                          <a href="myCart.html" className="cartBtn">
+                          <a href={APP_ROUTES.cart} className="cartBtn">
                             {" "}
                             <span className="cartIcon" />
                           </a>

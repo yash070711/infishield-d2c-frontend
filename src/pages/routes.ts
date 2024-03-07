@@ -1,3 +1,4 @@
 export const APP_ROUTES = {
-    login: '/login'
+    login: '/login',
+    cart: '/cart'
 }
