@@ -9,6 +9,7 @@ import "@/styles/OurPartner.css";
 import "@/styles/InfyAbout.css";
 import "@/styles/Footer.css";
 import "@/styles/Login.scss";
+import favicon from '@/assets/images/InfinityLogo.png'
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<Head>
 				<title>{APP_INFO.TITLE}</title>
 				<meta name="description" content={APP_INFO.DESCRIPTION} />
+				<link rel="shortcut icon" href={favicon.src} />
 			</Head>
 			<CustomerProvider>
 				<Component {...pageProps} />
