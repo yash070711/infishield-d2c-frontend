@@ -51,8 +51,6 @@ function Slider() {
       modules:[Autoplay, Pagination, Navigation]
     });
 
-    console.log(swiper, 'swiper')
-
     // Clean up on unmount
     return () => swiper.destroy();
   }, []);
