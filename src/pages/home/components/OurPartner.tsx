@@ -1,12 +1,12 @@
 import React from 'react'
-import futhuregenrali from '../../assets/img/partners/futuregenerali.png'
-import amazon from '../../assets/img/partners/amazon.png'
-import ebay from '../../assets/img/partners/ebay.png'
-import europ from '../../assets/img/partners/europ.png'
-import rediff from '../../assets/img/partners/rediff.png'
-import shopclues from '../../assets/img/partners/shopclues.png'
-import snapdeal from '../../assets/img/partners/snapdeal.png'
-import groffers from '../../assets/img/partners/groffers.png'
+import futhuregenrali from '../../../assets/img/partners/futuregenerali.png'
+import amazon from '../../../assets/img/partners/amazon.png'
+import ebay from '../../../assets/img/partners/ebay.png'
+import europ from '../../../assets/img/partners/europ.png'
+import rediff from '../../../assets/img/partners/rediff.png'
+import shopclues from '../../../assets/img/partners/shopclues.png'
+import snapdeal from '../../../assets/img/partners/snapdeal.png'
+import groffers from '../../../assets/img/partners/groffers.png'
 function OurPartner() {
   return (
     <>

@@ -1,8 +1,8 @@
-import InfyAbout from '@/components/layouts/InfyAbout'
-import Networks from '@/components/layouts/Networks'
-import OurPartner from '@/components/layouts/OurPartner'
-import Plans from '@/components/layouts/Plans'
-import Slider from '@/components/layouts/Slider'
+import InfyAbout from '@/pages/home/components/InfyAbout'
+import Networks from '@/pages/home/components/Networks'
+import OurPartner from '@/pages/home/components/OurPartner'
+import Plans from '@/pages/home/components/Plans'
+import Slider from '@/pages/home/components/Slider'
 import React from 'react'
 
 function Home() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import logowithShield from '../../assets/img/about/logowithShield.png'
+import logowithShield from '../../../assets/img/about/logowithShield.png'
 function InfyAbout() {
   return (
   <>

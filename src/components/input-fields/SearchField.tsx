@@ -21,12 +21,6 @@ const SearchInputField: React.FC<SearchInputProps> = ({ onSearch }) => {
 
     return (
         <div className="input-group">
-        {/* <input
-        className="form-control"
-        name="search"
-        type="text"
-        id="search"
-        /> */}
         <input
             type="text"
             placeholder="Search..."

@@ -1,10 +1,10 @@
-import no1choice from '../../assets/img/network/no1peopleChoice.svg'
-import claim100 from '../../assets/img/network/100Claims.svg'
-import allbrands from '../../assets/img/network/allBrands.svg'
-import googlerating from '../../assets/img/network/googleRating.svg'
-import star from '../../assets/img/star.png'
-import girl from '../../assets/img/girl.png'
-import Man from '../../assets/img/man.png'
+import no1choice from '../../../assets/img/network/no1peopleChoice.svg'
+import claim100 from '../../../assets/img/network/100Claims.svg'
+import allbrands from '../../../assets/img/network/allBrands.svg'
+import googlerating from '../../../assets/img/network/googleRating.svg'
+import star from '../../../assets/img/star.png'
+import girl from '../../../assets/img/girl.png'
+import Man from '../../../assets/img/man.png'
 import React, { useEffect } from 'react';
 import Swiper from 'swiper';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'

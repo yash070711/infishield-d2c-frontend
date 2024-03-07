@@ -1,7 +1,7 @@
 import React from 'react'
-import logored from '../../assets/img/plans/LogoRed.png'
-import logogreen from '../../assets/img/plans/LogoGreen.png'
-import logoblack from '../../assets/img/plans/LogoBlack.png'
+import logored from '../../../assets/img/plans/LogoRed.png'
+import logogreen from '../../../assets/img/plans/LogoGreen.png'
+import logoblack from '../../../assets/img/plans/LogoBlack.png'
 function Plans() {
   return (
     <>
