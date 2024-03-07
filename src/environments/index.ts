@@ -4,8 +4,8 @@ export const env = {
 };
 
 export const APP_INFO = {
-	TITLE: "Inifinity Customer",
-	DESCRIPTION: "Inifinty | Customer | App",
+	TITLE: "InfyShield Customer",
+	DESCRIPTION: "InfyShield | Customer | App",
 };
 
 export const SOCIAL_URL = {

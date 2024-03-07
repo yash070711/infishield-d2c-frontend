@@ -8,6 +8,7 @@ import "@/styles/Networks.css";
 import "@/styles/OurPartner.css";
 import "@/styles/InfyAbout.css";
 import "@/styles/Footer.css";
+import "@/styles/Login.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import 'bootstrap/dist/css/bootstrap.min.css';
