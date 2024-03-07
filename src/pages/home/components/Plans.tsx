@@ -2,6 +2,8 @@ import React from 'react'
 import logored from '../../../assets/img/plans/LogoRed.png'
 import logogreen from '../../../assets/img/plans/LogoGreen.png'
 import logoblack from '../../../assets/img/plans/LogoBlack.png'
+import Image from 'next/image'
+
 function Plans() {
   return (
     <>
@@ -28,7 +30,7 @@ function Plans() {
               <div className="planCard  light_brd">
                 <div className="head">
                   <div className="media">
-                    <img
+                    <Image
                       src={logored.src}
                       width={74}
                       height={85}
@@ -74,7 +76,7 @@ function Plans() {
               <div className="planCard popPlan">
                 <div className="head">
                   <div className="media">
-                    <img
+                    <Image
                       src={logoblack.src}
                       width={72}
                       height={79}
@@ -120,7 +122,7 @@ function Plans() {
               <div className="planCard light_brd">
                 <div className="head">
                   <div className="media">
-                    <img
+                    <Image
                       src={logogreen.src}
                       width={72}
                       height={79}
