@@ -20,3 +20,8 @@ export interface AuthUserInterface {
   emailid: string;
   fullname : string;
 }
+
+export interface LoginInterface {
+  mobile: number | null,
+  otp: number | null
+}

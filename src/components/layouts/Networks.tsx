@@ -7,6 +7,7 @@ import girl from '../../assets/img/girl.png'
 import Man from '../../assets/img/man.png'
 import React, { useEffect } from 'react';
 import Swiper from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 
 const reviews = [
     {
@@ -53,6 +54,7 @@ function Networks() {
           // Your swiper options here
           slidesPerView: 'auto',
           spaceBetween: 30,
+          speed: 1500,
           loop: true, // Enable continuous loop
           navigation: {
             nextEl: '.swiper-button-next',
@@ -61,6 +63,10 @@ function Networks() {
           pagination: {
             el: '.swiper-pagination',
           },
+          autoplay: {
+            delay: 3000, // Set delay to 3 seconds
+          },
+          modules:[Autoplay, Pagination, Navigation]
         });
       }, []);
   return (
