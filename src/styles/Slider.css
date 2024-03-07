@@ -1080,7 +1080,6 @@
     }
     #heroSection .heroSection___gridTriCard .triCard___body .callCard h2::before {
       content: "";
-     
       background-position: center;
       background-size: auto;
       background-repeat: no-repeat;
