@@ -16,13 +16,14 @@ const InputTextField: React.FC<InputTextFieldInterfaces> = ({
     isDisabled,
     isReadOnly,
     labelName,
-    isRequired
+    isRequired,
+    type = 'text'
 }) => {
     return (
         <Form.Group className="input-group-sm">
             {labelName && <label className="form-label form-text">{labelName} {isRequired && <span className="text-danger">*</span>} </label> }
             <input
-                type="text"
+                type={type}
                 autoComplete="off"
                 className={`form-control form-control-sm`}
                 name={fieldName}

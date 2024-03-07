@@ -9,7 +9,7 @@ const accessToken = Cookies.get("accessToken");
 
 const ApiAxios = axios.create({
 	// baseURL: "https://partnersapi.infyshield.com/",
-	baseURL: "http://localhost:4004",
+	baseURL: "http://localhost:4000/v1",
 	timeout: 8000,
 });
 

@@ -10,6 +10,7 @@ export interface CommonInputInterfaces {
     isReadOnly?: boolean
     isRequired?: boolean
     className?:any
+    type?: any
 }
 
 export interface InputFieldInterfaces extends CommonInputInterfaces {

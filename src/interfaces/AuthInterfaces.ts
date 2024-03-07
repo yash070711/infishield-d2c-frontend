@@ -23,5 +23,5 @@ export interface AuthUserInterface {
 
 export interface LoginInterface {
   mobile: number | null,
-  otp: number | null
+  otp?: string | null
 }
