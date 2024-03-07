@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import logo from '../../assets/img/logo/logo.png';
 import { APP_ROUTES } from '@/pages/routes';
+import SearchInputField from '../input-fields/SearchField';
 
 const Header: React.FC = () => {
+    const onSearch = (query: string) => {
+      console.log(query, 'query')
+    }
     return (
         <>
       {/* Header Section Start */}
@@ -161,33 +165,7 @@ const Header: React.FC = () => {
                   <div className="middleHeader___Right navbar navbar-expand-lg">
                     <div className="headerForm">
                       <form action="dvicePlans.html">
-                        <div className="input-group">
-                          <input
-                            className="form-control"
-                            name="search"
-                            type="text"
-                            id="search"
-                          />
-                          <span className="input-group-append">
-                            <button className="btn btnSearch" type="button">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="feather feather-search"
-                              >
-                                <circle cx={11} cy={11} r={8} />
-                                <line x1={21} y1={21} x2="16.65" y2="16.65" />
-                              </svg>
-                            </button>
-                          </span>
-                        </div>
+                        <SearchInputField onSearch={onSearch} />
                       </form>
                     </div>
                     <div className="headergroup">
