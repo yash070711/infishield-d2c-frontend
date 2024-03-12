@@ -1,0 +1,255 @@
+.OurDevices--Section {
+    position: relative;
+    z-index: 1;
+    top: -60px;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 120px 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .OurDevices--Section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: initial;
+    background-size: 28%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .OurDevices--Section::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-position: 100%;
+    background-size: 28%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .OurDevices--Section .topheadfilter {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    box-shadow: 0 0 20px 9px rgba(197, 197, 197, 0.08);
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+  .OurDevices--Section .topheadfilter .allCati-btn {
+    color: #030330;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+  }
+  .OurDevices--Section .topheadfilter .allCati-btn::before {
+    content: "";
+    position: absolute;
+    inset: auto;
+    left: 0px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDciIGhlaWdodD0iNDciIHZpZXdCb3g9IjAgMCA0NyA0NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSI0NiIgaGVpZ2h0PSI0NiIgcng9IjE0LjUiIGZpbGw9IiMwMDQ5ODUiIHN0cm9rZT0iIzAwNDk4NSIvPgo8cmVjdCB4PSIxMy42NDUzIiB5PSIxMi44ODY3IiB3aWR0aD0iMjAuNDY3NyIgaGVpZ2h0PSI0LjU0ODM5IiByeD0iMi4yNzQxOSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTMuNjQ1MyIgeT0iMjEuMjI1NiIgd2lkdGg9IjEyLjEyOSIgaGVpZ2h0PSI0LjU0ODM5IiByeD0iMi4yNzQxOSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTMuNjQ1MyIgeT0iMjkuNTY0NSIgd2lkdGg9IjcuNTgwNjUiIGhlaWdodD0iNC41NDgzOSIgcng9IjIuMjc0MTkiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 47px;
+    height: 47px;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter {
+    flex: 0 0 40%;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]:checked + .btn {
+    background-color: #216DA8;
+    color: #fff;
+    border-color: #216DA8;
+    transition: all ease 0.5s;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio] + .btn {
+    background-color: #fff;
+    color: #216DA8;
+    border-color: #216DA8;
+    transition: all ease 0.5s;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input, .OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
+    width: 97%;
+    padding: 1.25rem 2.25rem 0.75rem 0.75rem;
+    font-size: 14px;
+    color: #888;
+    font-weight: 400;
+    background-color: #fff;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-outer-spin-button,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=number] {
+    -moz-appearance: textfield;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form option {
+    font-weight: 400;
+    display: block;
+    min-height: 1.2em;
+    padding: 1.25rem 0.75rem 1.25rem 0.75rem;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus, .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
+    border-color: rgba(33, 109, 168, 0.4117647059);
+    outline: 0;
+    box-shadow: none;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form label {
+    position: relative;
+    top: 14px;
+    background: #fff;
+    padding: 0 5px;
+    left: 8px;
+    margin: 0;
+    font-size: 12px;
+    color: #545454;
+    font-weight: 400;
+    border-radius: 0.375em;
+    border: 1px solid #f5f5f5;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio] + label {
+    position: relative;
+    background: #fff;
+    padding: 8px;
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: #545454;
+    font-weight: 400;
+    border-radius: 0.375em;
+    border: 1px solid #f5f5f5;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .getShield-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    background: #216DA8;
+    border: 1px solid #216DA8;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    transition: all ease 0.5s;
+  }
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .smallTextInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(53, 53, 53, 0.8196078431);
+  }
+  .OurDevices--Section .topheadfilter .offcanvas-title {
+    color: #a30e11;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .OurDevices--Section .topheadfilter .offcanvas-body {
+    padding: 0 16px;
+  }
+  .OurDevices--Section .topheadfilter .catiList .cateHead h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #004985;
+    margin: 0;
+  }
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #070707;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3::after {
+    content: "";
+    background: #004985;
+    height: 2px;
+    width: 120px;
+    border-radius: 20px;
+  }
+  .OurDevices--Section .topheadfilter .catiList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .OurDevices--Section .topheadfilter .catiList li {
+    padding: 0;
+    border-bottom: 1px solid rgba(236, 236, 236, 0.7450980392);
+  }
+  .OurDevices--Section .topheadfilter .catiList a {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #070707;
+    padding: 12px 16px;
+    transition: all ease 0.5s;
+  }
+  .OurDevices--Section .topheadfilter .catiList a:hover, .OurDevices--Section .topheadfilter .catiList a:active {
+    background: rgba(245, 245, 245, 0.431372549);
+    color: #004985;
+    font-weight: 600;
+  }
+  .OurDevices--Section .ourDevice--filterGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 42px 0;
+  }
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard {
+    flex: 0 0 27%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    box-shadow: 0 0 20px 9px rgba(197, 197, 197, 0.08);
+    margin-bottom: 64px;
+  }
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media img {
+    width: 180px;
+    height: auto;
+  }
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody {
+    padding: 12px 0;
+  }
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody h3 {
+    font-size: 16px;
+    font-weight: 600px;
+    color: #030330;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+    padding: 4px 16px;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    color: #fff;
+    background: #004985;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all ease 0.5s;
+  }
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn:hover {
+    background: #ffffff;
+    color: #004985;
+    border: 3px solid #004985;
+  }

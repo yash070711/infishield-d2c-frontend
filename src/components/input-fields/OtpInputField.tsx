@@ -6,7 +6,7 @@ interface OTPInputProps {
     setOtpValue: Dispatch<SetStateAction<string>>
 }
 
-const OtpInputField: React.FC<OTPInputProps> = ({ length = 4, onComplete, setOtpValue }) => {
+const OtpInputField: React.FC<OTPInputProps> = ({ length = 6, onComplete, setOtpValue }) => {
     const [otp, setOTP] = useState<string[]>(new Array(length).fill(''));
     const inputsRef = useRef<HTMLInputElement[]>([]);
 

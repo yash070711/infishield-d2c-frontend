@@ -10,3 +10,7 @@ export const subscribeNewsletter = async (email: string): Promise<any> => {
         email
     });
 }
+export const getAllnewproductcategory = async (productnewid: string): Promise<any> => {
+    return await get(`/product/newproductlist?productnewid=${productnewid}`);
+};
+ 

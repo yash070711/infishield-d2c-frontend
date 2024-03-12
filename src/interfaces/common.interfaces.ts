@@ -94,7 +94,14 @@ export interface TabContentInterfaces {
 }
 
 
+export interface ProductList {
+    subcategoryid: string;
+    subcategoryname: string;
+    image: string;
+    productnewid: string;
 
+
+  }
 
 
 

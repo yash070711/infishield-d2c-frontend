@@ -8,7 +8,7 @@ export const login = async (loginParams: LoginInterface): Promise<any> => {
 };
 
 export const sendOtp = async (mobile: number): Promise<any> => {
-    return await post('auth/send-otp-multifactor', {
+    return await post('/send-email-txtmsg', {
         mobile,
         sentToOtp : 'Mobile'
     })

@@ -9,7 +9,7 @@ import snapdeal from '../../../assets/img/partners/snapdeal.png'
 import groffers from '../../../assets/img/partners/groffers.png'
 function OurPartner() {
   return (
-    <>
+  
     <>
   {/* Partners Section Start */}
   <section id="partnerSection">
@@ -99,7 +99,7 @@ function OurPartner() {
   {/* Partners Section Ends */}
 </>
 
-    </>
+ 
   )
 }
 
