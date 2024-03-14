@@ -38,8 +38,7 @@ const getCategoryImage = (categoryId: number): string => {
     case 9:
       return phone.src;
     default:
-      // You can return a default image URL here if needed
-      return ''; // or return a placeholder image
+      return ''; 
   }
 };
 const Header: React.FC = () => {
@@ -340,12 +339,9 @@ const Header: React.FC = () => {
                                 </a>
                                 <ul className="flex-dropdown-List">
                                   {categories.map((category) => {
-                                    console.log(category); // Add this line to check the structure of the category object
                                     return (
                                       <li key={category.id} className="dropdown-item">
-                                       <Link href={{ pathname: '/productlist', query: { productnewid: category.subcategoryid } }} className="dropdown-item-links">
-
-
+                                       <Link href={{ pathname: '/productlist' }} className="dropdown-item-links">
 
                                           <div className="navMedia">
                                             <img
@@ -392,7 +388,7 @@ const Header: React.FC = () => {
                               </a>
                             </li>
                             <li className="nav-item">
-                              <a className="nav-link" href="#">
+                              <a className="nav-link" href="Partners with InfyShield.html">
                                 Partners with InfyShield
                               </a>
                             </li>

@@ -1,0 +1,558 @@
+.pageMainContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid #F4FAFF;
+  }
+  .pageMainContent::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(180deg, #E9F5FF 2.31%, rgba(220, 240, 255, 0.03) 107.98%);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .pageMainContent .pageHead-Outer {
+    position: relative;
+  }
+  .pageMainContent .pageHead-Outer .outerHero nav .breadcrumb {
+    margin: 1rem 0;
+  }
+  .pageMainContent .pageHead-Outer .outerHero nav .breadcrumb-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+  }
+  .pageMainContent .pageHead-Outer .outerHero nav .breadcrumb-item a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3B89C4;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner {
+    padding: 20px 0 80px 0;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--left .left_content {
+    margin-bottom: 10px;
+    width: 70%;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--left .left_content h2 {
+    width: 100%;
+    color: #353535;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--left .left_content h1 {
+    background: #a30e11;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--left .left_content p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #353535;
+    line-height: 1.5;
+    margin: 0;
+    text-align: start;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--left .left_action {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--left .left_action .ActionBtn {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 8px 32px;
+    border-radius: 50px;
+    border: 1px solid #009cdd;
+    color: #004985;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.25);
+    transition: all 0.3s ease 0s;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--right {
+    display: flex;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--right figure {
+    padding: 0;
+    margin: 0;
+  }
+  .pageMainContent .pageHead-Outer .outerHero .OuterBanner--right figure img {
+    width: 250px;
+    padding: 0;
+    margin: 0;
+  }
+  .pageMainContent .pageHead-Inner {
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    margin-top: -40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 3px 3px rgba(0, 0, 0, 0.1215686275);
+  }
+  .pageMainContent .pageHead-Inner .dw--left {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--head .dw--title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: start;
+    margin: 0;
+    width: 70%;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--head .dw--para {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: start;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input[type=radio]:checked + .btn {
+    background-color: #216DA8;
+    color: #fff;
+    border-color: #216DA8;
+    transition: all ease 0.5s;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input[type=radio] + .btn {
+    background-color: #fff;
+    color: #216DA8;
+    border-color: #216DA8;
+    transition: all ease 0.5s;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input, .pageMainContent .pageHead-Inner .dw--left .dw--form select {
+    width: 97%;
+    padding: 1.25rem 2.25rem 0.75rem 0.75rem;
+    font-size: 14px;
+    color: #888;
+    font-weight: 400;
+    background-color: #fff;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input::-webkit-outer-spin-button,
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input[type=number] {
+    -moz-appearance: textfield;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form option {
+    font-weight: 400;
+    display: block;
+    min-height: 1.2em;
+    padding: 1.25rem 0.75rem 1.25rem 0.75rem;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form .form-control:focus, .pageMainContent .pageHead-Inner .dw--left .dw--form .form-select:focus {
+    border-color: rgba(33, 109, 168, 0.4117647059);
+    outline: 0;
+    box-shadow: none;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form label {
+    position: relative;
+    top: 14px;
+    background: #fff;
+    padding: 0 5px;
+    left: 8px;
+    margin: 0;
+    font-size: 12px;
+    color: #545454;
+    font-weight: 400;
+    border-radius: 0.375em;
+    border: 1px solid #f5f5f5;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form input[type=radio] + label {
+    position: relative;
+    background: #fff;
+    padding: 8px;
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: #545454;
+    font-weight: 400;
+    border-radius: 0.375em;
+    border: 1px solid #f5f5f5;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form .getShield-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    background: #216DA8;
+    border: 1px solid #216DA8;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    transition: all ease 0.5s;
+  }
+  .pageMainContent .pageHead-Inner .dw--left .dw--form .smallTextInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(53, 53, 53, 0.8196078431);
+  }
+  .pageMainContent .pageHead-Inner .dw--right {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #FBFBFB;
+    border-radius: 0 20px 20px 0;
+    padding: 32px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--media img {
+    width: auto;
+    height: auto;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--media h3 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .custom-radio input {
+    display: none;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn {
+    margin: 10px;
+    width: 90px;
+    height: 60px;
+    border: 3px solid transparent;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(195, 195, 195, 0.4039215686);
+    cursor: pointer;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn > i {
+    color: #ffffff;
+    background-color: #3b89c4;
+    font-size: 8px;
+    position: absolute;
+    top: 46px;
+    left: 50%;
+    transform: translateX(-50%) scale(2);
+    border-radius: 50px;
+    padding: 3px;
+    transition: 0.5s;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn .hobbies-icon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn .hobbies-icon img {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn .hobbies-icon i {
+    color: #3b89c4;
+    line-height: 80px;
+    font-size: 60px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn .hobbies-icon span {
+    background: #458fc7;
+    border-radius: 16px;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .radio-btn .hobbies-icon h3 {
+    color: #555;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .custom-radio input:checked + .radio-btn {
+    border: 2px solid #3b89c4;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .radio-buttons .custom-radio input:checked + .radio-btn > i {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .addTocard-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #216DA8;
+    background: #fff;
+    border: 1px solid #216DA8;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    transition: all ease 0.5s;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .smallTextInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(53, 53, 53, 0.8196078431);
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .coverdtext {
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-right: 10px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .coverdtext .roundOk {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    margin-right: 5px;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .coverdtext .green {
+    background: #288A18;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .coverdtext .red {
+    background: #BB0000;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .green {
+    color: #288A18;
+  }
+  .pageMainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .red {
+    color: #BB0000;
+  }
+  .faqSection {
+    padding: 0 0 60px;
+  }
+  .faqSection .faqs {
+    margin: 20px auto;
+  }
+  .faqSection .faqs .accordion-item {
+    margin-bottom: 24px;
+  }
+  .faqSection .faqs .accordion-item:not(:first-of-type) {
+    border-top: 1px solid #dee2e6;
+  }
+  .faqSection .faqs .accordion-button {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .faqSection .faqs .accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #004985;
+  }
+  .faqSection .faqs .accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-active-icon);
+    filter: invert(1);
+  }
+  .faqSection .faqs .accordion-body {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .hoeItwork {
+    position: relative;
+    padding: 0;
+  }
+  .hoeItwork::after {
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI0OTUiIHZpZXdCb3g9IjAgMCAxNDQwIDQ5NSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0NzEgNDQ0LjgxOFYwTC0zMSAwVjQ5NUwyMTYuMjU5IDMyNC40NzhMNTg5LjE2NiA0NDQuMzMxTDk1NC41NzkgMzI0LjQ3OEwxNDcxIDQ0NC44MThaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNzA4XzI2NykiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl83MDhfMjY3IiB4MT0iNzIwIiB5MT0iNDk1IiB4Mj0iNzIwIiB5Mj0iMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRjdGN0Y3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0I4QjhCOCIgc3RvcC1vcGFjaXR5PSIwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==");
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -140px;
+    z-index: -1;
+  }
+  .hoeItwork--container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px auto;
+  }
+  .hoeItwork--container .hoeItwork--steps {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 270px;
+    background: #81689d;
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  }
+  .hoeItwork--container .hoeItwork--steps .stepCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: #ababab;
+    background: #ffffff;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+  }
+  .hoeItwork--container .hoeItwork--steps .stepBody {
+    margin: 20px 0;
+  }
+  .hoeItwork--container .hoeItwork--steps .stepBody h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: start;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .hoeItwork--container .hoeItwork--steps .stepBody p {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: start;
+    margin: 0;
+    width: 79%;
+  }
+  .hoeItwork--container .hoeItwork--steps .stepBody p a {
+    color: #000;
+    text-decoration: underline;
+    line-height: 1.7;
+  }
+  .hoeItwork--container .hoeItwork--steps .stepMedia {
+    position: absolute;
+    right: -10%;
+    bottom: -15%;
+  }
+  .hoeItwork--container .hoeItwork--steps .stepMedia img {
+    width: 152px;
+    height: auto;
+  }
+  .hoeItwork--container .hoeItwork--steps:nth-child(1) {
+    background: #81689D;
+  }
+  .hoeItwork--container .hoeItwork--steps:nth-child(2) {
+    background: #474F7A;
+  }
+  .hoeItwork--container .hoeItwork--steps:nth-child(3) {
+    background: #1F2544;
+  }
+  .hoeItwork .ctaConnect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+  }
+  .hoeItwork .ctaConnect .ctaBody {
+    margin-bottom: 16px;
+  }
+  .hoeItwork .ctaConnect .ctaBody h3 {
+    color: rgba(61, 61, 61, 0.8);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .hoeItwork .ctaConnect .ctaBody p {
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+  }
+  .hoeItwork .ctaConnect .ctaBtn {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 8px 32px;
+    border-radius: 50px;
+    color: #fff;
+    background: #004985;
+    box-shadow: 0px 4px 4px 0px hsla(0, 0%, 0%, 0.25);
+    transition: all 0.3s ease 0s;
+  }
+  .whyInfyshield .infoFlex--conatainer {
+    margin: 60px 0;
+  }
+  .whyInfyshield .infoFlex--conatainer .infoFlex--card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .whyInfyshield .infoFlex--conatainer .infoFlex--card .media {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .whyInfyshield .infoFlex--conatainer .infoFlex--card .media img {
+    width: 62px;
+    height: 62px;
+  }
+  .whyInfyshield .infoFlex--conatainer .infoFlex--card .media .media-body h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+  }
+  .whyInfyshield .infoFlex--conatainer .infoFlex--card .media .media-body p {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+  }

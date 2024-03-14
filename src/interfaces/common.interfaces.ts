@@ -94,15 +94,20 @@ export interface TabContentInterfaces {
 }
 
 
-export interface ProductList {
-    subcategoryid: string;
+
+
+  interface Product {
+    map(arg0: (product: any, index: number) => React.JSX.Element): React.ReactNode;
+    subcategoryid: number;
     subcategoryname: string;
     image: string;
-    productnewid: string;
-
-
+    productnewid: number;
+    product: any;
+    index :any;
+  
   }
-
+  
+  type NewProductList = Product[];
 
 
 
