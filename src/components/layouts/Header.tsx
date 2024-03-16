@@ -65,7 +65,7 @@ const Header: React.FC = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await getProductSubcategoryList();
+      const response = await getProductSubcategoryList('');
       setCategories(response.data);
       // Assuming the API response has a `data` property containing the list of categories
     } catch (error) {
@@ -341,8 +341,7 @@ const Header: React.FC = () => {
                                   {categories.map((category) => {
                                     return (
                                       <li key={category.id} className="dropdown-item">
-                                       <Link href={{ pathname: '/productlist' }} className="dropdown-item-links">
-
+                                       <Link href={`/productlist?subcategoryid=${category.subcategoryid}`} className="dropdown-item-links">
                                           <div className="navMedia">
                                             <img
                                               src={getCategoryImage(category.subcategoryid)}

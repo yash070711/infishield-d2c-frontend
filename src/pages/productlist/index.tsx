@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@/components/layouts/Layout';
-import { getAllnewproductcategory } from '@/services/global_services';
+import { getAllnewproductcategory, getProductSubcategoryList, getSubcategoryByProducts } from '@/services/global_services';
 import { NewProductList } from '@/interfaces/common.interfaces';
 import mp3PlayerImage from '../../assets/img/product/mp3player.jpg';
 import lcdImage from '../../assets/img/product/Lcd.jpeg';
@@ -18,10 +18,11 @@ import smart from '../../assets/img/product/mobile smat.jpg';
 import feature from '../../assets/img/product/mobile feature.jpeg';
 import tablet from '../../assets/img/product/mobileand tablet.jpg';
 import Link from 'next/link';
-
-
-const getCategoryImage = (subcategoryid: number): string => {
-  switch (subcategoryid) {
+import { useRouter } from 'next/router';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import dynamic from 'next/dynamic';
+const getCategoryImage = (productid: number): string => {
+  switch (productid) {
     case 4:
       return mp3PlayerImage.src;
     case 5:
@@ -59,31 +60,80 @@ const getCategoryImage = (subcategoryid: number): string => {
 
 
 function ProductList() {
+  const router = useRouter();
+  const { subcategoryid } = router.query;
   const [products, setProducts] = useState<NewProductList>([] as NewProductList);
   const [filteredProducts, setFilteredProducts] = useState<NewProductList>([] as NewProductList);
   const [filterId, setFilterId] = useState<number | null>(null);
-
+  const [categories, setCategories] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [sortBy, setSortBy] = useState<string>(''); // State to manage sorting
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await getAllnewproductcategory();
-        setProducts(response.data as NewProductList);
+
+        await getSubcategoryByProducts(subcategoryid).then(response => {
+          if (response.statusCode === 200 && response.isSuccess && response.data) {
+            setProducts(response.data);
+          }
+        });
       } catch (error) {
         console.error('Error fetching data:', error);
       }
+      finally {
+        setLoading(false); // Set loading to false when data fetching completes (whether successful or not)
+      }
     }
     fetchData();
+  }, [subcategoryid]);
+
+  useEffect(() => {
+    fetchCategories();
   }, []);
+
+  const fetchCategories = async () => {
+    try {
+      const response = await getProductSubcategoryList('');
+      setCategories(response.data);
+      // Assuming the API response has a `data` property containing the list of categories
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  };
 
   useEffect(() => {
     if (filterId !== null) {
-      const filtered = products.filter((product: { productnewid: number; }) => product.productnewid === filterId);
+      const filtered = products.filter((product: { subcategoryid: number; }) => product.subcategoryid === filterId);
       setFilteredProducts(filtered);
     } else {
       setFilteredProducts(products);
     }
   }, [products, filterId]);
 
+  useEffect(() => {
+    // Call sorting function when sortBy state changes
+    sortProducts();
+  }, [sortBy]);
+  const sortProducts = () => {
+    let sortedProducts = [...filteredProducts];
+    if (sortBy === 'A-z') {
+      sortedProducts.sort((a, b) => a.productname.localeCompare(b.productname));
+    } else if (sortBy === 'Z-a') {
+      sortedProducts.sort((a, b) => b.productname.localeCompare(a.productname));
+    } else if (sortBy === 'Popular') {
+      // Implement sorting logic for popularity
+    } else if (sortBy === 'New Arrivals') {
+      // Implement sorting logic for new arrivals
+    }
+    setFilteredProducts(sortedProducts);
+  };
+  console.log('products', products);
+  if (loading) {
+    // If loading, display a loading indicator
+    <div className="loader-container">
+      <div className="spinner"></div>
+    </div>
+  }
   return (
     <Layout>
       <section className="pageTop--MainContent mb-0">
@@ -98,7 +148,7 @@ function ProductList() {
                       <nav aria-label="breadcrumb" className="g-0">
                         <ol className="breadcrumb">
                           <li className="breadcrumb-item">
-                            <a href="index.html">Home</a>
+                            <Link href="/">Home</Link>
                           </li>
                           <li className="breadcrumb-item active" aria-current="page">
                             Our Devices
@@ -144,12 +194,16 @@ function ProductList() {
                         <label htmlFor="sortBy" className="form-label">
                           Sort By
                         </label>
-                        <select id="sortBy" className="form-select">
-                          <option>sort...</option>
-                          <option>A-z</option>
-                          <option>Z-a</option>
-                          <option>Popular</option>
-                          <option>New Arrivals</option>
+                        <select
+                          id="sortBy"
+                          className="form-select"
+                          onChange={(e) => setSortBy(e.target.value)}
+                        >
+                          <option value="">Sort...</option>
+                          <option value="A-z">A-z</option>
+                          <option value="Z-a">Z-a</option>
+                          <option value="Popular">Popular</option>
+                          <option value="New Arrivals">New Arrivals</option>
                         </select>
                       </div>
                       <div className="col-md-6">
@@ -161,16 +215,16 @@ function ProductList() {
                           className="form-select"
                           onChange={(e) => setFilterId(parseInt(e.target.value))}
                         >
-                          <option value={null}>Type...</option>
-                          <option value={1}>Televisions & Entertainment</option>
-                          <option value={2}>Mobile Phones & Tablet</option>
-                          <option value={3}>Large Appliances</option>
-                          <option value={4}>Laptops, PCs & Computing</option>
-                          <option value={5}>Office & Retail Automation</option>
-                          <option value={6}>Kitchen Appliances</option>
-                          <option value={7}>Home Appliances</option>
-                          <option value={8}>Cameras & Photography</option>
-                          <option value={9}>Display, Projection & Conferencing</option>
+                          <option value="">Type...</option>
+                          <option value={subcategoryid}>Televisions & Entertainment</option>
+                          <option value={subcategoryid}>Mobile Phones & Tablet</option>
+                          <option value={subcategoryid}>Large Appliances</option>
+                          <option value={subcategoryid}>Laptops, PCs & Computing</option>
+                          <option value={subcategoryid}>Office & Retail Automation</option>
+                          <option value={subcategoryid}>Kitchen Appliances</option>
+                          <option value={subcategoryid}>Home Appliances</option>
+                          <option value={subcategoryid}>Cameras & Photography</option>
+                          <option value={subcategoryid}>Display, Projection & Conferencing</option>
                           {/* Add other options as per your productnewid */}
                         </select>
                       </div>
@@ -200,39 +254,26 @@ function ProductList() {
                 <div className="offcanvas-body">
                   <hr />
                   <div className="catiList">
-                    <div className="cateHead">
-                      <h4>InfyShield</h4>
-                      <h3>Products and Devices</h3>
-                    </div>
-                    <ul>
-                      <li>
-                        <a href="#"> Mobile Phones & Tablets</a>
-                      </li>
-                      <li>
-                        <a href="#"> Televisions & Entertainment</a>
-                      </li>
-                      <li>
-                        <a href="#"> Large Appliances</a>
-                      </li>
-                      <li>
-                        <a href="#"> Laptops, PCs & Computing</a>
-                      </li>
-                      <li>
-                        <a href="#"> Office & Retail Automation</a>
-                      </li>
-                      <li>
-                        <a href="#"> Kitchen Appliances</a>
-                      </li>
-                      <li>
-                        <a href="#"> Home Appliances</a>
-                      </li>
-                      <li>
-                        <a href="#"> Cameras & Photography</a>
-                      </li>
-                      <li>
-                        <a href="#"> Display, Projection & Conferencing</a>
-                      </li>
-                    </ul>
+
+                    {categories.map((category) => {
+                      return (
+                        <>
+                         
+                          <li key={category.id} className="dropdown-item">
+                            <Link href={`/productlist?subcategoryid=${category.subcategoryid}`} className="dropdown-item-links"
+                            >
+                              <div className="navMedia">
+
+                              </div>
+                              <div className="navText">
+
+                                <span>{category.subcategoryname}</span>
+                              </div>
+                            </Link>
+                          </li>
+                        </>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -241,22 +282,25 @@ function ProductList() {
               {/* products */}
               <div className="ourDevice--filterGrid">
                 {filteredProducts.map((product: any, index: number) => (
+                  <>
+                      
                   <div className="deviceCard" key={index}>
                     <div className="media">
                       <img
-                        src={getCategoryImage(product.subcategoryid)}
+                        src={getCategoryImage(product.productid)}
                         width={180}
                         height={180}
                         alt="Device Image"
                       />
                     </div>
                     <div className="ctaBody">
-                      <h3>{product.subcategoryname}</h3>
-                      <Link href={{ pathname: '/plan' }}  className="viewPlan-btn">
+                      <h3>{product.productname}</h3>
+                      <Link href={`/plan?subcategoryid=${product.productid}`} className="viewPlan-btn">
                         View Plan
                       </Link>
                     </div>
                   </div>
+                  </>
                 ))}
               </div>
             </div>

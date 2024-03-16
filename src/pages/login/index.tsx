@@ -22,9 +22,10 @@ const LoginPage: React.FC = () => {
     }
 
     const handleSendOtp = async () => {
-        if (formik.values.mobile && formik.values.mobile.length === 10) { // Check if mobile number is exactly 10 digits
+        const mobileNumber = formik.values.mobile?.toString(); // Add a null check using optional chaining
+        if (mobileNumber && mobileNumber.length === 10) { // Check if mobile number is not null and is exactly 10 digits
             try {
-                const response = await sendOtp(formik.values.mobile);
+                const response = await sendOtp(parseInt(mobileNumber)); // Convert to number using parseInt
                 if (response && response.isSuccess && response.statusCode === 200) {
                     notify.success('OTP sent successfully!');
                     setShowOtpField(true); // Show OTP field upon successful OTP send
@@ -39,6 +40,10 @@ const LoginPage: React.FC = () => {
             notify.error('Please enter a valid 10-digit mobile number before sending OTP.');
         }
     };
+    
+    
+    
+    
 
     const handleSubmit = async () => {
         if (formik.isValid && formik.values.otp?.length === 6) {
@@ -138,11 +143,11 @@ const LoginPage: React.FC = () => {
                                             {getIn(formik.touched, `mobile`) && getIn(formik.errors, `mobile`) && <div className="form-validated">{getIn(formik.errors, `mobile`)}</div>}
                                         </div>
                                     </div>
-                                    {formik.values.mobile && formik.values.mobile.length === 10 && !showOtpField && (
-                                        <div className="row justify-content-center g-0 mb-3">
-                                            <Button className="loginAuth-btn btn-outline-primary rounded-5 mb-3" type="button" onClick={handleSendOtp}>Send OTP</Button>
-                                        </div>
-                                    )}
+                                    {formik.values.mobile && formik.values.mobile.toString().length === 10 && !showOtpField && (
+    <div className="row justify-content-center g-0 mb-3">
+        <Button className="loginAuth-btn btn-outline-primary rounded-5 mb-3" type="button" onClick={handleSendOtp}>Send OTP</Button>
+    </div>
+)}
                                     {
                                         showOtpField && (
                                             <div className="row d-flex justify-content-center g-0 mb-3">
