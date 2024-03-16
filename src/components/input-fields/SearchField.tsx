@@ -57,14 +57,16 @@ const SearchInputField: React.FC<SearchInputProps> = ({ onSearch }) => {
     const handleSelectOption = (option: any) => {
         setSearchTerm(option.subcategoryname);
         setIsDropdownOpen(false);
+        router.push(`/productlist?subcategoryid=${option.subcategoryid}`);
     };
 
     const handleInputFocus = () => {
         fetchDropdownOptions();
     };
- const handlebutton=()=>{
-    router.push('/productlist')
- }
+    const handlebutton = (option: any) => {
+        setSearchTerm(option.subcategoryname);
+        router.push(`/productlist?subcategoryid=${option.subcategoryid}`);
+    };
     return (
         <div className="input-group">
             <input
@@ -85,7 +87,7 @@ const SearchInputField: React.FC<SearchInputProps> = ({ onSearch }) => {
                             key={option.subcategoryid}
                             className="dropdown-item"
                             onClick={() => {handleSelectOption(option),
-                                handlebutton()}}
+                                handlebutton(option)}}
                         >
                             {option.subcategoryname}
                         </button>
