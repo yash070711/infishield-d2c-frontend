@@ -37,3 +37,127 @@
     font-size: 14px;
     font-weight: 400;
   }
+
+/* reponsive css*/
+/* 
+    320px — 480px: Mobile devices
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  #aboutSection {
+    position: relative;
+    display: flex;
+    padding-top: 0;
+  }
+  #aboutSection::after {
+    top: 0px;
+    background: linear-gradient(90deg, rgba(220, 220, 220, 0.2196078431) 0%, rgba(220, 220, 220, 0.22) 100%);
+    -webkit-clip-path: polygon(0% 1%, 46% 27%, 99% 1%, 99% 99%, 49% 77%, 1% 99%);
+    clip-path: polygon(0% 1%, 46% 27%, 99% 1%, 99% 99%, 49% 77%, 1% 99%);
+    -webkit-clip-path: polygon(0% 0%, 50% 20%, 100% 0%, 100% 100%, 50% 67%, 0% 100%);
+    clip-path: polygon(0% 0%, 50% 10%, 100% 0%, 100% 216%, 50% 228%, 0% 216%);
+    height: 100%;
+  }
+  #aboutSection .aboutContent {
+    flex-direction: column;
+  }
+  #aboutSection .aboutContent .left {
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #aboutSection .aboutContent .left .aboutLogo img {
+    width: 10pc;
+    height: auto;
+  }
+  #aboutSection .aboutContent .right {
+    flex: 0 0 50%;
+  }
+  #aboutSection .aboutContent .right .startContent p {
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+/* 
+    481px — 768px: iPads, Tablets
+*/
+@media (min-width: 481px) and (max-width: 768px) {
+  #aboutSection {
+    position: relative;
+    display: flex;
+    padding-top: 0;
+  }
+  #aboutSection::after {
+    top: 0px;
+    background: linear-gradient(90deg, rgba(220, 220, 220, 0.2196078431) 0%, rgba(220, 220, 220, 0.22) 100%);
+    -webkit-clip-path: polygon(0% 1%, 46% 27%, 99% 1%, 99% 99%, 49% 77%, 1% 99%);
+    clip-path: polygon(0% 1%, 46% 27%, 99% 1%, 99% 99%, 49% 77%, 1% 99%);
+    -webkit-clip-path: polygon(0% 0%, 50% 20%, 100% 0%, 100% 100%, 50% 67%, 0% 100%);
+    clip-path: polygon(0% 0%, 50% 10%, 100% 0%, 100% 216%, 50% 228%, 0% 216%);
+    height: 100%;
+  }
+  #aboutSection .aboutContent {
+    flex-direction: column;
+  }
+  #aboutSection .aboutContent .left {
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #aboutSection .aboutContent .left .aboutLogo img {
+    width: 12pc;
+    height: auto;
+    position: relative;
+  }
+  #aboutSection .aboutContent .right {
+    flex: 0 0 50%;
+  }
+  #aboutSection .aboutContent .right .startContent p {
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+/* 
+    769px — 1024px: Small screens, laptops
+*/
+@media (min-width: 769PX) and (max-width: 960px) {
+  #aboutSection {
+    position: relative;
+    display: flex;
+    padding-top: 0;
+  }
+  #aboutSection::after {
+    top: 0px;
+    background: linear-gradient(90deg, rgba(220, 220, 220, 0.2196078431) 0%, rgba(220, 220, 220, 0.22) 100%);
+    -webkit-clip-path: polygon(0% 1%, 46% 27%, 99% 1%, 99% 99%, 49% 77%, 1% 99%);
+    clip-path: polygon(0% 1%, 46% 27%, 99% 1%, 99% 99%, 49% 77%, 1% 99%);
+    -webkit-clip-path: polygon(0% 0%, 50% 20%, 100% 0%, 100% 100%, 50% 67%, 0% 100%);
+    clip-path: polygon(0% 0%, 50% 10%, 100% 0%, 100% 216%, 50% 228%, 0% 216%);
+    height: 100%;
+  }
+  #aboutSection .aboutContent {
+    flex-direction: column;
+  }
+  #aboutSection .aboutContent .left {
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #aboutSection .aboutContent .left .aboutLogo img {
+    width: 12pc;
+    height: auto;
+    position: relative;
+  }
+  #aboutSection .aboutContent .right {
+    flex: 0 0 50%;
+  }
+  #aboutSection .aboutContent .right .startContent p {
+    text-align: start;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

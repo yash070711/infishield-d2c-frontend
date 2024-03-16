@@ -38,7 +38,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 83%;
+    /* width: 83%; */
+    width: 90%;
     padding: 32px;
     background: #fff;
     border-radius: 30px;
@@ -164,3 +165,365 @@
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2509803922);
     transition: all 1.8s cubic-bezier(0.84, 0.21, 0.13, 0.73);
   }
+
+  #planSection {
+    padding: 20px 0;
+  }
+  
+  #planSection .swiper .swiper-button-next,
+  #planSection .swiper .swiper-button-prev {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #004985;
+    background-color: rgb(217, 217, 217);
+    border-radius: 50%;
+  }
+  
+  #planSection .swiper .swiper-button-next:after,
+  #planSection .swiper .swiper-button-prev:after {
+    font-weight: 900;
+    font-size: 10px;
+  }
+  
+  #planSection .swiper-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  #planSection .swiper-slide {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #planSection .planFlexBox {
+    padding-top: 24px;
+    flex-direction: column;
+  }
+  
+  #planSection .planFlexBox .planCard {
+    padding: 20px;
+  }
+  
+  #planSection .planFlexBox .planCard.popPlan {
+    margin-block: 0;
+  }
+  
+  #planSection .planFlexBox .planCard.popPlan:has(.head) h3,
+  #planSection .planFlexBox .planCard.popPlan:has(.body) p {
+    color: #fff;
+  }
+  
+  #planSection .planFlexBox .planCard.popPlan:has(.head) h3::after {
+    background: #fff;
+  }
+  
+  #planSection .planFlexBox .planCard .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #planSection .planFlexBox .planCard .head .media img {
+    width: 72px;
+    height: auto;
+  }
+  
+  #planSection .planFlexBox .planCard .head h3 {
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    margin: 8px auto;
+  }
+  
+  #planSection .planFlexBox .planCard .head h3::after {
+    width: 50%;
+    height: 1px;
+    margin-top: 0;
+  }
+  
+  #planSection .planFlexBox .planCard .body {
+    padding: 10px 0px;
+  }
+  
+  #planSection .planFlexBox .planCard .body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #planSection .planFlexBox .planCard .body ul li {
+    justify-content: center;
+    margin-bottom: 9px;
+  }
+  
+  #planSection .planFlexBox .planCard .body ul li p {
+    width: 75%;
+  }
+  
+  #planSection .planFlexBox .planCard .body .btn___Lightbtn {
+    margin-top: 10px;
+  }
+  
+  #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+    margin-top: 10px;
+  }
+  
+  /* Media Queries */
+
+  @media (min-width: 320px) and (max-width: 375px),
+  (min-width: 376px) and (max-width: 480px),
+  (min-width: 481px) and (max-width: 768px) {
+
+    #planSection .swiper-slide {
+      width: 100%;
+    }
+
+  }
+  
+  @media (min-width: 320px) and (max-width: 375px),
+         (min-width: 376px) and (max-width: 480px),
+         (min-width: 481px) and (max-width: 768px),
+         (min-width: 769px) and (max-width: 960px),
+         (min-width: 961px) and (max-width: 1024px),
+         (min-width: 1025px) and (max-width: 1200px),
+         (min-width: 1201px) and (max-width: 1440px) {
+          
+    
+    #planSection .swiper-slide:nth-child(1) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(2) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(3) {
+      margin: 0;
+    }
+  
+    #planSection .planFlexBox .planCard.popPlan {
+      margin-block: -20px;
+    }
+  
+    #planSection .planFlexBox .planCard .body ul li.tick::before,
+    #planSection .planFlexBox .planCard .body ul li.tickDark::before,
+    #planSection .planFlexBox .planCard .body ul li.cross::before {
+      width: 16px;
+      height: 16px;
+    }
+  
+    #planSection .planFlexBox .planCard .body .btn___Lightbtn,
+    #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+      padding: 8px 24px;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px),
+         (min-width: 769px) and (max-width: 960px),
+         (min-width: 961px) and (max-width: 1024px),
+         (min-width: 1025px) and (max-width: 1200px),
+         (min-width: 1201px) and (max-width: 1440px) {
+  
+    #planSection .swiper-slide:nth-child(1) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(2) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(3) {
+      margin: 0;
+    }
+  
+    #planSection .planFlexBox .planCard .head h3 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  
+    #planSection .planFlexBox .planCard .body ul li.tick::before,
+    #planSection .planFlexBox .planCard .body ul li.tickDark::before,
+    #planSection .planFlexBox .planCard .body ul li.cross::before {
+      width: 16px;
+      height: 16px;
+    }
+  
+    #planSection .planFlexBox .planCard .body .btn___Lightbtn,
+    #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+      padding: 4px 20px;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 960px),
+         (min-width: 961px) and (max-width: 1024px),
+         (min-width: 1025px) and (max-width: 1200px),
+         (min-width: 1201px) and (max-width: 1440px) {
+  
+    #planSection .swiper .swiper-button-next,
+    #planSection .swiper .swiper-button-prev {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #004985;
+      background-color: rgb(217, 217, 217);
+      border-radius: 50%;
+      font-size: 18px;
+    }
+  
+    #planSection .swiper-slide:nth-child(1) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(2) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(3) {
+      margin: 0;
+    }
+  
+    #planSection .planFlexBox .planCard .head h3 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    #planSection .planFlexBox .planCard .body ul li.tick::before,
+    #planSection .planFlexBox .planCard .body ul li.tickDark::before,
+    #planSection .planFlexBox .planCard .body ul li.cross::before {
+      width: 18px;
+      height: 18px;
+    }
+  
+    #planSection .planFlexBox .planCard .body .btn___Lightbtn,
+    #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+      padding: 4px 16px;
+    }
+  }
+  
+  @media (min-width: 961px) and (max-width: 1024px),
+         (min-width: 1025px) and (max-width: 1200px),
+         (min-width: 1201px) and (max-width: 1440px) {
+  
+    #planSection .swiper .swiper-button-next,
+    #planSection .swiper .swiper-button-prev {
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+    }
+  
+    #planSection .swiper-slide:nth-child(1) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(2) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(3) {
+      margin: 0;
+    }
+  
+    #planSection .planFlexBox .planCard .head h3 {
+      font-size: 18px;
+    }
+  
+    #planSection .planFlexBox .planCard .body ul li.tick::before,
+    #planSection .planFlexBox .planCard .body ul li.tickDark::before,
+    #planSection .planFlexBox .planCard .body ul li.cross::before {
+      width: 20px;
+      height: 20px;
+    }
+  
+    #planSection .planFlexBox .planCard .body .btn___Lightbtn,
+    #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+      padding: 12px 36px;
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1200px),
+         (min-width: 1201px) and (max-width: 1440px) {
+  
+    #planSection .swiper .swiper-button-next,
+    #planSection .swiper .swiper-button-prev {
+      width: 36px;
+      height: 36px;
+      font-size: 22px;
+    }
+  
+    #planSection .swiper-slide:nth-child(1) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(2) {
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(3) {
+      margin: 0;
+    }
+  
+    #planSection .planFlexBox .planCard .head h3 {
+      font-size: 20px;
+    }
+  
+    #planSection .planFlexBox .planCard .body ul li.tick::before,
+    #planSection .planFlexBox .planCard .body ul li.tickDark::before,
+    #planSection .planFlexBox .planCard .body ul li.cross::before {
+      width: 22px;
+      height: 22px;
+    }
+  
+    #planSection .planFlexBox .planCard .body .btn___Lightbtn,
+    #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+      padding: 4px 16px;
+    }
+  }
+  
+  @media (min-width: 1201px) and (max-width: 1440px) {
+  
+    #planSection .swiper .swiper-button-next,
+    #planSection .swiper .swiper-button-prev {
+      width: 40px;
+      height: 40px;
+      font-size: 32px;
+    }
+  
+    #planSection .swiper-slide:nth-child(1) {
+      /* margin: 0 60px 0 72px; */
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(2) {
+      /* margin: 0 60px 0 0; */
+      margin: 0;
+    }
+  
+    #planSection .swiper-slide:nth-child(3) {
+      /* margin: 0 60px 0 -72px; */
+      margin: 0;
+    }
+  
+    #planSection .planFlexBox .planCard .head h3 {
+      font-size: 22px;
+    }
+  
+    #planSection .planFlexBox .planCard .body ul li.tick::before,
+    #planSection .planFlexBox .planCard .body ul li.tickDark::before,
+    #planSection .planFlexBox .planCard .body ul li.cross::before {
+      width: 24px;
+      height: 24px;
+    }
+  
+    #planSection .planFlexBox .planCard .body .btn___Lightbtn,
+    #planSection .planFlexBox .planCard .body .btn___Solidtbtn {
+      padding: 6px 20px;
+    }
+  }
+  

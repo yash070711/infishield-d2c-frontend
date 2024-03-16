@@ -204,3 +204,264 @@
     font-weight: 400;
     margin: 0;
   }
+
+/* 320px — 480px: Mobile devices */
+@media (min-width: 320px) and (max-width: 480px) {
+  #networkSection {
+    padding: 20px 0;
+  }
+  #networkSection .networkContent {
+    margin-block: 2pc;
+    flex-direction: column;
+  }
+  #networkSection .networkContent .nc_left {
+    flex: 0 0 50%;
+  }
+  #networkSection .networkContent .nc_left .title {
+    margin-bottom: 16px;
+  }
+  #networkSection .networkContent .nc_left .title h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  #networkSection .networkContent .nc_left .title h2 span {
+    color: #3B89C4;
+  }
+  #networkSection .networkContent .nc_left .contentBody {
+    width: 100%;
+  }
+  #networkSection .networkContent .nc_left .contentBody p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  #networkSection .networkContent .nc_right {
+    flex: 0 0 36%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card {
+    flex: 0 0 95px;
+    height: 90px;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom {
+    justify-content: space-between;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard img {
+    width: 54px;
+    height: 54px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard p {
+    margin: 0;
+    font-size: 12px;
+  }
+}
+
+/* 481px — 768px: iPads, Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  #networkSection {
+    padding: 20px 0;
+}
+
+#networkSection .networkContent {
+    margin-block: 1pc;
+    flex-direction: column;
+}
+
+#networkSection .networkContent .nc_left {
+    flex: 0 0 50%;
+}
+
+#networkSection .networkContent .nc_left .title {
+    margin-bottom: 16px;
+}
+
+#networkSection .networkContent .nc_left .title h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+#networkSection .networkContent .nc_left .title h2 span {
+    color: #3B89C4;
+}
+
+#networkSection .networkContent .nc_left .contentBody {
+    width: 100%;
+}
+
+#networkSection .networkContent .nc_left .contentBody p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#networkSection .networkContent .nc_right {
+    flex: 0 0 36%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#networkSection .networkContent .nc_right .nc_counterTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#networkSection .networkContent .nc_right .nc_counterTop .nc_card {
+    flex: 0 0 95px;
+    height: 90px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+#networkSection .networkContent .nc_right .nc_counterTop .nc_card span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+}
+
+#networkSection .networkContent .nc_right .nc_counterTop .nc_card p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+}
+
+#networkSection .networkContent .nc_right .nc_counterBottom {
+    justify-content: space-between;
+}
+
+#networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+#networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard img {
+    width: 54px;
+    height: 54px;
+}
+
+#networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard p {
+    margin: 0;
+    font-size: 12px;
+}
+
+}
+
+/* 769px — 1024px: Small screens, laptops */
+@media (min-width: 769px) and (max-width: 960px) {
+  #networkSection {
+    padding: 30px 0;
+  }
+  #networkSection .networkContent {
+    display: flex;
+    align-items: stretch;
+    margin-block: 1pc 0;
+    padding: 0;
+  }
+  #networkSection .networkContent .nc_left {
+    flex: 0 0 60%;
+  }
+  #networkSection .networkContent .nc_left .title {
+    margin-bottom: 16px;
+  }
+  #networkSection .networkContent .nc_left .title h2 {
+    font-size: 28px;
+    color: #2E2C2C;
+    margin: 0;
+  }
+  #networkSection .networkContent .nc_left .title h2 span {
+    color: #004985;
+  }
+  #networkSection .networkContent .nc_left .contentBody {
+    width: 80%;
+  }
+  #networkSection .networkContent .nc_left .contentBody p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  #networkSection .networkContent .nc_right {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 50px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card {
+    flex: 0 0 92px;
+    height: 92px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card span {
+    font-size: 24px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card p {
+    font-size: 10px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card:nth-child(1) {
+    background: linear-gradient(180deg, #F2F2F2 0%, #0A2D4A 100%);
+    transition: all ease 0.5s;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card:nth-child(2) {
+    background: linear-gradient(180deg, #368BD0 0%, #003764 100%);
+    margin-top: 24px;
+    transition: all ease 0.5s;
+  }
+  #networkSection .networkContent .nc_right .nc_counterTop .nc_card:nth-child(3) {
+    background: linear-gradient(180deg, #074D86 0%, #0665AD 100%);
+    transition: all ease 0.5s;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard {
+    flex: 0 0 48%;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard img {
+    width: 62px;
+    height: 62px;
+  }
+  #networkSection .networkContent .nc_right .nc_counterBottom .nc_iconCard p {
+    margin: 0;
+  }
+}

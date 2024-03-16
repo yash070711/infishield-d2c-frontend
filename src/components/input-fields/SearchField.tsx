@@ -78,7 +78,7 @@ const SearchInputField: React.FC<SearchInputProps> = ({ onSearch }) => {
                 onChange={handleChange}
                 onFocus={handleInputFocus}
                 ref={inputRef}
-                style={{ padding: '0.5rem', fontSize: '1rem' }}
+                style={{ padding: '.875rem 1rem', fontSize: '0.98rem' }}
             />
             {isDropdownOpen && (
                 <div ref={dropdownRef} className="dropdown-menu" style={{ display: 'block', marginTop: '40px' }}>

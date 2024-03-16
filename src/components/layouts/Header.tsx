@@ -16,7 +16,6 @@ import AllDevices from '../../assets/img/devices/PNG/AllDevices.png'
 import APP_ROUTES from '@/pages/routes';
 
 
-
 const getCategoryImage = (categoryId: number): string => {
   switch (categoryId) {
     case 1:
@@ -72,6 +71,8 @@ const Header: React.FC = () => {
       console.error('Error fetching categories:', error);
     }
   };
+
+  
   return (
     <>
       <header className="headerSection">
@@ -286,7 +287,7 @@ const Header: React.FC = () => {
                       </ul>
                     </div>
                     <button
-                      className="navbar-toggler"
+                      className="navbar-toggler collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#navbarNavDropdown"
@@ -306,7 +307,7 @@ const Header: React.FC = () => {
                     <nav className="navbar navbar-expand-lg">
                       <div className="container-fluid p-0">
                         <div
-                          className="navbar-collapse justify-content-end"
+                          className="navbar-collapse justify-content-end collapse"
                           id="navbarNavDropdown"
                         >
                           <ul className="navbar-nav">
@@ -320,7 +321,7 @@ const Header: React.FC = () => {
                               </Link>
                             </li>
                             <li className="nav-item dropdown w-lg-auto">
-                              <a
+                              <Link
                                 className="nav-link dropdown-toggle"
                                 href="#"
                                 role="button"
@@ -328,15 +329,15 @@ const Header: React.FC = () => {
                                 aria-expanded="false"
                               >
                                 Device &amp; Plans
-                              </a>
+                              </Link>
                               <div className="dropdown-menu pb-0">
-                                <a
+                                <Link
                                   href="#"
                                   className="mega-menu-title w-dropdown-link"
                                   tabIndex={0}
                                 >
                                   InfyShield Popular Categories
-                                </a>
+                                </Link>
                                 <ul className="flex-dropdown-List">
                                   {categories.map((category) => {
                                     return (
@@ -366,12 +367,12 @@ const Header: React.FC = () => {
                               </div>
                             </li>
                             <li className="nav-item">
-                              <a
+                              <Link
                                 className="nav-link"
                                 href="protect-InfyShield.html"
                               >
                                 Protect with InfyShield
-                              </a>
+                              </Link>
                             </li>
                             <li className="nav-item">
                               <Link href="/trackmyservice" className="nav-link">
@@ -379,17 +380,17 @@ const Header: React.FC = () => {
                               </Link>
                             </li>
                             <li className="nav-item">
-                              <a
+                              <Link
                                 className="nav-link"
                                 href="Earn-InfyShield.html"
                               >
                                 Earn with InfyShield
-                              </a>
+                              </Link>
                             </li>
                             <li className="nav-item">
-                              <a className="nav-link" href="Partners with InfyShield.html">
+                              <Link className="nav-link" href="Partners with InfyShield.html">
                                 Partners with InfyShield
-                              </a>
+                              </Link>
                             </li>
                           </ul>
                         </div>

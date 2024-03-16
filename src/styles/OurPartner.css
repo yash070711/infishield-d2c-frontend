@@ -17,3 +17,52 @@
     width: 249px;
     height: auto;
   }
+
+  
+/* Responsive CSS */
+
+/* 320px — 480px: Mobile devices */
+@media (min-width: 320px) and (max-width: 480px) {
+  #partnerSection {
+    padding: 1pc 0;
+  }
+  #partnerSection .partnerContent {
+    padding-top: 1pc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #partnerSection .partnerContent .pc_cards {
+    margin: 5px;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  #partnerSection .partnerContent .pc_cards img {
+    width: 135px;
+    height: auto;
+  }
+}
+
+/* 481px — 1440px: iPads, Tablets, Desktops, Large screens, Extra large screens, TV */
+@media (min-width: 481px) and (max-width: 1440px) {
+  #partnerSection {
+    padding: 1pc 0 6pc;
+  }
+  #partnerSection .partnerContent {
+    padding-top: 1pc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #partnerSection .partnerContent .pc_cards {
+    margin: 5px;
+    flex: 0 0 16%;
+    display: flex;
+    justify-content: center;
+  }
+  #partnerSection .partnerContent .pc_cards img {
+    width: 190px;
+    height: auto;
+  }
+}

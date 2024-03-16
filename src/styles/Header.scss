@@ -33,7 +33,6 @@
                     font-size: 12px;
                     font-weight: 600;
                     line-height: 1.5;
-                    font-family: var(--prime-light);
                     text-decoration: none;
                 }
 
@@ -46,7 +45,6 @@
                         font-weight: 500;
                     }
                 }
-                
 
                 .dropdown-item:focus, .dropdown-item:hover {
                     color: #004985;
@@ -85,11 +83,9 @@
     }
 
     // Main Header
-
     .mainHeader {
         background: linear-gradient(180deg, rgba(0, 179, 240, 0.51) 0%, #004985 65%),
-linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
-
+            linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
 
         // Middle Header
         .middleHeader {
@@ -134,7 +130,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-weight: 400;
                         width: 85%;
                         height: 40px;
-                        border-radius: 30px;
+                        border-radius: 30px !important;
                         border: 1px solid rgba(0,102,179,.8);
                     }
 
@@ -179,11 +175,10 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 12px;
                         font-weight: 400;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
                         position: relative;
 
                         .LoginAvtar {
-                            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSIxMSIgZmlsbD0iI2ZmZiIvPjxnIGNsaXAtcGF0aD0idXJsKCNhKSI+PHBhdGggZD0iTTEwLjUgMTEuODA1YTMuMTQ4IDMuMTQ4IDAgMSAwIDAtNi4yOTcgMy4xNDggMy4xNDggMCAwIDAgMCA2LjI5N1ptMC01LjY4OGEyLjUzOSAyLjUzOSAwIDEgMSAwIDUuMDc4IDIuNTM5IDIuNTM5IDAgMCAxIDAtNS4wNzhabTUuODU0IDExLjAwNWMtLjYxLTIuNzEyLTMtNC43MDgtNS44NTQtNC43MDhhNS45OTUgNS45OTUgMCAwIDAtNS44NDYgNC42NjhsLS4wMDguMDRhLjMwNS4zMDUgMCAwIDAgLjU5NS4xMzJ2LS4wMDFjLjU0OS0yLjQzNyAyLjY5NS00LjIzIDUuMjU5LTQuMjNhNS4zODcgNS4zODcgMCAwIDEgNS4yNTIgNC4xOTRsLjAwNy4wMzZjLjAzMS4xMzguMTUyLjI0LjI5OC4yNGEuMzA2LjMwNiAwIDAgMCAuMDY3LS4wMDhoLS4wMDJhLjMwNS4zMDUgMCAwIDAgLjIzMy0uMzY0di4wMDJaIiBmaWxsPSIjMDA2NkIzIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQgNWgxM3YxM0g0eiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==");
+                            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAyMiAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTcuMjI1IDUuNDAxSDQuNjJMMy42MDMgMS4yMDNILjc3NnYuNkgzLjEzbDIuOTI0IDEyLjA2YTEuNDk0IDEuNDk0IDAgMCAwIC40MTggMi45MzMgMS41IDEuNSAwIDAgMCAxLjUtMS41YzAtLjMzOS0uMTE3LS42NDgtLjMwNy0uODk5aDQuMjEyYy0uMTkuMjUxLS4zMDcuNTYxLS4zMDcuOWExLjUgMS41IDAgMSAwIDEuNS0xLjVINi42NTVsLS4yOS0xLjJoOC40MTlsMi40NC03LjE5N3YuMDAxWm0tOS44NTIgOS44OTdhLjkuOSAwIDEgMS0xLjgtLjAwMi45LjkgMCAwIDEgMS44LjAwMlptNi41OTcgMGEuOS45IDAgMCAxLTEuOCAwIC45LjkgMCAwIDEgMS44IDBabS03Ljc1LTMuM0w0Ljc2NiA2LjAwMmgxMS42MjJMMTQuMzU1IDEySDYuMjJaIiBmaWxsPSIjZmZmIi8+PC9zdmc+");
                             background-position: center;
                             background-size: auto;
                             background-repeat: no-repeat;
@@ -235,11 +230,29 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         line-height: 1.5;
                         color: #3D3D3D;
                         padding: 8px 10px;
+
+                        .item-media {
+                            margin-right: 16px;
+
+                            img {
+                                width: 48px;
+                                height: 48px;
+                            }
+                        }
+
+                        .item-text {
+
+                            h6 {
+                                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                                color: #353535 !important;
+                            }
+                        }
+
                     }
 
                     .dropdown-divider {
                         height: 0;
-                        margin: 0;
+                        // margin: 0;
                         overflow: hidden;
                         // border-top: 1px solid var(--bs-dropdown-divider-bg);
                         /* opacity: 1; */
@@ -259,18 +272,14 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                     .dropdown-item.active, .dropdown-item:active {
                         color: #ffffff;
                         text-decoration: none;
-                        background-color: #3b89c4;
                     }
-
-
                     
-
                 }
             }
 
         }
 
-        // bottom Header
+        // Bottom Header
         .bottomHeader {
             background: #ffffff;
 
@@ -351,7 +360,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                 font-size: 14px;
                 font-weight: 600;
                 line-height: 1.5;
-                font-family: var(--prime-light);
+                
             }
 
             .flex-dropdown-List {
@@ -469,6 +478,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
 }
 
 
+
 /* reponsive css*/
 /* 
     320px — 480px: Mobile devices
@@ -517,7 +527,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 10px;
                         font-weight: 400;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
+                        
                     }
     
                     .callSupport {
@@ -630,7 +640,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                             font-size: 12px;
                             font-weight: 400;
                             line-height: 1.5;
-                            font-family: var(--prime-light);
+                            
                             position: relative;
     
                             .LoginAvtar {
@@ -895,7 +905,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 10px;
                         font-weight: 400;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
+                        
                     }
     
                     .callSupport {
@@ -1008,7 +1018,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                             font-size: 12px;
                             font-weight: 400;
                             line-height: 1.5;
-                            font-family: var(--prime-light);
+                            
                             position: relative;
     
                             .LoginAvtar {
@@ -1274,7 +1284,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 10px;
                         font-weight: 400;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
+                        
                     }
     
                     .callSupport {
@@ -1387,7 +1397,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                             font-size: 12px;
                             font-weight: 400;
                             line-height: 1.5;
-                            font-family: var(--prime-light);
+                            
                             position: relative;
     
                             .LoginAvtar {
@@ -1645,7 +1655,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 12px;
                         font-weight: 600;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
+                        
                     }
     
     
@@ -1790,7 +1800,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                             font-size: 12px;
                             font-weight: 400;
                             line-height: 1.5;
-                            font-family: var(--prime-light);
+                            
                             position: relative;
     
                             .LoginAvtar {
@@ -2115,7 +2125,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 12px;
                         font-weight: 600;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
+                        
                     }
     
     
@@ -2262,7 +2272,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                             font-size: 12px;
                             font-weight: 400;
                             line-height: 1.5;
-                            font-family: var(--prime-light);
+                            
                             position: relative;
     
                             .LoginAvtar {
@@ -2587,7 +2597,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                         font-size: 12px;
                         font-weight: 600;
                         line-height: 1.5;
-                        font-family: var(--prime-light);
+                        
                     }
     
     
@@ -2732,7 +2742,7 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18));
                             font-size: 12px;
                             font-weight: 400;
                             line-height: 1.5;
-                            font-family: var(--prime-light);
+                            
                             position: relative;
     
                             .LoginAvtar {

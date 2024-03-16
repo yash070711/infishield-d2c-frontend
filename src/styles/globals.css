@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -103,11 +101,6 @@ h5, h6 {
   line-height: 1.4;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 
 .centerTitle {
   display: flex;
@@ -143,3 +136,135 @@ h5, h6 {
   text-align: center;
   width: 40%;
 }
+
+
+
+/* titles and common Utilities starts */
+
+/* Center Title */
+.centerTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.centerTitle h3 {
+  color: #3B89C4;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: center;
+  margin: 12px auto;
+  margin-bottom: -5px;
+}
+
+.centerTitle h2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3D3D3D;
+}
+
+.centerTitle h2::after {
+  content: '';
+  background: #004985;
+  width: 130px;
+  height: 3px;
+}
+
+.centerTitle p {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Start Title */
+.startTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+
+.startTitle h3 {
+  color: #3B89C4;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: start;
+  margin: 12px 0;
+  margin-bottom: -5px;
+}
+
+.startTitle h2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  color: #3D3D3D;
+}
+
+.startTitle h2::after {
+  content: '';
+  background: #004985;
+  width: 130px;
+  height: 3px;
+}
+
+.startTitle p {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: start;
+  width: 80%;
+}
+
+/* Responsive CSS */
+/* 320px — 480px: Mobile devices */
+@media (min-width: 320px) and (max-width: 480px) {
+  .centerTitle h3 {
+      font-size: 14px;
+  }
+
+  .centerTitle h2::after {
+      width: 60%;
+      height: 1px;
+  }
+
+  .centerTitle p {
+      font-size: 14px;
+      width: 80%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .centerTitle h3 {
+    font-size: 14px;
+}
+
+.centerTitle h2::after {
+    width: 60%;
+    height: 1px;
+}
+
+.centerTitle p {
+    font-size: 14px;
+    width: 100%;
+}
+}
+
+/* 769px — 1024px: Small screens, laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .centerTitle h3 {
+      line-height: 1.3;
+  }
+
+  .centerTitle p {
+      width: 64%;
+  }
+}
+
+/* Other media queries remain unchanged */
+
+
+/* Ends */
