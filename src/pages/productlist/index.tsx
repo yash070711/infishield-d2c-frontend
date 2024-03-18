@@ -217,11 +217,11 @@ onHide={toggleModal}
           Select Device Brands
         </h5>
         <button
-          type="button"
-          className="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
+    type="button"
+    className="btn-close"
+    onClick={toggleModal} // Add onClick event handler here
+    aria-label="Close"
+  />
       </div>
       <div className="modal-body">
         <div className="main-container">
