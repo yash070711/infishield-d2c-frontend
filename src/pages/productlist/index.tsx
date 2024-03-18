@@ -172,6 +172,184 @@ function ProductList() {
         </div>
       </section>
 
+      {
+  /* Modal for Brands start */
+}
+<div
+  className="modal fade"
+  id="selectBrands"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabIndex={-1}
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="staticBackdropLabel">
+          Select Device Brands
+        </h5>
+        <button
+          type="button"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        />
+      </div>
+      <div className="modal-body">
+        <div className="main-container">
+          {/* search field strat*/}
+          <div className="searchbar">
+            <div className="searchbar-wrapper">
+              <div className="searchbar-left">
+                <div className="search-icon-wrapper">
+                  <span className="search-icon searchbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div className="searchbar-center">
+                <div className="searchbar-input-spacer" />
+                <input
+                  type="text"
+                  className="searchbar-input"
+                  maxLength={2048}
+                  name="q"
+                  autoCapitalize="off"
+                  autoComplete="off"
+                  title="Search"
+                  role="combobox"
+                  placeholder="Search Brand..."
+                />
+              </div>
+              <div className="searchbar-right">
+                <svg
+                  className="voice-search"
+                  role="button"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="#9aa0a6"
+                    d="M8 10c-1.7 0-3-1.3-3-3V3c0-1.6 1.3-3 3-3c1.6 0 3 1.3 3 3v4c0 1.6-1.4 3-3 3"
+                  />
+                  <path
+                    fill="#9aa0a6"
+                    d="M12 5v2.5c0 1.9-1.8 3.5-3.8 3.5h-.4C5.8 11 4 9.4 4 7.5V5c-.6 0-1 .4-1 1v1.5c0 2.2 1.8 4.1 4 4.4V14c-3 0-2.5 2-2.5 2h7s.5-2-2.5-2v-2.1c2.2-.4 4-2.2 4-4.4V6c0-.6-.4-1-1-1"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          {/* search field ends*/}
+          <h2>Search your brand if not visible here</h2>
+          <div className="radio-buttons">
+            <label className="custom-radio">
+              <input type="radio" name="radio" defaultChecked />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/iphone.png" />
+                  <h3 className>iPhone</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/oneplus.png" />
+                  <h3 className>Oneplus</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/gpixel.png" />
+                  <h3 className>Pixel</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/samsung.png" />
+                  <h3 className>Samsung</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/mi.png" />
+                  <h3 className>Xiaomi</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/nothing.png" />
+                  <h3 className>Nothing</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/oppo.png" />
+                  <h3 className>Oppo</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/lenovo.png" />
+                  <h3 className>Lenovo</h3>
+                </div>
+              </span>
+            </label>
+            <label className="custom-radio">
+              <input type="radio" name="radio" />
+              <span className="radio-btn">
+                <i className="las la-check" />
+                <div className="brand-icon">
+                  <img src="assets/img/brands/vivo.png" />
+                  <h3 className>Vivo</h3>
+                </div>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>;
+{
+  /* Modal for Brands ends */
+}
+
+
       <div className="OurDevices--Section">
         <div className="container">
           <div className="row">
