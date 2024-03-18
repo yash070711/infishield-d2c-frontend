@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@/components/layouts/Layout';
-import { getAllnewproductcategory, getProductSubcategoryList, getSubcategoryByProducts } from '@/services/global_services';
+import { getAllnewproductcategory, getBrandsByProducts, getProductSubcategoryList, getSubcategoryByProducts } from '@/services/global_services';
 import { NewProductList } from '@/interfaces/common.interfaces';
 import mp3PlayerImage from '../../assets/img/product/mp3player.jpg';
 import lcdImage from '../../assets/img/product/Lcd.jpeg';
@@ -17,10 +17,12 @@ import ebook from '../../assets/img/product/ebookreader.jpg';
 import smart from '../../assets/img/product/mobile smat.jpg';
 import feature from '../../assets/img/product/mobile feature.jpeg';
 import tablet from '../../assets/img/product/mobileand tablet.jpg';
+import iphone from '../../assets/img/iphone.png';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import dynamic from 'next/dynamic';
+import { Modal } from 'react-bootstrap';
 const getCategoryImage = (productid: number): string => {
   switch (productid) {
     case 4:
@@ -68,6 +70,8 @@ function ProductList() {
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState<string>(''); // State to manage sorting
+  const [showModal, setShowModal] = useState(false); // State to manage modal visibility
+  const [deviceList, setDeviceList] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -102,6 +106,21 @@ function ProductList() {
   };
 
   useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await getBrandsByProducts(subcategoryid);
+        if (response.statusCode === 200 && response.isSuccess && response.data) {
+          setDeviceList(response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    fetchData();
+  }, [subcategoryid]);
+
+  useEffect(() => {
     if (filterId !== null) {
       const filtered = products.filter((product: { subcategoryid: number; }) => product.subcategoryid === filterId);
       setFilteredProducts(filtered);
@@ -126,6 +145,11 @@ function ProductList() {
       // Implement sorting logic for new arrivals
     }
     setFilteredProducts(sortedProducts);
+  };
+  
+  // Function to toggle modal visibility
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
   console.log('products', products);
   if (loading) {
@@ -175,7 +199,9 @@ function ProductList() {
       {
   /* Modal for Brands start */
 }
-<div
+<Modal
+show={showModal}  
+onHide={toggleModal}
   className="modal fade"
   id="selectBrands"
   data-bs-backdrop="static"
@@ -249,102 +275,24 @@ function ProductList() {
           {/* search field ends*/}
           <h2>Search your brand if not visible here</h2>
           <div className="radio-buttons">
-            <label className="custom-radio">
-              <input type="radio" name="radio" defaultChecked />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/iphone.png" />
-                  <h3 className>iPhone</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/oneplus.png" />
-                  <h3 className>Oneplus</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/gpixel.png" />
-                  <h3 className>Pixel</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/samsung.png" />
-                  <h3 className>Samsung</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/mi.png" />
-                  <h3 className>Xiaomi</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/nothing.png" />
-                  <h3 className>Nothing</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/oppo.png" />
-                  <h3 className>Oppo</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/lenovo.png" />
-                  <h3 className>Lenovo</h3>
-                </div>
-              </span>
-            </label>
-            <label className="custom-radio">
-              <input type="radio" name="radio" />
-              <span className="radio-btn">
-                <i className="las la-check" />
-                <div className="brand-icon">
-                  <img src="assets/img/brands/vivo.png" />
-                  <h3 className>Vivo</h3>
-                </div>
-              </span>
-            </label>
-          </div>
+  {deviceList.map((brand, index) => (
+    <label key={index} className="custom-radio">
+      <input type="radio" name="radio" />
+      <span className="radio-btn">
+        <i className="las la-check" />
+        <div className="brand-icon">
+          <img src={iphone.src} alt={brand.Brand} />
+          <h3>{brand.Brand}</h3>
+        </div>
+      </span>
+    </label>
+  ))}
+</div>
         </div>
       </div>
     </div>
   </div>
-</div>;
+</Modal>;
 {
   /* Modal for Brands ends */
 }
@@ -473,9 +421,10 @@ function ProductList() {
                     </div>
                     <div className="ctaBody">
                       <h3>{product.productname}</h3>
-                      <Link href={`/plan?subcategoryid=${product.productid}`} className="viewPlan-btn">
+                      <button  className="viewPlan-btn"  onClick={toggleModal}>
                         View Plan
-                      </Link>
+                      </button>
+                      {/* href={`/plan?subcategoryid=${product.productid}`} */}
                     </div>
                   </div>
                   </>
