@@ -1,24 +1,24 @@
 #partnerSection {
-    padding: 5pc 0;
+    padding: 0 0 2pc;
   }
   #partnerSection .partnerContent {
-    padding-top: 6pc;
+    padding-top: 0pc;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   #partnerSection .partnerContent .pc_cards {
-    margin: 1pc 1pc;
-    flex: 0 0 22.532%;
+    margin: 1pc 0pc;
+    flex: 0 0 17.532%;
     display: flex;
     justify-content: center;
   }
   #partnerSection .partnerContent .pc_cards img {
-    width: 249px;
+    width: 160px;
     height: auto;
   }
 
-  
+
 /* Responsive CSS */
 
 /* 320px — 480px: Mobile devices */
@@ -62,7 +62,7 @@
     justify-content: center;
   }
   #partnerSection .partnerContent .pc_cards img {
-    width: 190px;
+    width: 150px;
     height: auto;
   }
 }

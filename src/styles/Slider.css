@@ -380,9 +380,10 @@
   }
   #benefitSection .fancyIcon___box {
     display: grid;
-    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    /* grid-template-columns: repeat(4, minmax(auto, 1fr)); */
+    grid-template-columns: repeat(4, minmax(27%, 1fr));
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 90px;
+    grid-column-gap: 0px;
     grid-row-gap: 40px;
     justify-items: stretch;
     margin-top: 16px;
@@ -406,7 +407,7 @@
     line-height: 1.6;
     color: #212121;
     text-align: start;
-    width: 50%;
+    width: auto;
   }
 
 
