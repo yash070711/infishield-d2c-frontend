@@ -23,42 +23,44 @@ import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import dynamic from 'next/dynamic';
 import { Modal } from 'react-bootstrap';
-const getCategoryImage = (productid: number): string => {
-  switch (productid) {
-    case 4:
-      return mp3PlayerImage.src;
-    case 5:
-      return lcdImage.src;
-    case 6:
-      return ledTvImage.src;
-    case 7:
-      return crtTvImage.src;
-    case 8:
-      return plasmaTvImage.src;
-    case 17:
-      return setupBoxImage.src;
-    case 18:
-      return homeTheatreImage.src;
-    case 19:
-      return dvdPlayerImage.src;
-    case 20:
-      return bluplayer.src;
-    case 82:
-      return multimediaspeaker.src;
-    case 94:
-      return mediaplayer.src;
-    case 107:
-      return ebook.src;
-    case 1:
-      return smart.src;
-    case 2:
-      return feature.src;
-    case 3:
-      return tablet.src;
-    default:
-      return '';
-  }
-};
+import ModalDeviceBrands from '@/components/products/ModalDeviceBrands';
+import ProductSlider from '../home/components/ProductSlider';
+// const getCategoryImage = (productid: number): string => {
+//   switch (productid) {
+//     case 4:
+//       return mp3PlayerImage.src;
+//     case 5:
+//       return lcdImage.src;
+//     case 6:
+//       return ledTvImage.src;
+//     case 7:
+//       return crtTvImage.src;
+//     case 8:
+//       return plasmaTvImage.src;
+//     case 17:
+//       return setupBoxImage.src;
+//     case 18:
+//       return homeTheatreImage.src;
+//     case 19:
+//       return dvdPlayerImage.src;
+//     case 20:
+//       return bluplayer.src;
+//     case 82:
+//       return multimediaspeaker.src;
+//     case 94:
+//       return mediaplayer.src;
+//     case 107:
+//       return ebook.src;
+//     case 1:
+//       return smart.src;
+//     case 2:
+//       return feature.src;
+//     case 3:
+//       return tablet.src;
+//     default:
+//       return '';
+//   }
+// };
 
 
 function ProductList() {
@@ -72,6 +74,8 @@ function ProductList() {
   const [sortBy, setSortBy] = useState<string>(''); // State to manage sorting
   const [showModal, setShowModal] = useState(false); // State to manage modal visibility
   const [deviceList, setDeviceList] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState<string>('');
   useEffect(() => {
     async function fetchData() {
       try {
@@ -146,11 +150,11 @@ function ProductList() {
     }
     setFilteredProducts(sortedProducts);
   };
-  
+
   // Function to toggle modal visibility
   const toggleModal = () => {
     setShowModal(!showModal);
-  };
+  }
   console.log('products', products);
   if (loading) {
     // If loading, display a loading indicator
@@ -184,6 +188,7 @@ function ProductList() {
                       <div className="OuterBanner">
                         <div className="row g-0 d-flex justify-content-start align-items-center">
                           <div className="col-xs-8 col-sm-8 col-md-6 col-lg-6 mb-7 mb-lg-0 p-0"></div>
+                 
                         </div>
                       </div>
                       {/* banner ends */}
@@ -197,105 +202,13 @@ function ProductList() {
       </section>
 
       {
-  /* Modal for Brands start */
-}
-<Modal
-show={showModal}  
-onHide={toggleModal}
-  className="modal fade"
-  id="selectBrands"
-  data-bs-backdrop="static"
-  data-bs-keyboard="false"
-  tabIndex={-1}
-  aria-labelledby="staticBackdropLabel"
-  aria-hidden="true"
->
-  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="staticBackdropLabel">
-          Select Device Brands
-        </h5>
-        <button
-    type="button"
-    className="btn-close"
-    onClick={toggleModal} // Add onClick event handler here
-    aria-label="Close"
-  />
-      </div>
-      <div className="modal-body">
-        <div className="main-container">
-          {/* search field strat*/}
-          <div className="searchbar">
-            <div className="searchbar-wrapper">
-              <div className="searchbar-left">
-                <div className="search-icon-wrapper">
-                  <span className="search-icon searchbar-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <div className="searchbar-center">
-                <div className="searchbar-input-spacer" />
-                <input
-                  type="text"
-                  className="searchbar-input"
-                  maxLength={2048}
-                  name="q"
-                  autoCapitalize="off"
-                  autoComplete="off"
-                  title="Search"
-                  role="combobox"
-                  placeholder="Search Brand..."
-                />
-              </div>
-              <div className="searchbar-right">
-                <svg
-                  className="voice-search"
-                  role="button"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={24}
-                  height={24}
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill="#9aa0a6"
-                    d="M8 10c-1.7 0-3-1.3-3-3V3c0-1.6 1.3-3 3-3c1.6 0 3 1.3 3 3v4c0 1.6-1.4 3-3 3"
-                  />
-                  <path
-                    fill="#9aa0a6"
-                    d="M12 5v2.5c0 1.9-1.8 3.5-3.8 3.5h-.4C5.8 11 4 9.4 4 7.5V5c-.6 0-1 .4-1 1v1.5c0 2.2 1.8 4.1 4 4.4V14c-3 0-2.5 2-2.5 2h7s.5-2-2.5-2v-2.1c2.2-.4 4-2.2 4-4.4V6c0-.6-.4-1-1-1"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          {/* search field ends*/}
-          <h2>Search your brand if not visible here</h2>
-          <div className="radio-buttons">
-  {deviceList.map((brand, index) => (
-    <label key={index} className="custom-radio">
-      <input type="radio" name="radio" />
-      <span className="radio-btn">
-        <i className="las la-check" />
-        <div className="brand-icon">
-          <img src={iphone.src} alt={brand.Brand} />
-          <h3>{brand.Brand}</h3>
-        </div>
-      </span>
-    </label>
-  ))}
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</Modal>;
-{
-  /* Modal for Brands ends */
-}
+        /* Modal for Brands start */
+      }
+      <ModalDeviceBrands showModal={showModal} toggleModal={toggleModal} productId={selectedProduct} />
+
+      {
+        /* Modal for Brands ends */
+      }
 
 
       <div className="OurDevices--Section">
@@ -384,7 +297,7 @@ onHide={toggleModal}
                     {categories.map((category) => {
                       return (
                         <>
-                         
+
                           <li key={category.id} className="dropdown-item">
                             <Link href={`/productlist?subcategoryid=${category.subcategoryid}`} className="dropdown-item-links"
                             >
@@ -409,24 +322,33 @@ onHide={toggleModal}
               <div className="ourDevice--filterGrid">
                 {filteredProducts.map((product: any, index: number) => (
                   <>
-                      
-                  <div className="deviceCard" key={index}>
-                    <div className="media">
-                      <img
-                        src={getCategoryImage(product.productid)}
-                        width={180}
-                        height={180}
-                        alt="Device Image"
-                      />
+
+                    <div className="deviceCard" key={index}>
+                      <div className="media">
+                        <img
+
+                          width={180}
+                          height={180}
+                          alt="Device Image"
+                        />
+                      </div>
+                      <div className="ctaBody">
+                        <h3>{product.productname}</h3>
+                        <Link
+                          href="#"
+                          className="viewPlan-btn"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            toggleModal();
+                            setSelectedProduct(product.productid)
+                          }}
+                        >
+
+                          View Plan
+                        </Link>
+                        {/* href={`/productlist?subcategoryid=${product.productid}`} */}
+                      </div>
                     </div>
-                    <div className="ctaBody">
-                      <h3>{product.productname}</h3>
-                      <button  className="viewPlan-btn"  onClick={toggleModal}>
-                        View Plan
-                      </button>
-                      {/* href={`/plan?subcategoryid=${product.productid}`} */}
-                    </div>
-                  </div>
                   </>
                 ))}
               </div>

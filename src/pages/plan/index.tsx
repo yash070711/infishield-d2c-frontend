@@ -25,7 +25,7 @@ function Plan() {
   const [selectedDevice, setSelectedDevice] = useState(null); // Track selected device
   const router = useRouter(); // Initialize useRouter
   const [categories, setCategories] = useState<any[]>([]);
-  const { subcategoryid } = router.query;
+  const { subcategoryid, brand } = router.query;
   const [products, setProducts] = useState<NewProductList>([] as NewProductList);
   useEffect(() => {
     async function fetchData() {
@@ -171,7 +171,8 @@ function Plan() {
                                 <h2 className="dw--title">
                                     EXTENDED WARRANTY
                                 </h2>
-                                <h5 className="text-muted fw-bold">For Your Samsung Device </h5>
+                                
+                                <h5 className="text-muted fw-bold">For Your <b>{brand}</b>  Product</h5>
                                 <p className="dw--para">Fill the below details to generate best infyShield Plan for
                                     your device</p>
                             </div>

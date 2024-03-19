@@ -13,6 +13,7 @@ import "@/styles/mycart.css";
 import "@/styles/OurProducts.css";
 import "@/styles/trackmyservice.css";
 import "@/styles/Plan.css"
+import "@/styles/Benfits.css"
 import favicon from '@/assets/images/InfinityLogo.png'
 import type { AppProps } from "next/app";
 import Head from "next/head";

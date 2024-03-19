@@ -52,7 +52,7 @@ function Slider() {
     });
 
     // Clean up on unmount
-    return () => swiper.destroy();
+
   }, []);
 
   return (
