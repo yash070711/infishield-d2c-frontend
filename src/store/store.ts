@@ -5,8 +5,8 @@ import rootReducer from './reducers';
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(thunk),
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware().concat(thunk),
 });
 
 export default store;

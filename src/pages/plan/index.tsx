@@ -26,7 +26,7 @@ function Plan() {
   const [selectedDevice, setSelectedDevice] = useState(null); // Track selected device
   const router = useRouter(); // Initialize useRouter
   const [categories, setCategories] = useState<any[]>([]);
-  const [price,setprice]=useState<{ Plan: string; Price: number; }[]>([]);
+  const [price, setprice] = useState<{ Plan: string; Price: number; }[]>([]);
   const { subcategoryid, brand } = router.query;
   const [requestPlan, setRequestPlan] = useState<RequestServicePlanInterfaces>({
     ProductSubCatgID: subcategoryid ? parseInt(subcategoryid as string) : undefined,
@@ -35,11 +35,10 @@ function Plan() {
     Status: 'N',
     subcategoryid: subcategoryid ? parseInt(subcategoryid as string).toString() : undefined, // Convert to string
   });
-  
 
+  const [isRadioSelected, setIsRadioSelected] = useState(false); // Track if radio button is selected
 
   useEffect(() => {
-
     async function fetchData() {
       try {
         const response = await getBrandsByProducts(subcategoryid);
@@ -67,7 +66,6 @@ function Plan() {
       console.error('Error fetching data:', error);
     }
   };
-  
 
   const fetchCategories = async () => {
     try {
@@ -79,10 +77,14 @@ function Plan() {
     }
   };
 
-
   const handleDeviceChange = (event: any) => {
     setSelectedDevice(event.target.value);
   };
+
+  const handleRadioChange = () => {
+    setIsRadioSelected(true); // Enable the button when a radio button is selected
+  };
+
   const handleAddToCart = () => {
     router.push('/cart');
   };
@@ -282,38 +284,45 @@ function Plan() {
                   <div className="dw--content">
                     <h2>Best plans for your device</h2>
                     <div className="dw--planForm">
-  <form action="">
-    <div className="radio-buttons">
-      {price.map((plan, index) => (
-        <label className="custom-radio" key={index}>
-          <input type="radio" name="radio" />
-          <span className="radio-btn">
-            <i>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
-                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
-              </svg>
-            </i>
-        
-  <div className="hobbies-icon">
-    <span>1 Year</span>
-    <h3 className="">&#8377; {plan.Price}</h3>
-  </div>
+                      <form action="">
+                        <div className="radio-buttons">
+                          {price.map((plan, index) => (
+                            <label className="custom-radio" key={index}>
+                             <input type="radio" name="radio" onChange={() => handleRadioChange()} />
+                              <span className="radio-btn">
+                                <i>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                                  </svg>
+                                </i>
+
+                                <div className="hobbies-icon">
+                                  <span>1 Year</span>
+                                  <h3 className="">&#8377; {plan.Price}</h3>
+                                </div>
 
 
-  <div className="hobbies-icon">
-    <span>2 Years</span>
-    <h3 className="">&#8377; {plan.Price}</h3>
-  </div>
+                                <div className="hobbies-icon">
+                                  <span>1 Years</span>
+                                  <h3 className="">&#8377; {plan.Price}</h3>
+                                </div>
 
-          </span>
-        </label>
-      ))}
-    </div>
-    <div className="row d-flex justify-content-center align-items-center">
-      <button type="submit" className="addTocard-btn btn-outline-primary rounded-5 mb-3" onClick={handleAddToCart}>Add To Cart</button>
-    </div>
-  </form>
-</div>
+                              </span>
+                            </label>
+                          ))}
+                        </div>
+                        <div className="row d-flex justify-content-center align-items-center">
+                        <button
+  type="submit"
+  className={`addTocard-btn btn-outline-primary rounded-5 mb-3 ${isRadioSelected ? '' : 'disabled'}`}
+  onClick={handleAddToCart}
+  disabled={!isRadioSelected} // Disable the button when a radio button is not selected
+>
+  Add To Cart
+</button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
