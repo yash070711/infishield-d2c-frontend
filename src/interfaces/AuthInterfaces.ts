@@ -25,13 +25,3 @@ export interface LoginInterface {
   mobile: number | null,
   otp?: string | null
 }
-export interface ReducerStateInterfaces {
-  data: any;
-  loading: boolean;
-  error: string | null;
-}
-export const initialState: ReducerStateInterfaces = {
-  data: null,
-  loading: false,
-  error: null,
-};

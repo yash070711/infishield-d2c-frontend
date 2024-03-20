@@ -1,7 +1,7 @@
 // reducers/cartReducer.ts
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchAuthUser } from '../actions/authActions';
-import { initialState } from '@/interfaces/AuthInterfaces';
+import { initialState } from '@/interfaces/common.interfaces';
 
 
 
