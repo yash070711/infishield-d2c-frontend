@@ -191,7 +191,7 @@ function ProductList() {
                 <div className="dw--form">
                   <form action="">
                     <div className="row g-0 mb-3">
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-6 col-md-6">
                         <label htmlFor="sortBy" className="form-label">
                           Sort By
                         </label>
@@ -207,7 +207,7 @@ function ProductList() {
                           <option value="New Arrivals">New Arrivals</option>
                         </select>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-6 col-md-6">
                         <label htmlFor="Select Device Type" className="form-label">
                           Select Category Type
                         </label>
@@ -279,7 +279,7 @@ function ProductList() {
                 </div>
               </div>
             </div>
-            <div className="row">
+            <div className="row g-0">
               {/* products */}
               <div className="ourDevice--filterGrid">
                 {filteredProducts.map((product: any, index: number) => (

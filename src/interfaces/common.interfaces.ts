@@ -118,7 +118,16 @@ export type NewProductList = Product[];
 
   }
   
-
+  export interface ReducerStateInterfaces {
+    data: any;
+    loading: boolean;
+    error: string | null;
+  }
+  export const initialState: ReducerStateInterfaces = {
+    data: null,
+    loading: false,
+    error: null,
+  };
 
 
 

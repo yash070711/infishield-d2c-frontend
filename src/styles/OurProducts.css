@@ -1,255 +1,1675 @@
 .OurDevices--Section {
-    position: relative;
-    z-index: 1;
-    top: -60px;
-    display: flex;
-    justify-content: center;
-    padding: 0 0 120px 0;
-    background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  z-index: 1;
+  top: -51px;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 120px 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.OurDevices--Section::before {
+  /* content: ""; */
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../assets/img/topLeft-Shape.png");
+  background-position: initial;
+  background-size: 28%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.OurDevices--Section::after {
+  /* content: ""; */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/img/bottomright-shape.png");
+  background-position: 100%;
+  background-size: 28%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.OurDevices--Section .topheadfilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid rgba(35, 35, 35, 0.08);
+  box-shadow: 0 0 20px 9px rgba(197, 197, 197, 0.08);
+  margin-bottom: 24px;
+  padding: 0 20px;
+}
+
+.OurDevices--Section .topheadfilter .allCati-btn {
+  color: #030330;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.OurDevices--Section .topheadfilter .allCati-btn::before {
+  content: "";
+  position: absolute;
+  inset: auto;
+  left: 0px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDciIGhlaWdodD0iNDciIHZpZXdCb3g9IjAgMCA0NyA0NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSI0NiIgaGVpZ2h0PSI0NiIgcng9IjE0LjUiIGZpbGw9IiMwMDQ5ODUiIHN0cm9rZT0iIzAwNDk4NSIvPgo8cmVjdCB4PSIxMy42NDUzIiB5PSIxMi44ODY3IiB3aWR0aD0iMjAuNDY3NyIgaGVpZ2h0PSI0LjU0ODM5IiByeD0iMi4yNzQxOSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTMuNjQ1MyIgeT0iMjEuMjI1NiIgd2lkdGg9IjEyLjEyOSIgaGVpZ2h0PSI0LjU0ODM5IiByeD0iMi4yNzQxOSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTMuNjQ1MyIgeT0iMjkuNTY0NSIgd2lkdGg9IjcuNTgwNjUiIGhlaWdodD0iNC41NDgzOSIgcng9IjIuMjc0MTkiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 47px;
+  height: 47px;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter {
+  flex: 0 0 40%;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]:checked+.btn {
+  background-color: #216DA8;
+  color: #fff;
+  border-color: #216DA8;
+  transition: all ease 0.5s;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]+.btn {
+  background-color: #fff;
+  color: #216DA8;
+  border-color: #216DA8;
+  transition: all ease 0.5s;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input,
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
+  width: 97%;
+  padding: 1.25rem 2.25rem 0.75rem 0.75rem;
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-outer-spin-button,
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form option {
+  font-weight: 400;
+  display: block;
+  min-height: 1.2em;
+  padding: 1.25rem 0.75rem 1.25rem 0.75rem;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus,
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
+  border-color: rgba(33, 109, 168, 0.4117647059);
+  outline: 0;
+  box-shadow: none;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form label {
+  position: relative;
+  top: 14px;
+  background: #fff;
+  padding: 0 5px;
+  left: 8px;
+  margin: 0;
+  font-size: 12px;
+  color: #545454;
+  font-weight: 400;
+  border-radius: 0.375em;
+  border: 1px solid #f5f5f5;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]+label {
+  position: relative;
+  background: #fff;
+  padding: 8px;
+  margin: 0;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: #545454;
+  font-weight: 400;
+  border-radius: 0.375em;
+  border: 1px solid #f5f5f5;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form .getShield-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  background: #216DA8;
+  border: 1px solid #216DA8;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  transition: all ease 0.5s;
+}
+
+.OurDevices--Section .topheadfilter .onheadfilter .dw--form .smallTextInfo {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(53, 53, 53, 0.8196078431);
+}
+
+.OurDevices--Section .topheadfilter .offcanvas-title {
+  color: #a30e11;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.OurDevices--Section .topheadfilter .offcanvas-body {
+  padding: 0 16px;
+}
+
+.OurDevices--Section .topheadfilter .catiList .cateHead h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #004985;
+  margin: 0;
+}
+
+.OurDevices--Section .topheadfilter .catiList .cateHead h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #070707;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.OurDevices--Section .topheadfilter .catiList .cateHead h3::after {
+  content: "";
+  background: #004985;
+  height: 2px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.OurDevices--Section .topheadfilter .catiList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.OurDevices--Section .topheadfilter .catiList li {
+  padding: 0;
+  border-bottom: 1px solid rgba(236, 236, 236, 0.7450980392);
+}
+
+.OurDevices--Section .topheadfilter .catiList a {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #070707;
+  padding: 12px 16px;
+  transition: all ease 0.5s;
+}
+
+.OurDevices--Section .topheadfilter .catiList a:hover,
+.OurDevices--Section .topheadfilter .catiList a:active {
+  background: rgba(245, 245, 245, 0.431372549);
+  color: #004985;
+  font-weight: 600;
+}
+
+.OurDevices--Section .ourDevice--filterGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  column-gap: 1.555rem;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard {
+  flex: 0 0 23%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(35, 35, 35, 0.08);
+  box-shadow: 0 0 20px 9px rgba(197, 197, 197, 0.08);
+  margin-bottom: 40px;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard:last-child {
+  margin-bottom: auto;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard .media img {
+  width: 180px;
+  height: auto;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody h3 {
+  font-size: 16px;
+  font-weight: 600px;
+  color: #030330;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 2px 12px;
+  border-radius: 50px;
+  border: 3px solid transparent;
+  color: #fff;
+  background: #004985;
+  transition: all ease 0.5s;
+}
+
+.OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn:hover {
+  background: #ffffff;
+  color: #004985;
+  border: 3px solid #004985;
+}
+
+#selectBrands .modal-dialog {
+  margin: 0;
+}
+
+#selectBrands .main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#selectBrands .main-container h2 {
+  margin: 0 0 16px 0;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#selectBrands .radio-buttons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#selectBrands a.custom-radio {
+  flex: 0 0 24.99%;
+  display: flex;
+  justify-content: center;
+}
+
+#selectBrands .custom-radio input {
+  display: none;
+}
+
+#selectBrands .radio-btn {
+  margin: 5px;
+  width: 100px;
+  height: 92px;
+  border: 3px solid transparent;
+  display: flex;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(195, 195, 195, 0.4039215686);
+  cursor: pointer;
+  justify-content: center;
+}
+
+#selectBrands .radio-btn .brand-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+}
+
+#selectBrands .radio-btn .brand-icon img {
+  display: block;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#selectBrands .radio-btn .brand-icon i {
+  color: #1581cd;
+  line-height: 80px;
+  font-size: 60px;
+}
+
+#selectBrands .radio-btn .brand-icon h3 {
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+}
+
+#selectBrands .custom-radio input:checked+.radio-btn {
+  border: 2px solid #1581cd;
+}
+
+#selectBrands .searchbar {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  display: flex;
+  z-index: 3;
+  height: 44px;
+  background: white;
+  border: 1px solid #dfe1e5;
+  box-shadow: none;
+  border-radius: 24px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 270px;
+  margin-bottom: 5px;
+}
+
+#selectBrands .searchbar:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+#selectBrands .searchbar-wrapper {
+  flex: 1;
+  display: flex;
+  padding: 5px 8px 0 14px;
+}
+
+#selectBrands .searchbar-left {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  display: flex;
+  align-items: center;
+  padding-right: 13px;
+  margin-top: -5px;
+}
+
+#selectBrands .search-icon-wrapper {
+  margin: auto;
+}
+
+#selectBrands .search-icon {
+  margin-top: 3px;
+  color: #9aa0a6;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+
+#selectBrands .searchbar-icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+#selectBrands .searchbar-center {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+#selectBrands .searchbar-input-spacer {
+  color: transparent;
+  flex: 100%;
+  white-space: pre;
+  height: 34px;
+  font-size: 16px;
+}
+
+#selectBrands .searchbar-input {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.87);
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  margin-top: -37px;
+  height: 34px;
+  font-size: 16px;
+  max-width: 100%;
+  width: 100%;
+}
+
+#selectBrands .searchbar-right {
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: -5px;
+  align-items: center;
+  flex-direction: row;
+}
+
+#selectBrands .searchbar-clear-icon {
+  margin-right: 12px;
+}
+
+#selectBrands .voice-search {
+  flex: 1 0 auto;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 8px;
+  width: 2.3em;
+}
+
+
+/* reponsive css*/
+/* 
+    320px — 480px: Mobile devices
+*/
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .OurDevices--Section {
+    padding: 0;
   }
+
   .OurDevices--Section::before {
-    content: "";
-    position: absolute;
     left: 0;
     top: 0;
     background-position: initial;
-    background-size: 28%;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  .OurDevices--Section::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-position: 100%;
-    background-size: 28%;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  .OurDevices--Section .topheadfilter {
-    width: 100%;
-    border-radius: 6px;
-    border: 1px solid rgba(35, 35, 35, 0.08);
-    box-shadow: 0 0 20px 9px rgba(197, 197, 197, 0.08);
-    margin-bottom: 24px;
-    padding: 0 20px;
-  }
-  .OurDevices--Section .topheadfilter .allCati-btn {
-    color: #030330;
-    font-size: 14px;
-    font-weight: 600;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-  }
-  .OurDevices--Section .topheadfilter .allCati-btn::before {
-    content: "";
-    position: absolute;
-    inset: auto;
-    left: 0px;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDciIGhlaWdodD0iNDciIHZpZXdCb3g9IjAgMCA0NyA0NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMC41IiB5PSIwLjUiIHdpZHRoPSI0NiIgaGVpZ2h0PSI0NiIgcng9IjE0LjUiIGZpbGw9IiMwMDQ5ODUiIHN0cm9rZT0iIzAwNDk4NSIvPgo8cmVjdCB4PSIxMy42NDUzIiB5PSIxMi44ODY3IiB3aWR0aD0iMjAuNDY3NyIgaGVpZ2h0PSI0LjU0ODM5IiByeD0iMi4yNzQxOSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTMuNjQ1MyIgeT0iMjEuMjI1NiIgd2lkdGg9IjEyLjEyOSIgaGVpZ2h0PSI0LjU0ODM5IiByeD0iMi4yNzQxOSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMTMuNjQ1MyIgeT0iMjkuNTY0NSIgd2lkdGg9IjcuNTgwNjUiIGhlaWdodD0iNC41NDgzOSIgcng9IjIuMjc0MTkiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
-    background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 47px;
-    height: 47px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
+
+  .OurDevices--Section::after {
+    right: 0;
+    bottom: 0;
+    opacity: 0.75;
+    background-position: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section .topheadfilter {
+    border-radius: 0;
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    margin-bottom: 24px;
+    padding: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 50px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn::before {
+    inset: auto;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
   .OurDevices--Section .topheadfilter .onheadfilter {
-    flex: 0 0 40%;
+    display: none;
   }
-  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]:checked + .btn {
-    background-color: #216DA8;
-    color: #fff;
-    border-color: #216DA8;
-    transition: all ease 0.5s;
-  }
-  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio] + .btn {
-    background-color: #fff;
-    color: #216DA8;
-    border-color: #216DA8;
-    transition: all ease 0.5s;
-  }
-  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input, .OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
-    width: 97%;
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
     padding: 1.25rem 2.25rem 0.75rem 0.75rem;
     font-size: 14px;
-    color: #888;
     font-weight: 400;
-    background-color: #fff;
   }
+
   .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-outer-spin-button,
   .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
+
   .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=number] {
     -moz-appearance: textfield;
   }
-  .OurDevices--Section .topheadfilter .onheadfilter .dw--form option {
-    font-weight: 400;
-    display: block;
-    min-height: 1.2em;
-    padding: 1.25rem 0.75rem 1.25rem 0.75rem;
-  }
-  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus, .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
     border-color: rgba(33, 109, 168, 0.4117647059);
     outline: 0;
     box-shadow: none;
   }
+
   .OurDevices--Section .topheadfilter .onheadfilter .dw--form label {
-    position: relative;
     top: 14px;
-    background: #fff;
     padding: 0 5px;
     left: 8px;
     margin: 0;
     font-size: 12px;
-    color: #545454;
-    font-weight: 400;
-    border-radius: 0.375em;
-    border: 1px solid #f5f5f5;
   }
-  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio] + label {
-    position: relative;
-    background: #fff;
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]+label {
     padding: 8px;
     margin: 0;
     top: 0;
     left: 0;
     font-size: 16px;
-    color: #545454;
-    font-weight: 400;
-    border-radius: 0.375em;
-    border: 1px solid #f5f5f5;
   }
+
   .OurDevices--Section .topheadfilter .onheadfilter .dw--form .getShield-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 180px;
     padding: 12px 32px;
     font-size: 16px;
     font-weight: 400;
-    color: #ffffff;
-    background: #216DA8;
     border: 1px solid #216DA8;
     border-radius: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
-    transition: all ease 0.5s;
   }
+
   .OurDevices--Section .topheadfilter .onheadfilter .dw--form .smallTextInfo {
     font-size: 12px;
     font-weight: 600;
     color: rgba(53, 53, 53, 0.8196078431);
   }
+
   .OurDevices--Section .topheadfilter .offcanvas-title {
     color: #a30e11;
     font-size: 16px;
     font-weight: 600;
   }
+
   .OurDevices--Section .topheadfilter .offcanvas-body {
     padding: 0 16px;
   }
+
   .OurDevices--Section .topheadfilter .catiList .cateHead h4 {
     font-size: 14px;
     font-weight: 600;
-    color: #004985;
     margin: 0;
   }
+
   .OurDevices--Section .topheadfilter .catiList .cateHead h3 {
     font-size: 16px;
     font-weight: 400;
-    color: #070707;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    position: relative;
     margin-bottom: 20px;
   }
+
   .OurDevices--Section .topheadfilter .catiList .cateHead h3::after {
-    content: "";
-    background: #004985;
     height: 2px;
     width: 120px;
     border-radius: 20px;
   }
+
   .OurDevices--Section .topheadfilter .catiList ul {
-    list-style: none;
-    padding: 0;
     margin: 0;
   }
+
   .OurDevices--Section .topheadfilter .catiList li {
     padding: 0;
-    border-bottom: 1px solid rgba(236, 236, 236, 0.7450980392);
   }
+
   .OurDevices--Section .topheadfilter .catiList a {
-    display: block;
     font-size: 14px;
     font-weight: 400;
-    color: #070707;
     padding: 12px 16px;
-    transition: all ease 0.5s;
   }
-  .OurDevices--Section .topheadfilter .catiList a:hover, .OurDevices--Section .topheadfilter .catiList a:active {
-    background: rgba(245, 245, 245, 0.431372549);
-    color: #004985;
-    font-weight: 600;
-  }
+
   .OurDevices--Section .ourDevice--filterGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 42px 0;
+    padding: 10px;
   }
+
   .OurDevices--Section .ourDevice--filterGrid .deviceCard {
-    flex: 0 0 27%;
-    display: flex;
+    flex: 0 0 auto;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 6px;
-    border: 1px solid rgba(35, 35, 35, 0.08);
-    box-shadow: 0 0 20px 9px rgba(197, 197, 197, 0.08);
-    margin-bottom: 64px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-bottom: 24px;
   }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media {
+    flex: 0 0 auto;
+  }
+
   .OurDevices--Section .ourDevice--filterGrid .deviceCard .media img {
-    width: 180px;
+    width: 100%;
     height: auto;
   }
+
   .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody {
-    padding: 12px 0;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0 10px;
   }
+
   .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody h3 {
-    font-size: 16px;
-    font-weight: 600px;
-    color: #030330;
-    line-height: 1.6;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
-    display: block;
-    text-align: center;
     font-size: 14px;
-    line-height: 1.5;
     font-weight: 600;
-    padding: 4px 16px;
-    border-radius: 50px;
-    border: 3px solid transparent;
-    color: #fff;
-    background: #004985;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    transition: all ease 0.5s;
+    margin-bottom: 10px;
   }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
+    font-size: 10px;
+    font-weight: 400;
+    padding: 0px 8px;
+  }
+
   .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn:hover {
-    background: #ffffff;
-    color: #004985;
-    border: 3px solid #004985;
+    border: 1px solid #004985;
   }
+
+  /* select brnd modal  */
+  #selectBrands .modal-header {
+    padding: 10px;
+  }
+
+  #selectBrands .modal-title {
+    font-size: 14px;
+  }
+
+  #selectBrands .main-container {
+    padding: 0;
+  }
+
+  #selectBrands .main-container h2 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+  }
+
+  #selectBrands .radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #selectBrands a.custom-radio {
+    flex: 0 0 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #selectBrands .radio-btn {
+    margin: 5px;
+    width: 100%;
+    height: 80.66px;
+    border: 3px solid transparent;
+  }
+
+  #selectBrands .radio-btn .brand-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+  }
+
+  #selectBrands .radio-btn .brand-icon img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  #selectBrands .radio-btn .brand-icon i {
+    line-height: 80px;
+    font-size: 60px;
+  }
+
+  #selectBrands .radio-btn .brand-icon h3 {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  #selectBrands .custom-radio input:checked+.radio-btn {
+    border: 2px solid #1581cd;
+  }
+
+  #selectBrands .searchbar {
+    font-size: 14px;
+    height: 44px;
+    border-radius: 24px;
+    margin: 0 auto;
+    max-width: 270px;
+    margin-bottom: 5px;
+  }
+
+  #selectBrands .searchbar-wrapper {
+    padding: 5px 8px 0 14px;
+  }
+
+  #selectBrands .searchbar-left {
+    font-size: 14px;
+    padding-right: 13px;
+    margin-top: -5px;
+  }
+
+  #selectBrands .search-icon-wrapper {
+    margin: auto;
+  }
+
+  #selectBrands .search-icon {
+    margin-top: 3px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+  }
+
+  #selectBrands .searchbar-icon {
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+  }
+
+  #selectBrands .searchbar-input-spacer {
+    height: 34px;
+    font-size: 16px;
+  }
+
+  #selectBrands .searchbar-input {
+    margin: 0;
+    padding: 0;
+    margin-top: -37px;
+    height: 34px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #selectBrands .searchbar-right {
+    margin-top: -5px;
+  }
+
+  #selectBrands .searchbar-clear-icon {
+    margin-right: 12px;
+  }
+
+  #selectBrands .voice-search {
+    padding: 0 8px;
+    width: 2.3em;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+  .OurDevices--Section {
+    padding: 0;
+  }
+
+  .OurDevices--Section::before {
+    left: 0;
+    top: 0;
+    background-position: initial;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section::after {
+    right: 0;
+    bottom: 0;
+    opacity: 0.75;
+    background-position: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section .topheadfilter {
+    border-radius: 0;
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    margin-bottom: 24px;
+    padding: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 50px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn::before {
+    inset: auto;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter {
+    display: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
+    padding: 1.25rem 2.25rem 0.75rem 0.75rem;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-outer-spin-button,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
+    border-color: rgba(33, 109, 168, 0.4117647059);
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form label {
+    top: 14px;
+    padding: 0 5px;
+    left: 8px;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]+label {
+    padding: 8px;
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .getShield-btn {
+    width: 180px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #216DA8;
+    border-radius: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .smallTextInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(53, 53, 53, 0.8196078431);
+  }
+
+  .OurDevices--Section .topheadfilter .offcanvas-title {
+    color: #a30e11;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .OurDevices--Section .topheadfilter .offcanvas-body {
+    padding: 0 16px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3::after {
+    height: 2px;
+    width: 120px;
+    border-radius: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList ul {
+    margin: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList li {
+    padding: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList a {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 16px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid {
+    padding: 10px;
+    justify-content: center;
+    column-gap: 10px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard {
+    flex: 0 0 46.99%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media {
+    flex: 0 0 30%;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media img {
+    width: 100%;
+    height: auto;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 15px 0;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
+    font-size: 10px;
+    font-weight: 400;
+    padding: 2px 8px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn:hover {
+    border: 1px solid #004985;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard:last-child {
+    margin-bottom: 24px;
+  }
+
+
+
+}
+
+/* 
+    481px — 768px: iPads, Tablets
+*/
+@media (min-width: 481px) and (max-width: 768px) {
+  .OurDevices--Section {
+    padding: 0;
+  }
+
+  .OurDevices--Section::before {
+    left: 0;
+    top: 51px;
+    background-position: initial;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section::after {
+    right: 0;
+    bottom: 0;
+    opacity: 0.75;
+    background-position: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section .topheadfilter {
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 50px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn::before {
+    inset: auto;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter {
+    flex: 0 0 64%;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
+    padding: 1.05rem 0.75rem 0.25rem 0.75rem;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-outer-spin-button,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
+    border-color: rgba(33, 109, 168, 0.4117647059);
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form label {
+    top: 14px;
+    padding: 0 5px;
+    left: 8px;
+    margin: 0;
+    font-size: 10px;
+    font-size: 600;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]+label {
+    padding: 8px;
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .getShield-btn {
+    width: 180px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #216DA8;
+    border-radius: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .smallTextInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(53, 53, 53, 0.8196078431);
+  }
+
+  .OurDevices--Section .topheadfilter .offcanvas-title {
+    color: #a30e11;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .OurDevices--Section .topheadfilter .offcanvas-body {
+    padding: 0 16px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3::after {
+    height: 2px;
+    width: 120px;
+    border-radius: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList ul {
+    margin: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList li {
+    padding: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList a {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 16px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid {
+    padding: 10px;
+    justify-content: center;
+    column-gap: 0.555rem;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard {
+    flex: 0 0 48.99%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media {
+    flex: 0 0 30%;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media img {
+    width: 100%;
+    height: auto;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 15px 0;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
+    font-size: 10px;
+    font-weight: 400;
+    padding: 2px 8px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn:hover {
+    border: 1px solid #004985;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard:last-child {
+    margin-bottom: 24px;
+  }
+
+  #selectBrands .modal-header {
+    padding: 10px;
+  }
+
+  #selectBrands .modal-title {
+    font-size: 14px;
+  }
+
+  #selectBrands .main-container {
+    padding: 0;
+  }
+
+  #selectBrands .main-container h2 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+  }
+
+  #selectBrands .radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #selectBrands a.custom-radio {
+    flex: 0 0 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #selectBrands .radio-btn {
+    margin: 5px;
+    width: 100%;
+    border: 3px solid transparent;
+  }
+
+  #selectBrands .radio-btn .brand-icon {
+    position: absolute;
+  }
+
+  #selectBrands .radio-btn .brand-icon img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  #selectBrands .radio-btn .brand-icon i {
+    line-height: 80px;
+    font-size: 60px;
+  }
+
+  #selectBrands .radio-btn .brand-icon h3 {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  #selectBrands .custom-radio input:checked+.radio-btn {
+    border: 2px solid #1581cd;
+  }
+
+  #selectBrands .searchbar {
+    font-size: 14px;
+    height: 44px;
+    border-radius: 24px;
+    margin: 0 auto;
+    max-width: 270px;
+    margin-bottom: 5px;
+  }
+
+  #selectBrands .searchbar-wrapper {
+    padding: 5px 8px 0 14px;
+  }
+
+  #selectBrands .searchbar-left {
+    font-size: 14px;
+    padding-right: 13px;
+    margin-top: -5px;
+  }
+
+  #selectBrands .search-icon-wrapper {
+    margin: auto;
+  }
+
+  #selectBrands .search-icon {
+    margin-top: 3px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+  }
+
+  #selectBrands .searchbar-icon {
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+  }
+
+  #selectBrands .searchbar-input-spacer {
+    height: 34px;
+    font-size: 16px;
+  }
+
+  #selectBrands .searchbar-input {
+    margin: 0;
+    padding: 0;
+    margin-top: -37px;
+    height: 34px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #selectBrands .searchbar-right {
+    margin-top: -5px;
+  }
+
+  #selectBrands .searchbar-clear-icon {
+    margin-right: 12px;
+  }
+
+  #selectBrands .voice-search {
+    padding: 0 8px;
+    width: 2.3em;
+  }
+}
+
+/* 
+    769px — 1024px: Small screens, laptops
+*/
+@media (min-width: 769px) and (max-width: 960px) {
+  .OurDevices--Section {
+    padding: 0;
+  }
+
+  .OurDevices--Section::before {
+    left: 0;
+    top: 51px;
+    background-position: initial;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section::after {
+    right: 0;
+    bottom: -170px;
+    opacity: 0.75;
+    background-position: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .OurDevices--Section .topheadfilter {
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 50px;
+  }
+
+  .OurDevices--Section .topheadfilter .allCati-btn::before {
+    inset: auto;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter {
+    flex: 0 0 64%;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form select {
+    padding: 1.05rem 0.75rem 0.25rem 0.75rem;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-outer-spin-button,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-control:focus,
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .form-select:focus {
+    border-color: rgba(33, 109, 168, 0.4117647059);
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form label {
+    top: 14px;
+    padding: 0 5px;
+    left: 8px;
+    margin: 0;
+    font-size: 10px;
+    font-size: 600;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form input[type=radio]+label {
+    padding: 8px;
+    margin: 0;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .getShield-btn {
+    width: 180px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #216DA8;
+    border-radius: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .onheadfilter .dw--form .smallTextInfo {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(53, 53, 53, 0.8196078431);
+  }
+
+  .OurDevices--Section .topheadfilter .offcanvas-title {
+    color: #a30e11;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .OurDevices--Section .topheadfilter .offcanvas-body {
+    padding: 0 16px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList .cateHead h3::after {
+    height: 2px;
+    width: 120px;
+    border-radius: 20px;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList ul {
+    margin: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList li {
+    padding: 0;
+  }
+
+  .OurDevices--Section .topheadfilter .catiList a {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 16px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid {
+    padding: 10px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard {
+    flex: 0 0 30%;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media {
+    flex: 0 0 30%;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .media img {
+    width: 100%;
+    height: auto;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 15px 0;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn {
+    font-size: 10px;
+    font-weight: 400;
+    padding: 2px 8px;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard .ctaBody .viewPlan-btn:hover {
+    border: 1px solid #004985;
+  }
+
+  .OurDevices--Section .ourDevice--filterGrid .deviceCard:last-child {
+    margin-bottom: 24px;
+  }
+
+  #selectBrands .modal-header {
+    padding: 10px;
+  }
+
+  #selectBrands .modal-title {
+    font-size: 14px;
+  }
+
+  #selectBrands .main-container {
+    padding: 0;
+  }
+
+  #selectBrands .main-container h2 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+  }
+
+  #selectBrands .radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #selectBrands a.custom-radio {
+    flex: 0 0 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #selectBrands .radio-btn {
+    margin: 5px;
+    width: 100%;
+    border: 3px solid transparent;
+  }
+
+  #selectBrands .radio-btn .brand-icon {
+    position: absolute;
+    width: 65px;
+    height: auto;
+  }
+
+  #selectBrands .radio-btn .brand-icon img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  #selectBrands .radio-btn .brand-icon i {
+    line-height: 80px;
+    font-size: 60px;
+  }
+
+  #selectBrands .radio-btn .brand-icon h3 {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  #selectBrands .custom-radio input:checked+.radio-btn {
+    border: 2px solid #1581cd;
+  }
+
+  #selectBrands .searchbar {
+    font-size: 14px;
+    height: 44px;
+    border-radius: 24px;
+    margin: 0 auto;
+    max-width: 270px;
+    margin-bottom: 5px;
+  }
+
+  #selectBrands .searchbar-wrapper {
+    padding: 5px 8px 0 14px;
+  }
+
+  #selectBrands .searchbar-left {
+    font-size: 14px;
+    padding-right: 13px;
+    margin-top: -5px;
+  }
+
+  #selectBrands .search-icon-wrapper {
+    margin: auto;
+  }
+
+  #selectBrands .search-icon {
+    margin-top: 3px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+  }
+
+  #selectBrands .searchbar-icon {
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+  }
+
+  #selectBrands .searchbar-input-spacer {
+    height: 34px;
+    font-size: 16px;
+  }
+
+  #selectBrands .searchbar-input {
+    margin: 0;
+    padding: 0;
+    margin-top: -37px;
+    height: 34px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  #selectBrands .searchbar-right {
+    margin-top: -5px;
+  }
+
+  #selectBrands .searchbar-clear-icon {
+    margin-right: 12px;
+  }
+
+  #selectBrands .voice-search {
+    padding: 0 8px;
+    width: 2.3em;
+  }
+}
