@@ -25,42 +25,8 @@ import dynamic from 'next/dynamic';
 import { Modal } from 'react-bootstrap';
 import ModalDeviceBrands from '@/components/products/ModalDeviceBrands';
 import ProductSlider from '../home/components/ProductSlider';
-// const getCategoryImage = (productid: number): string => {
-//   switch (productid) {
-//     case 4:
-//       return mp3PlayerImage.src;
-//     case 5:
-//       return lcdImage.src;
-//     case 6:
-//       return ledTvImage.src;
-//     case 7:
-//       return crtTvImage.src;
-//     case 8:
-//       return plasmaTvImage.src;
-//     case 17:
-//       return setupBoxImage.src;
-//     case 18:
-//       return homeTheatreImage.src;
-//     case 19:
-//       return dvdPlayerImage.src;
-//     case 20:
-//       return bluplayer.src;
-//     case 82:
-//       return multimediaspeaker.src;
-//     case 94:
-//       return mediaplayer.src;
-//     case 107:
-//       return ebook.src;
-//     case 1:
-//       return smart.src;
-//     case 2:
-//       return feature.src;
-//     case 3:
-//       return tablet.src;
-//     default:
-//       return '';
-//   }
-// };
+import sample from '../../assets/img/alldevicesample.png'
+
 
 
 function ProductList() {
@@ -71,8 +37,8 @@ function ProductList() {
   const [filterId, setFilterId] = useState<number | null>(null);
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sortBy, setSortBy] = useState<string>(''); // State to manage sorting
-  const [showModal, setShowModal] = useState(false); // State to manage modal visibility
+  const [sortBy, setSortBy] = useState<string>(''); 
+  const [showModal, setShowModal] = useState(false); 
   const [deviceList, setDeviceList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<string>('');
@@ -89,7 +55,7 @@ function ProductList() {
         console.error('Error fetching data:', error);
       }
       finally {
-        setLoading(false); // Set loading to false when data fetching completes (whether successful or not)
+        setLoading(false); 
       }
     }
     fetchData();
@@ -133,24 +99,21 @@ function ProductList() {
     }
   }, [products, filterId]);
 
-  useEffect(() => {
-    // Call sorting function when sortBy state changes
-    sortProducts();
-  }, [sortBy]);
-  const sortProducts = () => {
-    let sortedProducts = [...filteredProducts];
-    if (sortBy === 'A-z') {
-      sortedProducts.sort((a, b) => a.productname.localeCompare(b.productname));
-    } else if (sortBy === 'Z-a') {
-      sortedProducts.sort((a, b) => b.productname.localeCompare(a.productname));
-    } else if (sortBy === 'Popular') {
-  
-    } else if (sortBy === 'New Arrivals') {
-  
-    }
-    setFilteredProducts(sortedProducts);
-  };
-
+  // useEffect(() => {
+   
+  //   sortProducts();
+  // }, [sortBy]);
+  // const sortProducts = () => {
+  //   let sortedProducts = [...filteredProducts];
+  //   if (sortBy === 'A-z') {
+  //     sortedProducts.sort((a, b) => a.productname.localeCompare(b.productname));
+  //   } else if (sortBy === 'Z-a') {
+  //     sortedProducts.sort((a, b) => b.productname.localeCompare(a.productname));
+  //   } else if (sortBy === 'Popular') {
+  //   } else if (sortBy === 'New Arrivals') {
+  //   }
+  //   setFilteredProducts(sortedProducts);
+  // };
   const toggleModal = () => {
     setShowModal(!showModal);
   }
@@ -325,7 +288,7 @@ function ProductList() {
                     <div className="deviceCard" key={index}>
                       <div className="media">
                         <img
-
+                          src={sample.src}
                           width={180}
                           height={180}
                           alt="Device Image"

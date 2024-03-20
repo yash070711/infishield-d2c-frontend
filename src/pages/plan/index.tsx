@@ -26,14 +26,16 @@ function Plan() {
   const [selectedDevice, setSelectedDevice] = useState(null); // Track selected device
   const router = useRouter(); // Initialize useRouter
   const [categories, setCategories] = useState<any[]>([]);
-  const [price,setprice]=useState([])
+  const [price,setprice]=useState<{ Plan: string; Price: number; }[]>([]);
   const { subcategoryid, brand } = router.query;
   const [requestPlan, setRequestPlan] = useState<RequestServicePlanInterfaces>({
-    ProductSubCatgID: subcategoryid ? parseInt(subcategoryid) : undefined,
-    invoiceamount: '',    
+    ProductSubCatgID: subcategoryid ? parseInt(subcategoryid as string) : undefined,
+    invoiceamount: '',
     invoicedate: '',
-    Status: 'N'
+    Status: 'N',
+    subcategoryid: subcategoryid ? parseInt(subcategoryid as string).toString() : undefined, // Convert to string
   });
+  
 
 
   useEffect(() => {
@@ -56,8 +58,8 @@ function Plan() {
     try {
       const response = await getServicePlanOptions(requestPlan);
       if (response.statusCode === 200 && response.isSuccess && response.data) {
-        // setRequestPlan(response.data);
-        const prices = response.data.map(plan => ({ Plan: plan.Plan, Price: plan.Price }));
+        // Type assertion to let TypeScript know that response.data is an array of objects
+        const prices = (response.data as { Plan: string; Price: number }[]).map(plan => ({ Plan: plan.Plan, Price: plan.Price }));
         // Setting the prices to the state variable
         setprice(prices);
       }
@@ -65,6 +67,7 @@ function Plan() {
       console.error('Error fetching data:', error);
     }
   };
+  
 
   const fetchCategories = async () => {
     try {
@@ -537,7 +540,8 @@ function Plan() {
             <div className="row">
               <div className="centerTitle">
                 <h3>InfyShield</h3>
-                <h2>FAQ's</h2>
+                <h2>FAQ&rsquo;s</h2>
+
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
                   tellus, luctus nec ullam corper mattis, pulvinar dapibus.

@@ -3,8 +3,12 @@ import { Modal, Spinner } from 'react-bootstrap';
 import { getBrandsByProducts } from '@/services/global_services';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-
+import brandsample from '../../assets/img/brandDummylogo.png'
+interface Brand {
+    mid: string;
+    Brand: string;
+    src: string;
+}
 
 const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: boolean, toggleModal: any, productId: string }) => {
     console.log('productId', productId);
@@ -12,7 +16,7 @@ const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: b
   const { subcategoryid } = router.query;
     const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(false); // State to manage loading
-    const [deviceList, setDeviceList] = useState([]);
+    const [deviceList, setDeviceList] = useState<Brand[]>([]); 
     const [listening, setListening] = useState(false);
     const fetchBrandList = useMemo(() => {
         return async () => {
@@ -38,27 +42,35 @@ const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: b
         }
     }, [productId, fetchBrandList]);
 
-    const handleVoiceSearch = () => {
-        const recognition = new window.webkitSpeechRecognition();
-        recognition.lang = 'en-US';
-        recognition.start();
-        setListening(true); // Set listening state to true when microphone is clicked
-
-        recognition.onresult = (event:any) => {
-            const transcript = event.results[0][0].transcript;
-            setSearchQuery(transcript);
-            setListening(false); // Set listening state to false when voice input is received
-        };
-
-        recognition.onend = () => {
-            setListening(false); // Set listening state to false when voice recognition ends
-        };
-
-        recognition.onerror = (event:any) => {
-            console.error('Speech recognition error:', event.error);
-            setListening(false); // Set listening state to false if there's an error
-        };
-    };
+    // const handleVoiceSearch = () => {
+    //     const SpeechRecognition = window.webkitSpeechRecognition as typeof window.webkitSpeechRecognition;
+    
+    //     if (SpeechRecognition) {
+    //         const recognition = new SpeechRecognition();
+    //         recognition.lang = 'en-US';
+    //         recognition.start();
+    //         setListening(true); // Set listening state to true when microphone is clicked
+    
+    //         recognition.onresult = (event: any) => {
+    //             const transcript = event.results[0][0].transcript;
+    //             setSearchQuery(transcript);
+    //             setListening(false); // Set listening state to false when voice input is received
+    //         };
+    
+    //         recognition.onend = () => {
+    //             setListening(false); // Set listening state to false when voice recognition ends
+    //         };
+    
+    //         recognition.onerror = (event: any) => {
+    //             console.error('Speech recognition error:', event.error);
+    //             setListening(false); // Set listening state to false if there's an error
+    //         };
+    //     } else {
+    //         console.error('Speech recognition not supported in this browser');
+    //     }
+    // };
+    
+    
 
     return (
         <Modal
@@ -121,7 +133,7 @@ const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: b
                                         width={24}
                                         height={24}
                                         viewBox="0 0 16 16"
-                                        onClick={handleVoiceSearch}
+                                        
                                     >
                                         <path
                                             fill="#9aa0a6"
@@ -149,7 +161,7 @@ const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: b
                                                         <span className="radio-btn">
                                                             <i className="las la-check" />
                                                             <div className="brand-icon">
-                                                                <img src={brand.src} alt={brand.Brand} />
+                                                                <img src={brandsample.src} alt={brand.Brand} />
                                                                 <h3>{brand.Brand}</h3>
                                                             </div>
                                                         </span>

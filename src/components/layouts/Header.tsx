@@ -248,12 +248,12 @@ const Header: React.FC = () => {
                           <div className="dropdown-menu mb-0 pb-0">
                             <div className="row">
                               <div className="col-12">
-                                <a
+                                <Link
                                   className="dropdown-item"
-                                  href={APP_ROUTES.login}
+                                  href='/login'
                                 >
                                   Sign In/Sign Up
-                                </a>
+                                </Link>
                                 <hr className="dropdown-divider w-100" />
                                 <a className="dropdown-item" href="#">
                                   My Plans
@@ -279,10 +279,10 @@ const Header: React.FC = () => {
                           </div>
                         </li>
                         <li>
-                          <a href={APP_ROUTES.cart} className="cartBtn">
+                          < Link href='/cart' className="cartBtn">
                             {" "}
                             <span className="cartIcon" />
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>

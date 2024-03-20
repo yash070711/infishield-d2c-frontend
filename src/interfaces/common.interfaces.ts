@@ -97,12 +97,14 @@ export interface TabContentInterfaces {
 
 
 export interface Product {
+    productname: any;
     subcategoryid: number;
     subcategoryname: string;
     image: string;
     productnewid: number;
     product: any;
     index: any;
+    
 }
 
 export type NewProductList = Product[];
@@ -112,6 +114,8 @@ export type NewProductList = Product[];
     invoiceamount: string;
     invoicedate: string;
     Status: string;
+    subcategoryid: string | undefined;
+
   }
   
 

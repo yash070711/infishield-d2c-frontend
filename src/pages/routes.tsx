@@ -1,6 +1,16 @@
-const APP_ROUTES = {
-    login: '/login',
-    cart: '/cart'
-};
+import React from 'react'
 
-export default APP_ROUTES;
+const routes = () => {
+  return (
+    <div>routes</div>
+  )
+}
+
+export default routes
+
+// const APP_ROUTES = {
+//     login: '/login',
+//     cart: '/cart'
+// };
+
+// export default APP_ROUTES;
