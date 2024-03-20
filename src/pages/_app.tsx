@@ -21,6 +21,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
+import store from "@/store/store";
+import { Provider } from "react-redux";
 export default function App({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
@@ -28,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	}, []);	
 
 	return (
-		<>
+		<Provider store={store}>
 			<Head>
 				<title>{APP_INFO.TITLE}</title>
 				<meta name="description" content={APP_INFO.DESCRIPTION} />
@@ -38,6 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
 				<ToastContainer />
 				<Component {...pageProps} />
 			</CustomerProvider>
-		</>
+		</Provider>
 	);
 }
