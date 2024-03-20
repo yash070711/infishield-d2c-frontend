@@ -18,7 +18,7 @@ import mobileClaim from "../../assets/img/devices/mobileClaim.png";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { NewProductList, RequestServicePlanInterfaces } from '@/interfaces/common.interfaces';
-
+import Cookies from 'js-cookie';
 
 function Plan() {
 
@@ -27,7 +27,7 @@ function Plan() {
   const router = useRouter(); // Initialize useRouter
   const [categories, setCategories] = useState<any[]>([]);
   const [price, setprice] = useState<{ Plan: string; Price: number; }[]>([]);
-  const { subcategoryid, brand } = router.query;
+  const { subcategoryid, brand='' } = router.query;
   const [requestPlan, setRequestPlan] = useState<RequestServicePlanInterfaces>({
     ProductSubCatgID: subcategoryid ? parseInt(subcategoryid as string) : undefined,
     invoiceamount: '',
@@ -37,6 +37,7 @@ function Plan() {
   });
 
   const [isRadioSelected, setIsRadioSelected] = useState(false); // Track if radio button is selected
+  const [selectedPlan, setSelectedPlan] = useState<{ Plan: string; Price: number; } | null>(null); // Track selected plan
 
   useEffect(() => {
     async function fetchData() {
@@ -81,13 +82,40 @@ function Plan() {
     setSelectedDevice(event.target.value);
   };
 
-  const handleRadioChange = () => {
+  const handleRadioChange = (plan: { Plan: string; Price: number }) => {
+    console.log("Selected plan:", plan);
     setIsRadioSelected(true); // Enable the button when a radio button is selected
+    setSelectedPlan(plan); // Set the selected plan
   };
 
-  const handleAddToCart = () => {
-    router.push('/cart');
+  const handleAddToCart = (event:any) => {
+    event.preventDefault();
+    console.log("Add to cart button clicked");
+    if (selectedPlan && subcategoryid) {
+      const iData = {
+        ...requestPlan,
+        ...selectedPlan,
+        brand : Array.isArray(brand) ? brand.join(', ') : brand
+      }
+      let parsedCartItems = []
+      const cartItems = Cookies.get('cartitems');
+      if (cartItems) {
+        parsedCartItems = JSON.parse(cartItems);
+      }
+      console.log('parsedCartItems', parsedCartItems);
+      const finalCartItems = [...parsedCartItems , iData]
+      console.log('cartItems2', finalCartItems);
+      Cookies.set('cartitems', JSON.stringify(finalCartItems));
+      sessionStorage.setItem("invoiceamount", requestPlan.invoiceamount);
+      sessionStorage.setItem("invoicedate", requestPlan.invoicedate);
+      sessionStorage.setItem("subcategoryid", subcategoryid.toString()); 
+      sessionStorage.setItem("plan", selectedPlan.Plan);
+      sessionStorage.setItem("price", selectedPlan.Price.toString());
+      sessionStorage.setItem("brand", Array.isArray(brand) ? brand.join(', ') : brand);
+      router.push("/cart");
+    }
   };
+
   return (
     <Layout>
       <>
@@ -288,7 +316,7 @@ function Plan() {
                         <div className="radio-buttons">
                           {price.map((plan, index) => (
                             <label className="custom-radio" key={index}>
-                             <input type="radio" name="radio" onChange={() => handleRadioChange()} />
+                              <input type="radio" name="radio" onChange={() => handleRadioChange(plan)} />
                               <span className="radio-btn">
                                 <i>
                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
@@ -312,14 +340,14 @@ function Plan() {
                           ))}
                         </div>
                         <div className="row d-flex justify-content-center align-items-center">
-                        <button
-  type="submit"
-  className={`addTocard-btn btn-outline-primary rounded-5 mb-3 ${isRadioSelected ? '' : 'disabled'}`}
-  onClick={handleAddToCart}
-  disabled={!isRadioSelected} // Disable the button when a radio button is not selected
->
-  Add To Cart
-</button>
+                          <button
+                            type="submit"
+                            className={`addTocard-btn btn-outline-primary rounded-5 mb-3 ${isRadioSelected ? '' : 'disabled'}`}
+                            onClick={handleAddToCart} // Remove selectedPlan from here
+                            disabled={!isRadioSelected}
+                          >
+                            Add To Cart
+                          </button>
                         </div>
                       </form>
                     </div>

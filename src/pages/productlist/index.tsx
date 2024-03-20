@@ -117,6 +117,9 @@ function ProductList() {
   const toggleModal = () => {
     setShowModal(!showModal);
   }
+  const handleSubcategoryClick = (id: string) => {
+    sessionStorage.setItem('subcategoryid', id);
+  };
   console.log('products', products);
   if (loading) {
     // If loading, display a loading indicator
@@ -214,7 +217,10 @@ function ProductList() {
                         <select
                           id="inputDeviceBrand"
                           className="form-select"
-                          onChange={(e) => setFilterId(parseInt(e.target.value))}
+                          onChange={(e) => {
+                            setFilterId(parseInt(e.target.value));
+                            handleSubcategoryClick(e.target.value);
+                          }}
                         >
                           <option value="">Type...</option>
                           <option value={subcategoryid}>Televisions & Entertainment</option>

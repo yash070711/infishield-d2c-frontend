@@ -1,7 +1,62 @@
 import Layout from "@/components/layouts/Layout"
 import mobileIcon from '../../assets/img/devices/mobileIcon.png'
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Cookies from 'js-cookie';
 const CartPage: React.FC = () => {
+    const [cartItems, setCartItems] = useState([]);
+    const [subcategoryid, setSubcategoryId] = useState("");
+    const router = useRouter();
+
+    useEffect(() => {
+       
+        const getCartItemsFromSessionStorage = () => {
+            const invoiceAmount = sessionStorage.getItem("invoiceamount");
+            const invoiceDate = sessionStorage.getItem("invoicedate");
+            const plan = sessionStorage.getItem("plan");
+            const price = sessionStorage.getItem("price");
+            const brand = sessionStorage.getItem("brand");
+            const subcategoryid = sessionStorage.getItem("subcategoryid");
+
+            if (invoiceAmount && invoiceDate && plan && price && brand && subcategoryid) {
+      
+                const cartItem = {
+                    productName: plan,
+                    devicePrice: price,
+                    planDuration: invoiceDate, 
+                    totalAmount: invoiceAmount,
+                    brand: brand,
+                    subcategoryid: subcategoryid
+                };
+
+                setSubcategoryId(subcategoryid);
+                const cartItems = Cookies.get('cartitems');
+                if (cartItems) {
+                    const parsedCartItems = JSON.parse(cartItems);
+                    setCartItems(parsedCartItems);
+                }
+            }
+        };
+
+        getCartItemsFromSessionStorage();
+    }, []);
+
+    const handleclick = () => {
+        console.log("click");
+        router.push(`/productlist?subcategoryid=${subcategoryid}`);
+    };
+    console.log('cartItemscart', cartItems);
+    const totalSum = cartItems.reduce((accumulator, item) => {
+        const devicePrice = parseFloat(item.Price); 
+        return isNaN(devicePrice) ? accumulator : accumulator + devicePrice;
+    }, 0);
+    const handleRemoveItem = (indexToRemove) => {
+        const updatedCartItems = cartItems.filter((item, index) => index !== indexToRemove);
+        setCartItems(updatedCartItems);
+        Cookies.set('cartitems', JSON.stringify(updatedCartItems));
+        // Also update the cookie or session storage with the new cartItems if necessary
+    };
     return (
         <Layout>
             <section className="pageTop--MainContent mb-0">
@@ -83,74 +138,82 @@ const CartPage: React.FC = () => {
                                     </ul>
                                 </div>
                                 <hr />
-                                <div className="myCart--item">
-                                    <button type="button" className="btn-close" aria-label="Close" />
-                                    <div className="itemTop">
-                                        <div className="itemHead">
-                                            <div className="media">
-                                                <img
-                                                    src={mobileIcon.src}
-                                                    width={64}
-                                                    height={64}
-                                                    alt="device type image"
-                                                />
+                                {cartItems.map((item, index) => (
+                                    <div className="myCart--item" key={index}>
+                                        <button type="button" className="btn-close" aria-label="Close"
+                                        onClick={() => handleRemoveItem(index)}
+                                         />
+                                        <div className="itemTop">
+                                            <div className="itemHead">
+                                                <div className="media">
+                                                    <img
+                                                        src={mobileIcon.src}
+                                                        width={64}
+                                                        height={64}
+                                                        alt="device type image"
+                                                    />
+                                                </div>
+                                                <div className="itemName">
+                                                    <h3>{item.productName}</h3>
+                                                    <p>{item.brand}</p>
+                                                </div>
                                             </div>
-                                            <div className="itemName">
-                                                <h3>product Name Here....</h3>
+                                            <div className="itemDetail">
+                                                <div className="itemPrice">
+                                                    <span>Device Price</span>
+                                                    <span>₹ {item.invoiceamount}</span>
+                                                </div>
+                                                <div className="itemTime">
+                                                    <span>Plan Duration</span>
+                                                    <span>{item.Plan}</span>
+                                                </div>
+                                                <div className="itemAmount">
+                                                    <span>Total Amount</span>
+                                                    <span>₹ {item.Price}</span>
+                                                    <button className="editBtn" type="button">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width={16}
+                                                            height={16}
+                                                            fill="currentColor"
+                                                            className="bi bi-pencil"
+                                                            viewBox="0 0 16 16"
+                                                        >
+                                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="itemDetail">
-                                            <div className="itemPrice">
-                                                <span>Device Price</span>
-                                                <span>₹ 24000</span>
-                                            </div>
-                                            <div className="itemTime">
-                                                <span>Plan Duration</span>
-                                                <span>2 Years</span>
-                                            </div>
-                                            <div className="itemAmount">
-                                                <span>Total Amount</span>
-                                                <span>₹ 3599</span>
-                                                <button className="editBtn" type="button">
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width={16}
-                                                        height={16}
-                                                        fill="currentColor"
-                                                        className="bi bi-pencil"
-                                                        viewBox="0 0 16 16"
-                                                    >
-                                                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="itembottom">
-                                        <form action="">
-                                            <div className="input-group mt-1">
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    placeholder="Enter IMEI Number"
-                                                    aria-label="Enter IMEI Number"
-                                                    aria-describedby="button-addon2"
-                                                />
-                                                <button
-                                                    className="btn btn-outline-secondary"
-                                                    type="button"
-                                                    id="button-addon2"
-                                                >
-                                                    Verify
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                                        <div className="itembottom">
+                                            <form action="">
+                                                <div className="input-group mt-1">
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder="Enter IMEI Number"
+                                                        aria-label="Enter IMEI Number"
+                                                        aria-describedby="button-addon2"
+                                                    />
+                                                    <button
+                                                        className="btn btn-outline-secondary"
+                                                        type="button"
+                                                        id="button-addon2"
 
+                                                    >
+                                                        Verify
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                ))}
 
                                 <div className="myCart-footer">
-                                    <button className="addDevices" type="button">
+                                    <button className="addDevices" type="button"
+                                        onClick={() => {
+                                            handleclick()
+                                        }}>
                                         {" "}
                                         Add More Devices
                                     </button>
@@ -184,11 +247,11 @@ const CartPage: React.FC = () => {
                                     <ul className="itemList">
                                         <li>
                                             <span className="textName">Total Iteams</span>{" "}
-                                            <span className="textCount">3</span>
+                                            <span className="textCount">{cartItems.length}</span>
                                         </li>
                                         <li>
                                             <span className="textName">Total Cost</span>{" "}
-                                            <span className="textCount">₹ 3599</span>
+                                            <span className="textCount">₹{totalSum.toFixed(2)}</span>
                                         </li>
                                         <li>
                                             <span className="textName">Other Charges</span>{" "}
@@ -228,12 +291,15 @@ const CartPage: React.FC = () => {
                                         </form>
                                     </div>
                                 </div>
+                                
                                 <div className="summary--Footer">
                                     <button className="ptpBtn" type="button">
                                         {" "}
                                         Proceed To Payment
                                     </button>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>

@@ -115,6 +115,7 @@ export type NewProductList = Product[];
     invoicedate: string;
     Status: string;
     subcategoryid: string | undefined;
+   
 
   }
   
