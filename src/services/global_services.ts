@@ -26,4 +26,6 @@ export const getBrandsByProducts = async (subCatgID : any): Promise<any> => {
     return await get(`product/brandsbyproducts/${subCatgID}`);
 };
  
- 
+export const getServicePlanOptions = async (iData: any): Promise<any> => {
+    return await post('/policy/service-plan-options',iData);
+}

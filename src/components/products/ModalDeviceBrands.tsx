@@ -2,13 +2,14 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { Modal, Spinner } from 'react-bootstrap';
 import { getBrandsByProducts } from '@/services/global_services';
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
 
 
 
 const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: boolean, toggleModal: any, productId: string }) => {
     console.log('productId', productId);
-
+    const router = useRouter();
+  const { subcategoryid } = router.query;
     const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(false); // State to manage loading
     const [deviceList, setDeviceList] = useState([]);
@@ -141,7 +142,7 @@ const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: b
                                 .map((brand, index) => {
                                     if (index <= 11) {
                                         return (
-                                            <Link key={index} href={`/plan?subcategoryid=${brand.mid}&brand=${brand.Brand}`} className="dropdown-item-links">
+                                            <Link key={index} href={`/plan?subcategoryid=${subcategoryid}&productid=${brand.mid}&brand=${brand.Brand}`} className="dropdown-item-links">
                                                 <div className="radio-buttons">
                                                     <label className="custom-radio">
                                                         <input type="radio" name="radio" />

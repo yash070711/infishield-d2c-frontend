@@ -1,5 +1,5 @@
 import Layout from '@/components/layouts/Layout';
-import { getAllbrandlist, getBrandsByProducts, getProductSubcategoryList, getSubcategoryByProducts } from '@/services/global_services';
+import { getAllbrandlist, getBrandsByProducts, getProductSubcategoryList, getServicePlanOptions, getSubcategoryByProducts } from '@/services/global_services';
 import React, { useEffect, useState } from 'react';
 import mobiledw from "../../assets/img/devices/warranty/mobile-dw.png";
 import registerIcon from "../../assets/img/registerIcon.png";
@@ -17,17 +17,27 @@ import iPhoneX from "../../assets/img/heroBanner/iPhone-X1.png"
 import mobileClaim from "../../assets/img/devices/mobileClaim.png";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { NewProductList } from '@/interfaces/common.interfaces';
+import { NewProductList, RequestServicePlanInterfaces } from '@/interfaces/common.interfaces';
 
 
 function Plan() {
+
   const [deviceList, setDeviceList] = useState([]);
   const [selectedDevice, setSelectedDevice] = useState(null); // Track selected device
   const router = useRouter(); // Initialize useRouter
   const [categories, setCategories] = useState<any[]>([]);
+  const [price,setprice]=useState([])
   const { subcategoryid, brand } = router.query;
-  const [products, setProducts] = useState<NewProductList>([] as NewProductList);
+  const [requestPlan, setRequestPlan] = useState<RequestServicePlanInterfaces>({
+    ProductSubCatgID: subcategoryid ? parseInt(subcategoryid) : undefined,
+    invoiceamount: '',    
+    invoicedate: '',
+    Status: 'N'
+  });
+
+
   useEffect(() => {
+
     async function fetchData() {
       try {
         const response = await getBrandsByProducts(subcategoryid);
@@ -42,25 +52,19 @@ function Plan() {
     fetchData();
   }, [subcategoryid]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-
-        await getSubcategoryByProducts(subcategoryid).then(response => {
-          if (response.statusCode === 200 && response.isSuccess && response.data) {
-            setProducts(response.data);
-          }
-        });
-      } catch (error) {
-        console.error('Error fetching data:', error);
+  const fetchServicePlanOptions = async () => {
+    try {
+      const response = await getServicePlanOptions(requestPlan);
+      if (response.statusCode === 200 && response.isSuccess && response.data) {
+        // setRequestPlan(response.data);
+        const prices = response.data.map(plan => ({ Plan: plan.Plan, Price: plan.Price }));
+        // Setting the prices to the state variable
+        setprice(prices);
       }
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
-    fetchData();
-  }, [subcategoryid]);
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  };
 
   const fetchCategories = async () => {
     try {
@@ -163,171 +167,155 @@ function Plan() {
 
         {/* Select Plan Section Start */}
         <section className="selectPlanbox">
-            <div className="container">
-                <div className="row g-0">
-                    <div className="pageHead-Inner">
-                        <div className="dw--left">
-                            <div className="dw--head">
-                                <h2 className="dw--title">
-                                    EXTENDED WARRANTY
-                                </h2>
-                                
-                                <h5 className="text-muted fw-bold">For Your <b>{brand}</b>  Product</h5>
-                                <p className="dw--para">Fill the below details to generate best infyShield Plan for
-                                    your device</p>
-                            </div>
-                            <div id="dwFormBox" className="dw--form">
-                                <form action="" autoComplete="off">
-                                    <div className="row g-0 mb-3">
-                                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 p-0">
-                                            <input type="radio" className="btn-check" name="claimType" id="extendedWarranty"
-                                                autoComplete="off" checked />
-                                            <label className="btn btn-outline-secondary  rounded-0 w-100"
-                                                htmlFor="extendedWarranty">Extended Warranty</label>
-                                        </div>
-                                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 p-0">
-                                            <input type="radio" className="btn-check" name="claimType" id="damageProtection"
-                                                autoComplete="off" />
-                                            <label className="btn btn-outline-secondary rounded-0 w-100 "
-                                                htmlFor="damageProtection">Damage Protection</label>
-                                        </div>
-                                    </div>
-                                    <div className="row g-0 mb-3 d-none">
-                                        <div className="col-md-6">
-                                            <label htmlFor="forDevice" className="form-label">Device</label>
-                                            <input type="text" className="form-control" id="inputforDevice"
-                                                placeholder="Android" disabled />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label htmlFor="Select Device Brand" className="form-label">Select
-                                                Brand</label>
-                                            <select id="inputDeviceBrand" className="form-select">
-                                                <option selected>Select Brand...</option>
-                                                <option>iPhone</option>
-                                                <option>One Plus</option>
-                                                <option>Samsung</option>
-                                                <option>Nothing</option>
-                                                <option>Oppo</option>
-                                                <option>Vivo</option>
-                                                <option>Xiaomi</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="row g-0 mb-3">
-                                        <div className="col-md-6">
-                                            <label htmlFor="inputDevicePrice" className="form-label">Device
-                                                Price</label>
-                                            <input type="text" className="form-control" id="inputDevicePrice"
-                                                placeholder="Enter Price" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label htmlFor="purchaseDate" className="form-label">Device Purchase
-                                                Date</label>
-                                            <input id="purchaseDate" className="form-control" type="date" />
-                                        </div>
-                                    </div>
-                                    <div className="row g-0 mb-4">
-                                        <div className="col-md-6">
-                                            <label htmlFor="userEmail" className="form-label">Email</label>
-                                            <input type="email" className="form-control" id="userEmail"
-                                                placeholder="Enter Email" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label htmlFor="uerMobile" className="form-label">Mobile Number</label>
-                                            <input type="number" className="form-control" id="uerMobile"
-                                                placeholder="Enter Mobile No." />
-                                        </div>
-                                    </div>
-                                    <div className="row g-0">
-                                        <div className="dwFormBottom">
-                                            <button type="submit" className="getShield-btn btn-primary rounded-5 mb-3">Get
-                                                Shield</button>
-                                            <small className="smallTextInfo text-muted text-center w-75"> <b>Note :</b>
-                                                Also, you understand that the device is brand new & purchased on or
-                                                after <b>22-May-2023</b> </small>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+          <div className="container">
+            <div className="row g-0">
+              <div className="pageHead-Inner">
+                <div className="dw--left">
+                  <div className="dw--head">
+                    <h2 className="dw--title">
+                      EXTENDED WARRANTY
+                    </h2>
+
+                    <h5 className="text-muted fw-bold">For Your <b>{brand}</b>  Product</h5>
+                    <p className="dw--para">Fill the below details to generate best infyShield Plan for
+                      your device</p>
+                  </div>
+                  <div id="dwFormBox" className="dw--form">
+                    <form action="" autoComplete="off">
+                      <div className="row g-0 mb-3">
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 p-0">
+                          <input type="radio" className="btn-check" name="claimType" id="extendedWarranty"
+                            autoComplete="off" checked />
+                          <label className="btn btn-outline-secondary  rounded-0 w-100"
+                            htmlFor="extendedWarranty">Extended Warranty</label>
                         </div>
-                        <div className="dw--right">
-                            <div className="dw--media">
-                                <img src={mobileClaim.src} width="327" height="219" alt="dw-mobile" />
-                                <small className="smallTextInfo text-center w-75"> <b>*</b> Any
-                                    Malfunction because of Tampering is not covered </small>
-                                <div className="d-flex justify-content-center align-items-center">
-                                    <p className="coverdtext green"> <span className="roundOk green"></span>
-                                        Covered</p>
-                                    <p className="coverdtext red"> <span className="roundOk red"></span> Not
-                                        Covered</p>
-                                </div>
-                            </div>
-                            <div className="dw--content">
-                                <h2>Best plans for your device</h2>
-                                <div className="dw--planForm">
-                                    <form action="">
-                                        <div className="radio-buttons">
-                                            <label className="custom-radio">
-                                                <input type="radio" name="radio" defaultChecked />
-                                                <span className="radio-btn">
-                                                    <i>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
-                                                        </svg>
-                                                    </i>
-                                                    <div className="hobbies-icon">
-                                                        <span> 2 Years </span>
-                                                        <h3 className="">&#8377; 3599</h3>
-                                                    </div>
-                                                </span>
-                                            </label>
-                                            <label className="custom-radio">
-                                                <input type="radio" name="radio" />
-                                                <span className="radio-btn">
-                                                    <i>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
-                                                        </svg>
-                                                    </i>
-                                                    <div className="hobbies-icon">
-                                                        <span> 3 Years </span>
-                                                        <h3 className="">&#8377; 6599</h3>
-                                                    </div>
-                                                </span>
-                                            </label>
-                                            <label className="custom-radio">
-                                                <input type="radio" name="radio" />
-                                                <span className="radio-btn">
-                                                    <i>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
-                                                        </svg>
-                                                    </i>
-                                                    <div className="hobbies-icon">
-                                                        <span> 5 Years </span>
-                                                        <h3 className="">&#8377; 9599</h3>
-                                                    </div>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div className="row d-flex justify-content-center align-items-center">
-                                            <button type="submit"
-                                                className="addTocard-btn  btn-outline-primary rounded-5 mb-3">Add To
-                                                Cart</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-6 p-0">
+                          <input type="radio" className="btn-check" name="claimType" id="damageProtection"
+                            autoComplete="off" />
+                          <label className="btn btn-outline-secondary rounded-0 w-100 "
+                            htmlFor="damageProtection">Damage Protection</label>
                         </div>
-                    </div>
+                      </div>
+                      <div className="row g-0 mb-3 d-none">
+                        <div className="col-md-6">
+                          <label htmlFor="forDevice" className="form-label">Device</label>
+                          <input type="text" className="form-control" id="inputforDevice"
+                            placeholder="Android" disabled />
+                        </div>
+                        <div className="col-md-6">
+                          <label htmlFor="Select Device Brand" className="form-label">Select
+                            Brand</label>
+                          <select id="inputDeviceBrand" className="form-select">
+                            <option selected>Select Brand...</option>
+                            <option>iPhone</option>
+                            <option>One Plus</option>
+                            <option>Samsung</option>
+                            <option>Nothing</option>
+                            <option>Oppo</option>
+                            <option>Vivo</option>
+                            <option>Xiaomi</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="row g-0 mb-3">
+                        <div className="col-md-6">
+                          <label htmlFor="inputDevicePrice" className="form-label">Device
+                            Price</label>
+                          <input type="text" className="form-control" id="inputDevicePrice" onChange={(event) => {
+                            setRequestPlan({
+                              ...requestPlan,
+                              invoiceamount: event.target.value
+                            });
+                          }}
+                            placeholder="Enter Price" />
+                        </div>
+                        <div className="col-md-6">
+                          <label htmlFor="purchaseDate" className="form-label">Device Purchase
+                            Date</label>
+                          <input id="purchaseDate" className="form-control" type="date" onChange={(event) => {
+                            setRequestPlan({
+                              ...requestPlan,
+                              invoicedate: event.target.value
+                            });
+                          }} />
+                        </div>
+                      </div>
+                      <div className="row g-0 mb-4">
+                        <div className="col-md-6">
+                          <label htmlFor="userEmail" className="form-label">Email</label>
+                          <input type="email" className="form-control" id="userEmail"
+                            placeholder="Enter Email" />
+                        </div>
+                        <div className="col-md-6">
+                          <label htmlFor="uerMobile" className="form-label">Mobile Number</label>
+                          <input type="number" className="form-control" id="uerMobile"
+                            placeholder="Enter Mobile No." />
+                        </div>
+                      </div>
+                      <div className="row g-0">
+                        <div className="dwFormBottom">
+                          <a type="submit" className="getShield-btn btn-primary rounded-5 mb-3" onClick={fetchServicePlanOptions}>Get
+                            Shield</a>
+                          <small className="smallTextInfo text-muted text-center w-75"> <b>Note :</b>
+                            Also, you understand that the device is brand new & purchased on or
+                            after <b>22-May-2023</b> </small>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                 </div>
+                <div className="dw--right">
+                  <div className="dw--media">
+                    <img src={mobileClaim.src} width="327" height="219" alt="dw-mobile" />
+                    <small className="smallTextInfo text-center w-75"> <b>*</b> Any
+                      Malfunction because of Tampering is not covered </small>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <p className="coverdtext green"> <span className="roundOk green"></span>
+                        Covered</p>
+                      <p className="coverdtext red"> <span className="roundOk red"></span> Not
+                        Covered</p>
+                    </div>
+                  </div>
+                  <div className="dw--content">
+                    <h2>Best plans for your device</h2>
+                    <div className="dw--planForm">
+  <form action="">
+    <div className="radio-buttons">
+      {price.map((plan, index) => (
+        <label className="custom-radio" key={index}>
+          <input type="radio" name="radio" />
+          <span className="radio-btn">
+            <i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+              </svg>
+            </i>
+        
+  <div className="hobbies-icon">
+    <span>1 Year</span>
+    <h3 className="">&#8377; {plan.Price}</h3>
+  </div>
+
+
+  <div className="hobbies-icon">
+    <span>2 Years</span>
+    <h3 className="">&#8377; {plan.Price}</h3>
+  </div>
+
+          </span>
+        </label>
+      ))}
+    </div>
+    <div className="row d-flex justify-content-center align-items-center">
+      <button type="submit" className="addTocard-btn btn-outline-primary rounded-5 mb-3" onClick={handleAddToCart}>Add To Cart</button>
+    </div>
+  </form>
+</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </section>
         {/* Select Plan Section Ends */}
 
@@ -451,7 +439,7 @@ function Plan() {
           </div>
         </section>
         {/* Why InfyShield Section Ends */}
-        
+
         {/* How It Work Section Start */}
         <section className="hoeItwork">
           <div className="container">
@@ -541,113 +529,113 @@ function Plan() {
         {/* How It Work Section Ends */}
 
         {
-  /* FAQ Section Start */
-}
-<section className="faqSection">
-  <div className="container">
-    {/* title */}
-    <div className="row">
-      <div className="centerTitle">
-        <h3>InfyShield</h3>
-        <h2>FAQ's</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullam corper mattis, pulvinar dapibus.
-        </p>
-      </div>
-    </div>
-    <div className="row">
-      <div className="faqs">
-        <div className="accordion" id="accordionExample">
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
-              >
-                What is the term of Mobile Total Care?
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              className="accordion-collapse collapse show"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body">
-                Onsitego Mobile Total Care offers a comprehensive mobile
-                protection cover and comes with a validity of 2 years. The plan
-                period is calculated from the purchase date of your device as
-                mentioned on its invoice. Assured Buyback can be availed any
-                time before the validity of your mobile protection plan expires.
+          /* FAQ Section Start */
+        }
+        <section className="faqSection">
+          <div className="container">
+            {/* title */}
+            <div className="row">
+              <div className="centerTitle">
+                <h3>InfyShield</h3>
+                <h2>FAQ's</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                  tellus, luctus nec ullam corper mattis, pulvinar dapibus.
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="faqs">
+                <div className="accordion" id="accordionExample">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header">
+                      <button
+                        className="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        What is the term of Mobile Total Care?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      className="accordion-collapse collapse show"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div className="accordion-body">
+                        Onsitego Mobile Total Care offers a comprehensive mobile
+                        protection cover and comes with a validity of 2 years. The plan
+                        period is calculated from the purchase date of your device as
+                        mentioned on its invoice. Assured Buyback can be availed any
+                        time before the validity of your mobile protection plan expires.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="accordion-item">
+                    <h2 className="accordion-header">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        What is the term of Mobile Total Care?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      className="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div className="accordion-body">
+                        Onsitego Mobile Total Care offers a comprehensive mobile
+                        protection cover and comes with a validity of 2 years. The plan
+                        period is calculated from the purchase date of your device as
+                        mentioned on its invoice. Assured Buyback can be availed any
+                        time before the validity of your mobile protection plan expires.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="accordion-item">
+                    <h2 className="accordion-header">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        What is the term of Mobile Total Care?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      className="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div className="accordion-body">
+                        Onsitego Mobile Total Care offers a comprehensive mobile
+                        protection cover and comes with a validity of 2 years. The plan
+                        period is calculated from the purchase date of your device as
+                        mentioned on its invoice. Assured Buyback can be availed any
+                        time before the validity of your mobile protection plan expires.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                What is the term of Mobile Total Care?
-              </button>
-            </h2>
-            <div
-              id="collapseTwo"
-              className="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body">
-                Onsitego Mobile Total Care offers a comprehensive mobile
-                protection cover and comes with a validity of 2 years. The plan
-                period is calculated from the purchase date of your device as
-                mentioned on its invoice. Assured Buyback can be availed any
-                time before the validity of your mobile protection plan expires.
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-              >
-                What is the term of Mobile Total Care?
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              className="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body">
-                Onsitego Mobile Total Care offers a comprehensive mobile
-                protection cover and comes with a validity of 2 years. The plan
-                period is calculated from the purchase date of your device as
-                mentioned on its invoice. Assured Buyback can be availed any
-                time before the validity of your mobile protection plan expires.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>;
-{
-  /* FAQ Section Ends */
-}
+        </section>;
+        {
+          /* FAQ Section Ends */
+        }
 
 
       </>

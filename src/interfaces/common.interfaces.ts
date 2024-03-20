@@ -107,7 +107,13 @@ export interface Product {
 
 export type NewProductList = Product[];
 
-
+ export interface RequestServicePlanInterfaces {
+    ProductSubCatgID: number | undefined;
+    invoiceamount: string;
+    invoicedate: string;
+    Status: string;
+  }
+  
 
 
 

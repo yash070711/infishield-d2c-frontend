@@ -103,7 +103,7 @@ function ProductList() {
     try {
       const response = await getProductSubcategoryList('');
       setCategories(response.data);
-      // Assuming the API response has a `data` property containing the list of categories
+
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
@@ -144,14 +144,13 @@ function ProductList() {
     } else if (sortBy === 'Z-a') {
       sortedProducts.sort((a, b) => b.productname.localeCompare(a.productname));
     } else if (sortBy === 'Popular') {
-      // Implement sorting logic for popularity
+  
     } else if (sortBy === 'New Arrivals') {
-      // Implement sorting logic for new arrivals
+  
     }
     setFilteredProducts(sortedProducts);
   };
 
-  // Function to toggle modal visibility
   const toggleModal = () => {
     setShowModal(!showModal);
   }
