@@ -131,7 +131,13 @@ export type NewProductList = Product[];
   };
 
 
-
+  export interface CartItem {
+    productName: string;
+    brand: string;
+    invoiceamount: number;
+    Plan: string;
+    Price: number;
+}
 
 
 

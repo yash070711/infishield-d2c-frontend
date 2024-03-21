@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Cookies from 'js-cookie';
+import { CartItem } from "@/interfaces/common.interfaces";
 const CartPage: React.FC = () => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
     const [subcategoryid, setSubcategoryId] = useState("");
     const router = useRouter();
 
     useEffect(() => {
-       
+
         const getCartItemsFromSessionStorage = () => {
             const invoiceAmount = sessionStorage.getItem("invoiceamount");
             const invoiceDate = sessionStorage.getItem("invoicedate");
@@ -20,11 +21,11 @@ const CartPage: React.FC = () => {
             const subcategoryid = sessionStorage.getItem("subcategoryid");
 
             if (invoiceAmount && invoiceDate && plan && price && brand && subcategoryid) {
-      
+
                 const cartItem = {
                     productName: plan,
                     devicePrice: price,
-                    planDuration: invoiceDate, 
+                    planDuration: invoiceDate,
                     totalAmount: invoiceAmount,
                     brand: brand,
                     subcategoryid: subcategoryid
@@ -47,11 +48,11 @@ const CartPage: React.FC = () => {
         router.push(`/productlist?subcategoryid=${subcategoryid}`);
     };
     console.log('cartItemscart', cartItems);
-    const totalSum = cartItems.reduce((accumulator, item) => {
-        const devicePrice = parseFloat(item.Price); 
-        return isNaN(devicePrice) ? accumulator : accumulator + devicePrice;
-    }, 0);
-    const handleRemoveItem = (indexToRemove) => {
+        const totalSum = cartItems.reduce((accumulator, item) => {
+            const devicePrice = parseFloat(item.Price);
+            return isNaN(devicePrice) ? accumulator : accumulator + devicePrice;
+        }, 0);
+    const handleRemoveItem = (indexToRemove: number) => {
         const updatedCartItems = cartItems.filter((item, index) => index !== indexToRemove);
         setCartItems(updatedCartItems);
         Cookies.set('cartitems', JSON.stringify(updatedCartItems));
@@ -141,8 +142,8 @@ const CartPage: React.FC = () => {
                                 {cartItems.map((item, index) => (
                                     <div className="myCart--item" key={index}>
                                         <button type="button" className="btn-close" aria-label="Close"
-                                        onClick={() => handleRemoveItem(index)}
-                                         />
+                                            onClick={() => handleRemoveItem(index)}
+                                        />
                                         <div className="itemTop">
                                             <div className="itemHead">
                                                 <div className="media">
@@ -154,7 +155,7 @@ const CartPage: React.FC = () => {
                                                     />
                                                 </div>
                                                 <div className="itemName">
-                                                    <h3>{item.productName}</h3>
+                                                    <h3>{item.Plan}</h3>
                                                     <p>{item.brand}</p>
                                                 </div>
                                             </div>
@@ -291,7 +292,7 @@ const CartPage: React.FC = () => {
                                         </form>
                                     </div>
                                 </div>
-                                
+
                                 <div className="summary--Footer">
                                     <button className="ptpBtn" type="button">
                                         {" "}
