@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import Layout from '@/components/layouts/Layout';
-import { getAllbrandlist, getBrandsByProducts, getProductSubcategoryList, getServicePlanOptions, getSubcategoryByProducts } from '@/services/global_services';
+import { getAllbrandlist, getBlockEmails, getBrandsByProducts, getProductSubcategoryList, getServicePlanOptions, getSubcategoryByProducts } from '@/services/global_services';
 import React, { useEffect, useState } from 'react';
 import mobiledw from "../../assets/img/devices/warranty/mobile-dw.png";
 import registerIcon from "../../assets/img/registerIcon.png";
@@ -17,8 +18,13 @@ import iPhoneX from "../../assets/img/heroBanner/iPhone-X1.png"
 import mobileClaim from "../../assets/img/devices/mobileClaim.png";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { NewProductList, RequestServicePlanInterfaces } from '@/interfaces/common.interfaces';
+import { NewProductList, RequestServicePlanInterfaces, initialPolicyPurchase } from '@/interfaces/common.interfaces';
 import Cookies from 'js-cookie';
+import notify from '@/helpers/notify';
+import { allowOnlyEmailAddresses, allowOnlyMobileNumber } from '@/helpers/uitility';
+import { multipleServicePlanSchema } from '@/validations/serviceplan/purchase_serviceplan_validation';
+import { useFormik } from 'formik';
+import { forbiddenEmails } from '@/components/constants/application';
 
 function Plan() {
 
@@ -27,7 +33,7 @@ function Plan() {
   const router = useRouter(); // Initialize useRouter
   const [categories, setCategories] = useState<any[]>([]);
   const [price, setprice] = useState<{ Plan: string; Price: number; }[]>([]);
-  const { subcategoryid, brand='' } = router.query;
+  const { subcategoryid, brand = '' } = router.query;
   const [requestPlan, setRequestPlan] = useState<RequestServicePlanInterfaces>({
     ProductSubCatgID: subcategoryid ? parseInt(subcategoryid as string) : undefined,
     invoiceamount: '',
@@ -38,29 +44,19 @@ function Plan() {
 
   const [isRadioSelected, setIsRadioSelected] = useState(false); // Track if radio button is selected
   const [selectedPlan, setSelectedPlan] = useState<{ Plan: string; Price: number; } | null>(null); // Track selected plan
+  const [email, setEmail] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [mobileError, setMobileError] = useState('');
+  const [isValidated, setIsValidated] = useState(false); // Track form validation
+  const [priceError, setPriceError] = useState('');
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await getBrandsByProducts(subcategoryid);
-        if (response.statusCode === 200 && response.isSuccess && response.data) {
-          setDeviceList(response.data);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-
-    fetchData();
-  }, [subcategoryid]);
-
-  const fetchServicePlanOptions = async () => {
+  const fetchServicePlanOptions = async (event: any) => {
+    event.preventDefault();
     try {
       const response = await getServicePlanOptions(requestPlan);
       if (response.statusCode === 200 && response.isSuccess && response.data) {
-        // Type assertion to let TypeScript know that response.data is an array of objects
         const prices = (response.data as { Plan: string; Price: number }[]).map(plan => ({ Plan: plan.Plan, Price: plan.Price }));
-        // Setting the prices to the state variable
         setprice(prices);
       }
     } catch (error) {
@@ -68,34 +64,22 @@ function Plan() {
     }
   };
 
-  const fetchCategories = async () => {
-    try {
-      const response = await getProductSubcategoryList('');
-      setCategories(response.data);
-      // Assuming the API response has a `data` property containing the list of categories
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-    }
-  };
 
-  const handleDeviceChange = (event: any) => {
-    setSelectedDevice(event.target.value);
-  };
 
   const handleRadioChange = (plan: { Plan: string; Price: number }) => {
     console.log("Selected plan:", plan);
-    setIsRadioSelected(true); // Enable the button when a radio button is selected
-    setSelectedPlan(plan); // Set the selected plan
+    setIsRadioSelected(true);
+    setSelectedPlan(plan);
   };
 
-  const handleAddToCart = (event:any) => {
+  const handleAddToCart = (event: any) => {
     event.preventDefault();
     console.log("Add to cart button clicked");
-    if (selectedPlan && subcategoryid) {
+    if (selectedPlan && subcategoryid && isValidated) {
       const iData = {
         ...requestPlan,
         ...selectedPlan,
-        brand : Array.isArray(brand) ? brand.join(', ') : brand
+        brand: Array.isArray(brand) ? brand.join(', ') : brand
       }
       let parsedCartItems = []
       const cartItems = Cookies.get('cartitems');
@@ -103,17 +87,112 @@ function Plan() {
         parsedCartItems = JSON.parse(cartItems);
       }
       console.log('parsedCartItems', parsedCartItems);
-      const finalCartItems = [...parsedCartItems , iData]
+      const finalCartItems = [...parsedCartItems, iData]
       console.log('cartItems2', finalCartItems);
       Cookies.set('cartitems', JSON.stringify(finalCartItems));
       sessionStorage.setItem("invoiceamount", requestPlan.invoiceamount);
       sessionStorage.setItem("invoicedate", requestPlan.invoicedate);
-      sessionStorage.setItem("subcategoryid", subcategoryid.toString()); 
+      sessionStorage.setItem("subcategoryid", subcategoryid.toString());
       sessionStorage.setItem("plan", selectedPlan.Plan);
       sessionStorage.setItem("price", selectedPlan.Price.toString());
       sessionStorage.setItem("brand", Array.isArray(brand) ? brand.join(', ') : brand);
       router.push("/cart");
     }
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const validateForm = () => {
+    if (requestPlan.invoiceamount && requestPlan.invoicedate && email && mobile) {
+      setIsValidated(true);
+    } else {
+      setIsValidated(false);
+    }
+  };
+
+  useEffect(() => {
+    validateForm();
+
+  }, [requestPlan, email, mobile, validateForm]);
+
+  const formik = useFormik({
+    enableReinitialize: true,
+    // initialValues: initialPolicyPurchase,
+    initialValues: initialPolicyPurchase,
+    validationSchema: multipleServicePlanSchema,
+    onSubmit: fetchServicePlanOptions,
+  });
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    console.log("Input name:", name);
+    console.log("Input value:", value);
+    let transformedValue = value.replace(/\D/g, ''); 
+    let error = '';
+
+    switch (name) {
+      case 'userEmail':
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+          error = 'Invalid email address';
+        } else if (forbiddenEmails.includes(value.toLowerCase())) {
+          error = 'This email is not allowed';
+        }
+        setEmailError(error);
+        setEmail(value);
+        break;
+      case 'userMobile':
+        if (!/^\d{10}$/.test(transformedValue) && transformedValue.length > 0) {
+          error = 'Invalid mobile number';
+        }
+        setMobileError(error);
+        setMobile(transformedValue);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+
+  const isValidPurchaseDate = () => {
+    const selectedDate = new Date(requestPlan.invoicedate);
+    const currentDate = new Date();
+    return requestPlan.invoicedate && selectedDate <= currentDate;
+  };
+  const getCurrentDate = () => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    let month: number | string = currentDate.getMonth() + 1;
+    let day: number | string = currentDate.getDate();
+
+    if (month < 10) {
+      month = `0${month}`;
+    }
+    if (day < 10) {
+      day = `0${day}`;
+    }
+
+    return `${year}-${month}-${day}`;
+  };
+
+
+
+  const handlePriceChange = (event: any) => {
+    const { value } = event.target;
+    let transformedValue = value.replace(/\D/g, ''); // Keep only digits
+    let error = '';
+
+    if (transformedValue.length > 6) {
+      error = 'Price  must be less than 10lakh';
+    } else if (transformedValue.startsWith('0')) {
+      error = 'Price cannot start with 0';
+    } else if (transformedValue === '' || parseInt(transformedValue) < 0) {
+      error = 'Price must be a positive number';
+    }
+
+    setPriceError(error);
+    setRequestPlan({
+      ...requestPlan,
+      invoiceamount: transformedValue
+    });
   };
 
   return (
@@ -229,69 +308,80 @@ function Plan() {
                             htmlFor="damageProtection">Damage Protection</label>
                         </div>
                       </div>
-                      <div className="row g-0 mb-3 d-none">
-                        <div className="col-md-6">
-                          <label htmlFor="forDevice" className="form-label">Device</label>
-                          <input type="text" className="form-control" id="inputforDevice"
-                            placeholder="Android" disabled />
-                        </div>
-                        <div className="col-md-6">
-                          <label htmlFor="Select Device Brand" className="form-label">Select
-                            Brand</label>
-                          <select id="inputDeviceBrand" className="form-select">
-                            <option selected>Select Brand...</option>
-                            <option>iPhone</option>
-                            <option>One Plus</option>
-                            <option>Samsung</option>
-                            <option>Nothing</option>
-                            <option>Oppo</option>
-                            <option>Vivo</option>
-                            <option>Xiaomi</option>
-                          </select>
-                        </div>
-                      </div>
                       <div className="row g-0 mb-3">
                         <div className="col-md-6">
-                          <label htmlFor="inputDevicePrice" className="form-label">Device
-                            Price</label>
-                          <input type="text" className="form-control" id="inputDevicePrice" onChange={(event) => {
+                          <label htmlFor="inputDevicePrice" className="form-label">Device Price</label>
+                          <input
+                            type="text"
+                            className={`form-control ${priceError ? 'is-invalid' : ''}`}
+                            id="inputDevicePrice"
+                            maxLength={7}
+                            onChange={handlePriceChange}
+                            placeholder="Enter Price"
+                            value={requestPlan.invoiceamount}
+                          />
+                          {priceError && <p style={{ color: 'red' }}>{priceError}</p>}
+                          {/* <input type="text" className="form-control" id="inputDevicePrice" onChange={(event) => {
                             setRequestPlan({
                               ...requestPlan,
                               invoiceamount: event.target.value
                             });
                           }}
-                            placeholder="Enter Price" />
+                            placeholder="Enter Price" /> */}
+
                         </div>
+
                         <div className="col-md-6">
-                          <label htmlFor="purchaseDate" className="form-label">Device Purchase
-                            Date</label>
-                          <input id="purchaseDate" className="form-control" type="date" onChange={(event) => {
-                            setRequestPlan({
-                              ...requestPlan,
-                              invoicedate: event.target.value
-                            });
-                          }} />
+                          <label htmlFor="purchaseDate" className="form-label">Device Purchase Date</label>
+                          <input
+                            id="purchaseDate"
+                            className='form-control'
+                            type="date"
+                            max={getCurrentDate()} // Set the max attribute to the current date
+                            onChange={(event) => {
+                              setRequestPlan({
+                                ...requestPlan,
+                                invoicedate: event.target.value
+                              });
+                            }}
+                          />
+                          {/* {!isValidPurchaseDate() && <div className='text-danger'>Please select a valid purchase date.</div>} */}
                         </div>
+
+
                       </div>
                       <div className="row g-0 mb-4">
                         <div className="col-md-6">
                           <label htmlFor="userEmail" className="form-label">Email</label>
-                          <input type="email" className="form-control" id="userEmail"
-                            placeholder="Enter Email" />
+                          <input type="email" className={`form-control ${emailError ? 'is-invalid' : ''}`}
+                            id="userEmail" name="userEmail"
+                            placeholder="Enter Email"
+                            value={formik.values.email}
+                            onChange={handleInputChange} />
+                          {emailError && <div className='text-danger'>{emailError}</div>}
                         </div>
                         <div className="col-md-6">
                           <label htmlFor="uerMobile" className="form-label">Mobile Number</label>
-                          <input type="number" className="form-control" id="uerMobile"
-                            placeholder="Enter Mobile No." />
+                          <input
+                            type="tel"
+                            className={`form-control ${mobileError ? 'is-invalid' : ''}`}
+                            id="uerMobile"
+                            name="userMobile"
+                            placeholder="Enter Mobile No."
+                            maxLength={10}
+                            value={mobile}
+                            onChange={handleInputChange} />
+                          {mobileError && <div className='text-danger'>{mobileError}</div>}
                         </div>
                       </div>
                       <div className="row g-0">
                         <div className="dwFormBottom">
-                          <a type="submit" className="getShield-btn btn-primary rounded-5 mb-3" onClick={fetchServicePlanOptions}>Get
-                            Shield</a>
-                          <small className="smallTextInfo text-muted text-center w-75"> <b>Note :</b>
-                            Also, you understand that the device is brand new & purchased on or
-                            after <b>22-May-2023</b> </small>
+                          <button type="submit" className="getShield-btn btn-primary rounded-5 mb-3" onClick={fetchServicePlanOptions}
+                            disabled={!isValidated ||!!priceError|| !!emailError || !!mobileError}
+                          >Get Shield</button>
+                          <small className="smallTextInfo text-muted text-center w-75">
+                            <b>Note:</b> Also, you understand that the device is brand new & purchased on or after <b>22-May-2023</b>
+                          </small>
                         </div>
                       </div>
                     </form>
@@ -325,16 +415,9 @@ function Plan() {
                                 </i>
 
                                 <div className="hobbies-icon">
-                                  <span>1 Year</span>
+                                  <span>{plan.Plan.substring(0, 7)}</span>
                                   <h3 className="">&#8377; {plan.Price}</h3>
                                 </div>
-
-
-                                <div className="hobbies-icon">
-                                  <span>1 Years</span>
-                                  <h3 className="">&#8377; {plan.Price}</h3>
-                                </div>
-
                               </span>
                             </label>
                           ))}

@@ -37,14 +37,14 @@ const getCategoryImage = (categoryId: number): string => {
     case 9:
       return phone.src;
     default:
-      return ''; 
+      return '';
   }
 };
 const Header: React.FC = () => {
   const [categories, setCategories] = useState<any[]>([]);
   const router = useRouter();
   const [query, setQuery] = useState('');
-
+  const [BranchName, setBranchName] = useState('')
 
   const onSearch = (query: string) => {
     setQuery(query);
@@ -72,7 +72,12 @@ const Header: React.FC = () => {
     }
   };
 
-  
+  useEffect(() => {
+    const storedBranchName = sessionStorage.getItem('branchname');
+    if (storedBranchName) {
+      setBranchName(storedBranchName);
+    }
+  }, []);
   return (
     <>
       <header className="headerSection">
@@ -236,15 +241,15 @@ const Header: React.FC = () => {
                     <div className="headergroup">
                       <ul>
                         <li className="dropdown">
-                          <a
-                            href="#"
-                            className="loginBtn dropdown-toggle"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            <span className="LoginAvtar" /> login{" "}
-                          </a>
+                        <a
+    href="#"
+    className="loginBtn dropdown-toggle"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    <span className="LoginAvtar" />  {BranchName ? BranchName.charAt(0) + BranchName.split(' ')[1]?.charAt(0) : 'Login'}
+  </a>
                           <div className="dropdown-menu mb-0 pb-0">
                             <div className="row">
                               <div className="col-12">
@@ -342,7 +347,7 @@ const Header: React.FC = () => {
                                   {categories.map((category) => {
                                     return (
                                       <li key={category.id} className="dropdown-item">
-                                       <Link href={`/productlist?subcategoryid=${category.subcategoryid}`} className="dropdown-item-links">
+                                        <Link href={`/productlist?subcategoryid=${category.subcategoryid}`} className="dropdown-item-links">
                                           <div className="navMedia">
                                             <img
                                               src={getCategoryImage(category.subcategoryid)}

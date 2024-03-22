@@ -138,7 +138,80 @@ export type NewProductList = Product[];
     Plan: string;
     Price: number;
 }
+export interface PurchaseServiceInterface {
+    productId: string;
+    productName: string;
+    productSubCatgId: string;
+    productCatgId : string;
+    brand: string;
+    IMEINo: string;
+    serialno: string;
+    invoicedate_productdetails: string;
+    invoiceamount_productdetails: number ;
+    invoiceno_productdetails: string;
+    Price: string
+    planName: string
+    planid: string
+    promoCode: string
+    DiscountAmt: number,
+    ActualProductPrice: string;
+    qty: 1;
+    PlanPrice: string
+    InvoiceAmount: number,
+    tds_amt: number,
+    gst_amt: number,
+    promoDiscount: number,
+    
+}
+export interface MultiplePurchaseServiceInterface {
+    mobileno: string;
+    emailidaddress: string;
+    ClientID: string;
+    RetailerID: number;
+    customername: string;
+    addressline1: string;
+    addressline2: string;
+    addressline3: string;
+    city: string;
+    state: string;
+    pincode: number | undefined;
+    landlineno: string;
+    alternateEmailId: string;
+    useableAmountAccount: number;
+    amountPayAccount: number;
+    TotalAmountpay: number
+    AmountPayBy: number;
+    PayBy : string
+    tdsAmount: number;
+    gstAmount: number;
+    discountAmount: number;
+    services: PurchaseServiceInterface[]
+}
 
+export const initialPolicyPurchase: MultiplePurchaseServiceInterface = {
+    mobileno: '',
+    emailidaddress: '',
+    ClientID: '',
+    RetailerID: 0,
+    customername: '',
+    addressline1: '',
+    addressline2: '',
+    addressline3: '',
+    city: '',
+    state: '',
+    pincode: undefined,
+    landlineno: '',
+    alternateEmailId: '',
+    TotalAmountpay: 0,
+    AmountPayBy: 0,
+    PayBy: '',
+    useableAmountAccount: 0,
+    amountPayAccount: 0,
+    tdsAmount: 0,
+    gstAmount: 0,
+    discountAmount: 0,
+    services: []
+}
 
 
 

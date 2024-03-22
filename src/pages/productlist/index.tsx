@@ -37,8 +37,8 @@ function ProductList() {
   const [filterId, setFilterId] = useState<number | null>(null);
   const [categories, setCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sortBy, setSortBy] = useState<string>(''); 
-  const [showModal, setShowModal] = useState(false); 
+  const [sortBy, setSortBy] = useState<string>('');
+  const [showModal, setShowModal] = useState(false);
   const [deviceList, setDeviceList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<string>('');
@@ -55,7 +55,7 @@ function ProductList() {
         console.error('Error fetching data:', error);
       }
       finally {
-        setLoading(false); 
+        setLoading(false);
       }
     }
     fetchData();
@@ -100,7 +100,7 @@ function ProductList() {
   }, [products, filterId]);
 
   // useEffect(() => {
-   
+
   //   sortProducts();
   // }, [sortBy]);
   // const sortProducts = () => {
@@ -153,7 +153,7 @@ function ProductList() {
                       <div className="OuterBanner">
                         <div className="row g-0 d-flex justify-content-start align-items-center">
                           <div className="col-xs-8 col-sm-8 col-md-6 col-lg-6 mb-7 mb-lg-0 p-0"></div>
-                 
+
                         </div>
                       </div>
                       {/* banner ends */}
@@ -194,7 +194,7 @@ function ProductList() {
                 <div className="dw--form">
                   <form action="">
                     <div className="row g-0 mb-3">
-                      <div className="col-6 col-sm-6 col-md-6">
+                      <div className="col-6 col-sm-6 col-md-6 ">
                         <label htmlFor="sortBy" className="form-label">
                           Sort By
                         </label>
@@ -210,7 +210,7 @@ function ProductList() {
                           <option value="New Arrivals">New Arrivals</option>
                         </select>
                       </div>
-                      <div className="col-6 col-sm-6 col-md-6">
+                      {/* <div className="col-6 col-sm-6 col-md-6">
                         <label htmlFor="Select Device Type" className="form-label">
                           Select Category Type
                         </label>
@@ -218,23 +218,23 @@ function ProductList() {
                           id="inputDeviceBrand"
                           className="form-select"
                           onChange={(e) => {
-                            setFilterId(parseInt(e.target.value));
-                            handleSubcategoryClick(e.target.value);
+                            const subcategoryId = e.target.value;
+                            setFilterId(parseInt(subcategoryId));
+                            handleSubcategoryClick(subcategoryId);
+
+                            router.push(`/productlist?subcategoryid=${subcategoryId}`);
                           }}
                         >
                           <option value="">Type...</option>
-                          <option value={subcategoryid}>Televisions & Entertainment</option>
-                          <option value={subcategoryid}>Mobile Phones & Tablet</option>
-                          <option value={subcategoryid}>Large Appliances</option>
-                          <option value={subcategoryid}>Laptops, PCs & Computing</option>
-                          <option value={subcategoryid}>Office & Retail Automation</option>
-                          <option value={subcategoryid}>Kitchen Appliances</option>
-                          <option value={subcategoryid}>Home Appliances</option>
-                          <option value={subcategoryid}>Cameras & Photography</option>
-                          <option value={subcategoryid}>Display, Projection & Conferencing</option>
-                          {/* Add other options as per your productnewid */}
+                          {categories.map((category) => (
+                            <option key={category.subcategoryid} value={category.subcategoryid}>
+                              {category.subcategoryname}
+                            </option>
+                          ))}
                         </select>
-                      </div>
+
+
+                      </div> */}
                     </div>
                   </form>
                 </div>

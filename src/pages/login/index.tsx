@@ -7,6 +7,7 @@ import { LoginInterface } from "@/interfaces/AuthInterfaces";
 import { login, sendOtp } from "@/services/login_services";
 import { multyFactorValidationSchema } from "@/validations/login/multifactor_validation";
 import { getIn, useFormik } from "formik";
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 
@@ -15,17 +16,40 @@ const LoginPage: React.FC = () => {
     const MobileRef = useRef<HTMLInputElement | null>(null);
     const [showOtpField, setShowOtpField] = useState(false);
     const [otpValue, setOtpValue] = useState('');
-
+    const router = useRouter();
+    const[branch,setbranch]=useState('')
     const onOtpComplete = async (otp: string) => {
         console.log(otp);
         formik.setFieldValue('otp', otp);
     }
 
+ // const handleSendOtp = async () => {
+    //     if (formik.values.mobile && formik.values.mobile.length === 10) { // Check if mobile number is exactly 10 digits
+    //         try {
+    //             const response = await sendOtp(formik.values.mobile);
+    //             if (response && response.isSuccess && response.statusCode === 200) {
+    //                 notify.success('OTP sent successfully!');
+    //                 setShowOtpField(true); // Show OTP field upon successful OTP send
+    //             } else {
+    //                 notify.error('Failed to send OTP. Please try again.');
+    //             }
+    //         } catch (error) {
+    //             console.error(error);
+    //             notify.error('Error sending OTP. Please try again.');
+    //         }
+    //     } else {
+    //         notify.error('Please enter a valid 10-digit mobile number before sending OTP.');
+    //     }
+    // };
+    
+
+
+
     const handleSendOtp = async () => {
-        const mobileNumber = formik.values.mobile?.toString(); // Add a null check using optional chaining
+        const mobileNumber = formik.values.mobile?.toString(); // Convert mobile number to string
         if (mobileNumber && mobileNumber.length === 10) { // Check if mobile number is not null and is exactly 10 digits
             try {
-                const response = await sendOtp(parseInt(mobileNumber)); // Convert to number using parseInt
+                const response = await sendOtp(mobileNumber); // Pass mobileNumber as a string
                 if (response && response.isSuccess && response.statusCode === 200) {
                     notify.success('OTP sent successfully!');
                     setShowOtpField(true); // Show OTP field upon successful OTP send
@@ -41,17 +65,28 @@ const LoginPage: React.FC = () => {
         }
     };
     
-    
-    
-    
-
     const handleSubmit = async () => {
-        if (formik.isValid && formik.values.otp?.length === 6) {
+        const otp = formik.values.otp?.toString(); // Convert otp to string
+        if (formik.isValid && otp && otp.length === 6) {
             try {
                 const response = await login(formik.values);
+              
                 if (response && response.isSuccess && response.statusCode === 200) {
-                    notify.success('You are logged in!');
+   
+                    
+                    // Check if response has branchname and clientid properties
+                    if (response.data && response.data.branchname && response.data.contactpersonname) {
+                        // Set branchname and clientid in sessionStorage
+                        sessionStorage.setItem('branchname', response.data.branchname);
+                        sessionStorage.setItem('clientid', response.data.contactpersonname);
+                  
+                    } else {
+                        console.error('Branchname or clientid is undefined in the response');
+                    }
+                    router.push('/');
 
+                    // Display notification toaster message with the branch name
+                    notify.success(`Welcome, ${response.data.branchname}!`);
                 } else {
                     notify.error('Incorrect OTP. Please try again.');
                 }
@@ -63,6 +98,11 @@ const LoginPage: React.FC = () => {
             notify.error('Please enter a valid OTP.');
         }
     };
+    
+    
+    
+    
+    
 
     const handleResendOtp = async () => {
         // Clear the previous OTP value

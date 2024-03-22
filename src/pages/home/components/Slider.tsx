@@ -51,7 +51,7 @@ function Slider() {
       modules:[Autoplay, Pagination, Navigation]
     });
 
-    // Clean up on unmount
+
 
   }, []);
 
@@ -84,7 +84,7 @@ function Slider() {
                                   <p>Want To Protect Your Device From Accidents?</p>
                                 </div>
                                 <div className="hero_slidbox_left_action">
-                                  <a href="#" className="heroActionBtn">
+                                  <a  className="heroActionBtn">
                                     Get Now
                                   </a>
                                 </div>
@@ -124,7 +124,7 @@ function Slider() {
                                   <p>Want To Save High Repair Costs?</p>
                                 </div>
                                 <div className="hero_slidbox_left_action">
-                                  <a href="dvicePlans.html" className="heroActionBtn">
+                                  <a  className="heroActionBtn">
                                     Get Now
                                   </a>
                                 </div>
@@ -162,7 +162,7 @@ function Slider() {
                                   </div>
                                 </div>
                                 <div className="hero_slidbox_left_action">
-                                  <a href="dvicePlans.html" className="heroActionBtn">
+                                  <a  className="heroActionBtn">
                                     Get Now
                                   </a>
                                 </div>
@@ -270,7 +270,7 @@ function Slider() {
                   <h1>InfyShield Support</h1>
                 </div>
                 <div className="triCard___body">
-                  <a href="#" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={whatsapp.src}
@@ -281,7 +281,7 @@ function Slider() {
                     </div>
                     Whats App
                   </a>
-                  <a href="#" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={videocall.src}
@@ -292,7 +292,7 @@ function Slider() {
                     </div>
                     Video Call
                   </a>
-                  <a href="#" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={voicecall.src}
@@ -303,7 +303,7 @@ function Slider() {
                     </div>
                     Voice Call
                   </a>
-                  <a href="#" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={email.src}
@@ -314,7 +314,7 @@ function Slider() {
                     </div>
                     Email
                   </a>
-                  <a href="#" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={chatbot.src}
@@ -325,7 +325,7 @@ function Slider() {
                     </div>
                     ChatBot
                   </a>
-                  <a href="#" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={FPMS.src}
@@ -344,7 +344,7 @@ function Slider() {
                   <h1>Devices &amp; Plans</h1>
                 </div>
                 <div className="triCard___body">
-                  <a href="dvicePlans.html" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={Mobile.src}
@@ -355,7 +355,7 @@ function Slider() {
                     </div>
                     Mobiles
                   </a>
-                  <a href="dvicePlans.html" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={Laptop.src}
@@ -366,7 +366,7 @@ function Slider() {
                     </div>
                     Laptops
                   </a>
-                  <a href="dvicePlans.html" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={Tv.src}
@@ -377,7 +377,7 @@ function Slider() {
                     </div>
                     Smart TV
                   </a>
-                  <a href="dvicePlans.html" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={Ac.src}
@@ -388,7 +388,7 @@ function Slider() {
                     </div>
                     AC
                   </a>
-                  <a href="dvicePlans.html" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={Camera.src}
@@ -399,7 +399,7 @@ function Slider() {
                     </div>
                     Camera
                   </a>
-                  <a href="dvicePlans.html" className="infoCards">
+                  <a  className="infoCards">
                     <div className="media">
                       <img
                         src={AllDevices.src}

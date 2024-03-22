@@ -29,3 +29,6 @@ export const getBrandsByProducts = async (subCatgID : any): Promise<any> => {
 export const getServicePlanOptions = async (iData: any): Promise<any> => {
     return await post('/policy/service-plan-options',iData);
 }
+export const getBlockEmails = async (): Promise<any> => {
+    return await get('/emailblocker');
+};
