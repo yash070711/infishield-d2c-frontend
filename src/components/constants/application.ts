@@ -17,6 +17,8 @@ export const forbiddenEmails = [
     'nomail@no.com',
     'non@email.com',
     'rahul@gmail.com',
+    'xyz@gmail.com',
+    '1234@gmail.com',
     'noam@nomail.com',
     'noomil@gmail.com',
     'no@no.com',

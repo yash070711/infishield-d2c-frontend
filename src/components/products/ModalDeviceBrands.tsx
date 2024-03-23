@@ -42,34 +42,14 @@ const ModalDeviceBrands = ({ showModal, toggleModal, productId }: { showModal: b
         }
     }, [productId, fetchBrandList]);
 
-    // const handleVoiceSearch = () => {
-    //     const SpeechRecognition = window.webkitSpeechRecognition as typeof window.webkitSpeechRecognition;
     
-    //     if (SpeechRecognition) {
-    //         const recognition = new SpeechRecognition();
-    //         recognition.lang = 'en-US';
-    //         recognition.start();
-    //         setListening(true); // Set listening state to true when microphone is clicked
-    
-    //         recognition.onresult = (event: any) => {
-    //             const transcript = event.results[0][0].transcript;
-    //             setSearchQuery(transcript);
-    //             setListening(false); // Set listening state to false when voice input is received
-    //         };
-    
-    //         recognition.onend = () => {
-    //             setListening(false); // Set listening state to false when voice recognition ends
-    //         };
-    
-    //         recognition.onerror = (event: any) => {
-    //             console.error('Speech recognition error:', event.error);
-    //             setListening(false); // Set listening state to false if there's an error
-    //         };
-    //     } else {
-    //         console.error('Speech recognition not supported in this browser');
-    //     }
-    // };
-    
+    // if (loading) {
+    //     return (
+    //       <div className="spinner-grow" role="status">
+    //       <span className="sr-only">Loading...</span>
+    //     </div>
+    //     );
+    // }
     
 
     return (

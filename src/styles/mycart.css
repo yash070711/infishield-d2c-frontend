@@ -781,3 +781,68 @@
   .pageTop--MainContent .pageHead-Inner .dw--right .dw--content .dw--planForm .red {
     color: #BB0000;
   }
+
+  #selectCat .cate-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #selectCat .cate-container h2 {
+    margin: 0 0 16px 0;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  #selectCat .radio-buttons {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #selectCat label.custom-radio {
+    flex: 0 0 24.99%;
+    display: flex;
+    justify-content: center;
+  }
+  #selectCat .custom-radio input {
+    display: none;
+  }
+  #selectCat .radio-btn {
+    margin: 5px;
+    width: 222px;
+    height: 60px;
+    border: 3px solid rgba(0, 0, 0, 0);
+    display: flex;
+    border-radius: 2px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(195, 195, 195, 0.4039215686);
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  #selectCat .radio-btn .cate-icon {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  #selectCat .radio-btn .cate-icon img {
+    display: block;
+    width: 46px;
+    margin-bottom: 0;
+  }
+  #selectCat .radio-btn .cate-icon h3 {
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-left: 0.5rem;
+    text-align: start;
+  }
+  #selectCat .custom-radio input:checked + .radio-btn {
+    border: 2px solid #1581cd;
+  }

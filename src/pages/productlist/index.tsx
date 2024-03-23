@@ -121,12 +121,20 @@ function ProductList() {
     sessionStorage.setItem('subcategoryid', id);
   };
   console.log('products', products);
-  if (loading) {
-    // If loading, display a loading indicator
-    <div className="loader-container">
-      <div className="spinner"></div>
-    </div>
-  }
+  // if (loading) {
+  //   // If loading, display a loading indicator
+  //   <div className="loader-container">
+  //     <div className="spinner"></div>
+  //   </div>
+  // }
+//   if (loading) {
+//     return (
+//       <div className="spinner-grow" role="status">
+//       <span className="sr-only">Loading...</span>
+//     </div>
+//     );
+// }
+
   return (
     <Layout>
       <section className="pageTop--MainContent mb-0">

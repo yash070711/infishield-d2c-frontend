@@ -136,7 +136,7 @@ export type NewProductList = Product[];
     brand: string;
     invoiceamount: number;
     Plan: string;
-    Price: number;
+    Price: string;
 }
 export interface PurchaseServiceInterface {
     productId: string;
@@ -164,6 +164,8 @@ export interface PurchaseServiceInterface {
     
 }
 export interface MultiplePurchaseServiceInterface {
+    mobile: string | number | readonly string[] | undefined;
+    email: string | number | readonly string[] | undefined;
     mobileno: string;
     emailidaddress: string;
     ClientID: string;
@@ -210,7 +212,9 @@ export const initialPolicyPurchase: MultiplePurchaseServiceInterface = {
     tdsAmount: 0,
     gstAmount: 0,
     discountAmount: 0,
-    services: []
+    services: [],
+    mobile: undefined,
+    email: undefined
 }
 
 
