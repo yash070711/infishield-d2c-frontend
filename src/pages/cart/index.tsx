@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-before-interactive-script-outside-document */
 /* eslint-disable @next/next/no-img-element */
 import Layout from "@/components/layouts/Layout"
 import mobileIcon from '../../assets/img/devices/mobileIcon.png'
@@ -206,7 +207,7 @@ const CartPage: React.FC = () => {
 
     useEffect(() => {
         initializePayment();
-    }, []);
+    }, [initializePayment]);
 
     const makePaytmPayment = async () => {
         const config: PaytmConfigInterface = {
@@ -256,18 +257,21 @@ const CartPage: React.FC = () => {
           console.error('Paytm or CheckoutJS not available in the window object.');
         }
       };
-    const handleProceedToPayment = async () => {
+      const handleProceedToPayment = async () => {
         try {
-            // Initialize payment
-            await makePaytmPayment();
-
-            // Redirect to Paytm payment page with the orderId
-            window.location.href = `https://securegw.paytm.in/theia/processTransaction?orderid=${payTMData.order}`;
+            // Compute total amount
+       
+            
+            // Initialize payment with computed total amount
+            await initializePayment();
+    
+            // Redirect to Paytm payment page with the orderId  https://securegw-stage.paytm.in/theia/paytmCallback?ORDER_ID=<order_id>
         } catch (error) {
             console.error('Error:', error);
             // Handle error
         }
     };
+    
     
     
 

@@ -216,8 +216,21 @@ export const initialPolicyPurchase: MultiplePurchaseServiceInterface = {
     mobile: undefined,
     email: undefined
 }
-
-
+export interface PaytmTransactionInterfaces {
+    BANKTXNID: string | undefined;
+    CHECKSUMHASH: string | undefined;
+    CURRENCY: string | undefined;
+    GATEWAYNAME: string | undefined;
+    MID: string | undefined;
+    ORDERID: string | undefined;
+    PAYMENTMODE: string | undefined;
+    RESPCODE: string | undefined;
+    RESPMSG: string | undefined;
+    STATUS: string | undefined;
+    TXNAMOUNT: string | undefined;
+    TXNDATE: string | undefined;
+    TXNID: string | undefined;
+}
 
 
 
